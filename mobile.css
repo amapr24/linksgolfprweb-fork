@@ -1,0 +1,215 @@
+/* =========================================================
+   Boricua Golf Club · Mobile enhancements
+   Desktop layout is untouched. Everything here is gated on
+   viewport width ≤ 768px, focused on stacking, readable
+   typography, and touch-friendly controls.
+   ========================================================= */
+
+/* ------- Language toggle button (all viewports) ------- */
+.lang-toggle{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:44px; height:36px; padding:0 12px;
+  border-radius:999px; border:1px solid var(--line);
+  background:rgba(255,255,255,0.55);
+  font-family:var(--f-mono); font-size:11px; font-weight:700;
+  letter-spacing:.18em; color:var(--ink-soft);
+  cursor:pointer;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
+.lang-toggle:hover,
+.lang-toggle:focus-visible{
+  background:var(--ink); color:var(--cream); border-color:var(--ink);
+  outline:none;
+}
+.lang-toggle:active{ transform:translateY(1px); }
+
+.nav-inner > .nav-cta{
+  display:flex; align-items:center; gap:10px;
+}
+
+@media (max-width: 768px){
+  /* ----- Base / typography ----- */
+  body{ font-size:15px; }
+  h1,h2,h3{ text-wrap:balance; }
+
+  /* Prevent horizontal bleed from hero/map absolute positioning */
+  html, body{ overflow-x:hidden; }
+
+  /* ----- Navigation ----- */
+  .nav-inner{ height:60px; }
+  body{ padding-top:60px; }
+  .nav-inner > .nav-cta .btn{
+    padding:9px 12px; font-size:11px; letter-spacing:.04em;
+  }
+  .lang-toggle{ min-width:40px; height:32px; padding:0 10px; font-size:10px; }
+  .logo{ font-size:16px; gap:8px; min-width:0; flex:1 1 auto; overflow:hidden; }
+  .logo > span:not(.logo-mark){ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; }
+  .logo-mark{ width:28px; height:28px; flex:0 0 28px; }
+  .logo-mark svg{ width:14px; height:14px; }
+  .nav-inner > .nav-cta{ flex:0 0 auto; }
+  .mobile-panel{
+    top:60px; padding:18px 20px; gap:14px;
+  }
+  .mobile-panel a{ font-size:17px; }
+  /* Very narrow viewports: hide the desktop CTA in the bar so the
+     logo + lang toggle + hamburger don't fight for space. CTA still
+     reachable inside the mobile-panel and the hero. */
+  @media (max-width: 480px){
+    .nav-inner > .nav-cta > .btn-primary{ display:none; }
+    .logo{ font-size:16px; }
+  }
+
+  /* ----- Hero ----- */
+  .hero{ padding:28px 0 20px; }
+  .hero-grid{ gap:36px; }
+  .headline{ font-size:clamp(36px, 10vw, 58px) !important; line-height:1; letter-spacing:-.03em; }
+  .hero-sub{ font-size:15.5px; margin-bottom:28px; }
+  .hero-cta{ gap:10px; }
+  .hero-cta .btn{ width:100%; justify-content:center; }
+  /* hero-stats removed in 2026-05-01 rework */
+
+  .card-stage{ min-height:0; justify-content:center; }
+  .m-card{ width:min(360px, 100%); }
+  .mc-inner{ padding:20px !important; }
+  .mc-brand{ font-size:17px; }
+  .mc-name{ font-size:18px; }
+  .mc-qr{ width:46px; height:46px; }
+
+  .hero-map{ padding:24px 0 60px; min-height:0; }
+  .hero-map-grid{ gap:32px; }
+  .hero-map-viz{ padding:22px; aspect-ratio:16/10; }
+
+  /* ----- Marquee ----- */
+  .marquee{ padding:14px 0; }
+  .marquee-track{ font-size:20px; gap:40px; }
+
+  /* ----- Sections ----- */
+  .section{ padding:56px 0; }
+  .section-head{ margin-bottom:32px; }
+  .section-head h2{ font-size:clamp(32px, 8vw, 48px) !important; line-height:1.02; }
+  .section-head p{ font-size:15px; }
+
+  /* Benefits — vertical list at all sizes; just tighten on mobile */
+  .benefits-grid{ border-radius:16px; }
+  .benefit{ padding:18px 20px !important; gap:14px !important; flex-wrap:wrap; }
+  .benefit .num{ display:none; }
+  .benefit .glyph{ width:40px; height:40px; }
+  .benefit .glyph svg{ width:20px; height:20px; }
+  .benefit h3{ font-size:18px !important; line-height:1.2; }
+  .benefit .tagline-q{ width:100%; padding-left:0 !important; padding-top:8px !important; border-left:0 !important; border-top:1px solid var(--line); margin-left:0 !important; font-size:13px !important; }
+
+  /* Network / editorial */
+  .editorial{ grid-template-columns:1fr !important; gap:24px; }
+  .editorial .big-num{ font-size:clamp(120px, 40vw, 180px) !important; }
+  .map-wrap{ padding:24px; }
+  .map-header{ flex-direction:column; align-items:flex-start; gap:12px; }
+  .map-header h3{ font-size:30px; }
+  .map-grid{ grid-template-columns:1fr !important; gap:24px; }
+  .map-aside{ max-height:300px; }
+  .pr-map{ aspect-ratio:2.3/1; }
+
+  /* Fix 3 — Map pins: smaller dots, nudge anchor point south */
+  .pin{ transform:translate(-50%, calc(-100% + 10px)); }
+  .pin-dot{ width:10px; height:10px; }
+
+  /* Card showcase */
+  .card-show-grid{
+    display:block !important;
+    grid-template-columns:1fr !important;
+    gap:40px !important;
+  }
+  .card-show-grid > .reveal{ width:100%; margin-bottom:40px; }
+  .card-show-grid h2{ font-size:clamp(34px, 8vw, 48px) !important; }
+  .card-show-grid p{ max-width:none !important; }
+  /* Fix 4 — Card: remove excess blank space, clip orbit overflow */
+  .card-show-grid .card-stage{ min-height:auto; width:100%; overflow:hidden; }
+  #card.section{ padding:32px 0; }
+
+  /* FAQ (home) */
+  .faq-item{ padding:22px 0; }
+  .faq-q{ font-size:clamp(18px, 4.5vw, 22px) !important; }
+  .faq-plus{ width:34px; height:34px; }
+  .faq-a{ font-size:15px; }
+
+  /* Join */
+  .join-wrap{ padding:32px 22px !important; }
+  .join-grid{ grid-template-columns:1fr !important; gap:32px !important; }
+  .join-left h2{ font-size:clamp(32px, 7.5vw, 44px) !important; }
+  .price-card{ padding:22px; }
+  .price-card .price{ font-size:52px; }
+  .steps{ margin-bottom:26px; gap:4px; }
+  .step{ font-size:9px; letter-spacing:.14em; padding:10px 0 12px; }
+  .step .n{ margin-right:4px; }
+  .form-panel{ padding:22px; }
+  .form-row{ grid-template-columns:1fr !important; gap:12px; }
+  .field input, .field select{ font-size:16px; padding:14px; } /* 16px prevents iOS zoom */
+  .submit{ padding:16px; font-size:13px; }
+
+  /* Footer — Fix 5: 3 columns side-by-side */
+  .footer{ padding:56px 0 30px; }
+  .footer-grid{ grid-template-columns:1fr 1fr 1fr !important; gap:16px !important; margin-bottom:40px; }
+  .footer-brand{ grid-column:1 / -1; }
+  .footer-brand h3{ font-size:32px; }
+  .footer-grid h4{ font-size:10px; }
+  .footer-grid a{ font-size:12px; padding:4px 0; }
+  .footer-bot{ flex-direction:column; gap:10px; font-size:11px; }
+
+  /* ----- Courses page ----- */
+  .page-head{ padding:56px 0 36px; }
+  .page-head h1{ font-size:clamp(40px, 10vw, 64px); }
+  .page-head p{ font-size:15.5px; }
+  .stats-strip{ gap:24px; margin-top:32px; }
+  .stats-strip .stat .n{ font-size:32px; }
+  .toolbar{ gap:14px; margin:28px 0 20px; }
+  .search{ max-width:100%; min-width:0; }
+  .search input{ font-size:16px; padding:14px 16px 14px 44px; }
+  .pills{ gap:6px; }
+  .pill{ padding:9px 14px; font-size:10px; letter-spacing:.14em; }
+  .cta-banner{ margin:80px 0 0; padding:56px 0; }
+  .cta-banner h2{ font-size:clamp(30px, 7vw, 44px); }
+
+  /* ----- FAQ page ----- */
+  .faq-wrap{ padding:24px 0 80px; gap:24px; grid-template-columns:1fr; }
+  .side{ position:static; flex-direction:row; flex-wrap:wrap; gap:8px; top:0; }
+  .side a{ padding:8px 12px; font-size:10px; }
+  .group{ margin-bottom:40px; }
+  .group h2{ font-size:30px; }
+  .item{ padding:22px 0; }
+  .q{ font-size:clamp(17px, 4.5vw, 22px) !important; }
+  .plus{ width:32px; height:32px; }
+  .a{ font-size:14.5px; }
+  .cta{ padding:64px 0; }
+  .cta h2{ font-size:clamp(30px, 7vw, 44px); }
+
+  /* ----- Touch targets ----- */
+  a, button, .btn, .pill, .faq-item summary, .item summary{
+    min-height:44px; /* iOS/Android accessibility target */
+  }
+  .btn{ padding:14px 20px; }
+
+  /* Hide decorative pseudo elements that can leak horizontal space */
+  .page-head::before,
+  .hero::before,
+  .cta-banner::before,
+  .join-wrap::before,
+  .map-wrap::before{
+    transform:scale(.6);
+  }
+}
+
+/* Extra tightening below 420px */
+@media (max-width: 420px){
+  .headline{ font-size:clamp(32px, 11vw, 44px) !important; }
+  /* Fix 2 — Stats: all 3 in one row, 339 lands to the right of 25% */
+  .hero-stats{ grid-template-columns:repeat(3, 1fr); }
+  .hero-stats .stat-n{ font-size:24px; }
+  .section-head h2{ font-size:clamp(28px, 9vw, 40px) !important; }
+  /* Fix 5 — Footer: keep 3 cols even at 420px */
+  .footer-grid{ grid-template-columns:1fr 1fr 1fr !important; }
+  .footer-brand{ grid-column:1 / -1; }
+}
+
+/* On very narrow screens, drop the brand text and just show the mark */
+@media (max-width: 380px){
+  .logo > span:not(.logo-mark){ display:none; }
+}

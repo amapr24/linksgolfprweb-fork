@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PR Map — color preview</title>
+<style>
+:root {
+  --sage: oklch(58% 0.09 152);
+  --sage-light: oklch(72% 0.11 152);
+  --sage-2: oklch(48% 0.08 152);
+  --ink: #111a13;
+  --cream: #faf6ee;
+  --bg: #f0ebe0;
+  --line: rgba(140,190,130,.15);
+  --f-display: 'DM Serif Display', Georgia, serif;
+  --f-mono: 'DM Mono', ui-monospace, monospace;
+  --f-sans: 'Inter', system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--f-sans);
+  background: var(--bg);
+  color: var(--ink);
+  padding: 32px;
+}
+h1 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: -.02em;
+  margin: 0 0 8px;
+}
+.subtitle {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 32px;
+}
+.variant {
+  margin-bottom: 48px;
+}
+.variant-label {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.variant-meta {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: rgba(17,26,19,.55);
+  margin-bottom: 14px;
+  word-break: break-all;
+}
+.map-wrap {
+  position: relative;
+  background: var(--ink);
+  border-radius: 20px;
+  padding: 32px;
+  color: var(--cream);
+  overflow: hidden;
+}
+.map-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 20%, rgba(88,140,98,.2), transparent 50%),
+              radial-gradient(ellipse at 80% 80%, rgba(60,100,65,.1), transparent 50%);
+  pointer-events: none;
+}
+.pr-map {
+  position: relative;
+  aspect-ratio: 2.6/1;
+  background: rgba(250,246,238,.03);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 2;
+}
+.pr-map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/6/6d/Puerto-Rico-blank.svg") no-repeat;
+  background-size: 136.8% auto;
+  background-position: 91.4% 50%;
+  pointer-events: none;
+}
+/* Each variant overrides only the filter + opacity */
+.v-current::before     { filter: invert(1) sepia(0.85) saturate(2.2) hue-rotate(-12deg) brightness(0.92); opacity: .8; }
+.v-cream::before       { filter: invert(1) sepia(0.55) saturate(0.6) brightness(1.05); opacity: .85; }
+.v-stone::before       { filter: invert(1) saturate(0.15) brightness(1.05); opacity: .85; }
+.v-terracotta::before  { filter: invert(1) sepia(1) saturate(2.8) hue-rotate(-25deg) brightness(0.78); opacity: .8; }
+.v-champagne::before   { filter: invert(1) sepia(0.7) saturate(1.3) brightness(1.0); opacity: .85; }
+.v-duskblue::before    { filter: invert(1) sepia(0.4) saturate(0.6) hue-rotate(170deg) brightness(1.05); opacity: .85; }
+.v-greengold::before   { filter: invert(1) sepia(0.6) saturate(1.5) hue-rotate(20deg) brightness(1.0); opacity: .8; }
+.v-bone::before        { filter: invert(1) sepia(0.2) saturate(0.4) brightness(1.15); opacity: .9; }
+.v-rust::before        { filter: invert(1) sepia(1) saturate(3.5) hue-rotate(-30deg) brightness(0.7); opacity: .85; }
+.v-sageGoldMix::before { filter: invert(1) sepia(0.45) saturate(1.0) hue-rotate(45deg) brightness(0.95); opacity: .8; }
+
+.pin {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  z-index: 3;
+}
+.pin-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--sage-light);
+  box-shadow: 0 0 0 0 rgba(160,210,150,.5);
+  position: relative;
+}
+.pin-dot::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px solid rgba(160,210,150,.45);
+  animation: pin-pulse 2.5s ease-out infinite;
+}
+@keyframes pin-pulse {
+  0%   { transform: scale(.6); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+.pin.featured .pin-dot {
+  background: var(--sage);
+  box-shadow: 0 0 14px rgba(88,140,98,.6);
+}
+</style>
+</head>
+<body>
+
+<h1>PR Map — color preview</h1>
+<div class="subtitle">10 filter variants on the same map + pins</div>
+
+<!-- Variant template duplicated below; the only thing that changes per variant
+     is the .v-* class on .pr-map and the label/meta text. -->
+
+<div class="variant">
+  <div class="variant-label">1 · Current — amber/honey</div>
+  <div class="variant-meta">filter: invert(1) sepia(0.85) saturate(2.2) hue-rotate(-12deg) brightness(0.92); opacity: .8</div>
+  <div class="map-wrap"><div class="pr-map v-current" data-pins></div></div>
+</div>
+
+<div class="variant">
+  <div class="variant-label">2 · Pale cream / sand</div>
+  <div class="variant-meta">filter: invert(1) sepia(0.55) saturate(0.6) brightness(1.05); opacity: .85</div>
+  <div class="map-wrap"><div class="pr-map v-cream" data-pins></div></div>
+</div>
+
+<div class="variant">
+  <div class="variant-label">3 · Cool stone / paper-grey</div>
+  <div class="variant-meta">filter: invert(1) saturate(0.15) brightness(1.05); opacity: .85</div>
+  <div class="map-wrap"><div class="pr-map v-stone" data-pins></div></div>
+</div>
+
+<div class="variant">
+  <div class="variant-label">4 · Muted terracotta / clay</div>
+  <div class="variant-meta">filter: invert(1) sepia(1) saturate(2.8) hue-rotate(-25deg) brightness(0.78); opacity: .8</div>
+  <div class="map-wrap"><div class="pr-map v-terracotta" data-pins></div></div>
+</div>
+
+<div class="variant">
+  <div class="variant-label">5 · Champagne / dusty gold</div>
+  <div class="variant-meta">filter: invert(1) sepia(0.7) saturate(1.3) brightness(1.0); opacity: .85</div>
+  <div class="map-wrap"><div class="pr-map v-champagne" data-pins></div></div>
+</div>
+
+<div class="variant">
+  <div class="variant-label">6 · Pale dusk-blue</div>
+  <div class="variant-meta">filter: invert(1) sepia(0.4) saturate(0.6) hue-rotate(170deg) brightness(1.05); opacity: .85</div>
+  <div class="map-wrap"><div class="pr-map v-duskblue" data-pins></div></div>
+</div>
+
+<div class="variant">
+  <div class="variant-label">7 · Green-gold (warm sage adjacent)</div>
+  <div class="variant-meta">filter: invert(1) sepia(0.6) saturate(1.5) hue-rotate(20deg) brightness(1.0); opacity: .8</div>
+  <div class="map-wrap"><div class="pr-map v-greengold" data-pins></div></div>
+</div>
+
+<div class="variant">
+  <div class="variant-label">8 · Bone / very pale warm</div>
+  <div class="variant-meta">filter: invert(1) sepia(0.2) saturate(0.4) brightness(1.15); opacity: .9</div>
+  <div class="map-wrap"><div class="pr-map v-bone" data-pins></div></div>
+</div>
+
+<div class="variant">
+  <div class="variant-label">9 · Deep rust / bourbon</div>
+  <div class="variant-meta">filter: invert(1) sepia(1) saturate(3.5) hue-rotate(-30deg) brightness(0.7); opacity: .85</div>
+  <div class="map-wrap"><div class="pr-map v-rust" data-pins></div></div>
+</div>
+
+<div class="variant">
+  <div class="variant-label">10 · Olive / brass</div>
+  <div class="variant-meta">filter: invert(1) sepia(0.45) saturate(1.0) hue-rotate(45deg) brightness(0.95); opacity: .8</div>
+  <div class="map-wrap"><div class="pr-map v-sageGoldMix" data-pins></div></div>
+</div>
+
+<script>
+const COURSES = [
+  { name:"Punta Borinquen",          x:9.0,  y:22.0, featured:false },
+  { name:"Royal Isabela",            x:14.0, y:18.5, featured:true  },
+  { name:"Club Deportivo del Oeste", x:7.5,  y:65.0, featured:false },
+  { name:"TPC Dorado Beach",         x:49.0, y:21.5, featured:true  },
+  { name:"Dorado del Mar",           x:51.5, y:23.0, featured:false },
+  { name:"Rio Bayamon",              x:54.5, y:28.0, featured:false },
+  { name:"Fort Buchanan",            x:57.5, y:25.5, featured:false },
+  { name:"Bahia Beach",              x:70.0, y:29.0, featured:false },
+  { name:"Wyndham Rio Mar",          x:73.0, y:30.5, featured:true  },
+  { name:"Coco Beach",               x:67.0, y:27.5, featured:false },
+  { name:"El Conquistador",          x:79.5, y:35.0, featured:false },
+  { name:"Caguas Real",              x:60.0, y:47.0, featured:false },
+  { name:"Palmas del Mar",           x:72.0, y:62.0, featured:true  },
+  { name:"Costa Caribe",             x:33.5, y:75.0, featured:false },
+  { name:"El Legado",                x:57.5, y:79.0, featured:false },
+];
+
+document.querySelectorAll('[data-pins]').forEach(map => {
+  COURSES.forEach(c => {
+    const pin = document.createElement('div');
+    pin.className = 'pin' + (c.featured ? ' featured' : '');
+    pin.style.cssText = `left:${c.x}%;top:${c.y}%`;
+    pin.innerHTML = '<div class="pin-dot"></div>';
+    map.appendChild(pin);
+  });
+});
+</script>
+
+</body>
+</html>

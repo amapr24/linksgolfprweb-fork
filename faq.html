@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="doc.title.faq">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>FAQ · Links Golf Membership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="mobile.css"/>
+<style>
+:root {
+  --bg:         #f0ebe0;
+  --bg2:        #e8e1d3;
+  --cream:      #faf6ee;
+  --ink:        #111a13;
+  --ink-soft:   #2d3e30;
+  --muted:      #6b7260;
+  --line:       rgba(17,26,19,.10);
+  --sage:       oklch(58% 0.09 152);
+  --sage-2:     oklch(48% 0.09 152);
+  --sage-light: oklch(83% 0.07 152);
+  --sage-pale:  oklch(94% 0.04 152);
+  --radius:     12px;
+  --radius-lg:  20px;
+  --f-display:  "DM Serif Display", Georgia, serif;
+  --f-sans:     "Inter", system-ui, sans-serif;
+  --f-mono:     "DM Mono", ui-monospace, monospace;
+}
+*,*::before,*::after { box-sizing: border-box; }
+html,body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--f-sans); background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: .045; mix-blend-mode: multiply; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); background-size: 400px 400px; }
+h1,h2,h3,h4 { font-family: var(--f-display); font-weight: 400; letter-spacing: -.02em; color: var(--ink); margin: 0; text-wrap: balance; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+@media (max-width: 600px) { .wrap { padding: 0 18px; } }
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--line); }
+body { padding-top: 68px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.logo { font-family: var(--f-display); font-size: 22px; letter-spacing: -.01em; display: flex; align-items: center; gap: 11px; }
+.logo-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px rgba(255,255,255,.5), 0 2px 8px rgba(17,26,19,.2); flex-shrink: 0; }
+.logo-mark svg { width: 16px; height: 16px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 12px; font-weight: 500; color: var(--ink-soft); letter-spacing: .06em; text-transform: uppercase; transition: color .2s; position: relative; padding-bottom: 2px; }
+.nav-links a:hover { color: var(--sage); }
+.nav-links a.active { color: var(--sage); }
+.nav-links a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px; background: var(--sage); }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 999px; font-family: var(--f-sans); font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; border: none; transition: all .2s ease; }
+.btn-primary { background: var(--ink); color: var(--cream); }
+.btn-primary:hover { background: var(--sage-2); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.btn-outline:hover { background: var(--ink); color: var(--cream); }
+.lang-toggle { background: transparent; border: 1px solid var(--ink-soft); color: var(--ink); padding: 5px 10px; border-radius: 999px; font-family: var(--f-mono); font-size: 10px; font-weight: 600; letter-spacing: .14em; cursor: pointer; transition: all .2s ease; }
+.lang-toggle:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.eyebrow { font-family: var(--f-mono); font-size: 13px; letter-spacing: .28em; text-transform: uppercase; color: var(--sage); font-weight: 600; }
+.mobile-toggle { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.mobile-toggle svg { width: 20px; height: 20px; stroke: var(--ink); }
+.mobile-panel { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 18px 24px; flex-direction: column; gap: 16px; }
+.mobile-panel a { font-size: 17px; font-family: var(--f-display); }
+.mobile-panel.open { display: flex; }
+@media (max-width: 860px) { .nav-links { display: none; } .mobile-toggle { display: inline-flex; } }
+
+/* PAGE HEAD */
+.page-head { padding: 80px 0 56px; position: relative; overflow: hidden; }
+.page-head::before { content: ""; position: absolute; right: -8%; top: -40%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(88,140,98,.1), transparent 65%); pointer-events: none; }
+.crumbs { font-family: var(--f-mono); font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.crumbs a:hover { color: var(--sage); }
+.page-head h1 { font-size: clamp(44px, 7vw, 96px); line-height: .95; letter-spacing: -.035em; position: relative; z-index: 2; }
+.page-head h1 em { color: var(--sage); font-style: italic; }
+.page-head p { font-size: 16px; color: var(--ink-soft); max-width: 520px; margin: 20px 0 0; position: relative; z-index: 2; line-height: 1.7; }
+
+/* FAQ LAYOUT */
+.faq-wrap { padding: 40px 0 100px; display: grid; grid-template-columns: 220px 1fr; gap: 56px; align-items: start; }
+@media (max-width: 860px) { .faq-wrap { grid-template-columns: 1fr; gap: 28px; } }
+
+.side { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 2px; }
+@media (max-width: 860px) { .side { position: static; flex-direction: row; flex-wrap: wrap; gap: 8px; } }
+.side a { padding: 9px 0 9px 14px; font-family: var(--f-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); border-left: 2px solid transparent; transition: all .2s; }
+.side a.on { color: var(--sage); border-color: var(--sage); }
+.side a:hover { color: var(--ink); }
+@media (max-width: 860px) {
+  .side a { border-left: none; border-bottom: 2px solid transparent; padding: 7px 12px; background: var(--cream); border-radius: 999px; }
+  .side a.on { background: var(--ink); color: var(--cream); border-bottom: none; }
+}
+
+.group { margin-bottom: 52px; }
+.group h2 { font-size: clamp(28px, 3.5vw, 40px); margin-bottom: 20px; line-height: 1.05; }
+.group h2 em { color: var(--sage); font-style: italic; }
+
+.item { border-bottom: 1px solid var(--line); }
+.item:first-of-type { border-top: 1px solid var(--line); }
+.item summary { list-style: none; display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 20px 0; cursor: pointer; outline: none; }
+.item summary::-webkit-details-marker { display: none; }
+.q { font-family: var(--f-display); font-size: clamp(17px, 2vw, 22px); letter-spacing: -.01em; line-height: 1.25; font-weight: 400; }
+.q em { color: var(--sage); font-style: italic; }
+.plus { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line); position: relative; transition: all .3s; }
+.plus::before, .plus::after { content: ""; position: absolute; width: 11px; height: 1.5px; background: var(--ink); top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.plus::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform .3s; }
+.item[open] .plus { background: var(--sage); border-color: var(--sage); }
+.item[open] .plus::before, .item[open] .plus::after { background: white; }
+.item[open] .plus::after { transform: translate(-50%, -50%) rotate(0); }
+.ans { padding: 0 0 20px; color: var(--ink-soft); font-size: 15px; line-height: 1.75; max-width: 660px; }
+.ans a { color: var(--sage); border-bottom: 1px solid currentColor; }
+
+/* CTA */
+.cta { padding: 80px 0; background: var(--ink); color: var(--cream); position: relative; overflow: hidden; text-align: center; }
+.cta::before { content: ""; position: absolute; right: -10%; top: -50%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(88,140,98,.28), transparent 60%); filter: blur(30px); pointer-events: none; }
+.cta h2 { position: relative; z-index: 2; color: var(--cream); font-size: clamp(30px, 4vw, 52px); line-height: 1.05; }
+.cta h2 em { color: var(--sage-light); font-style: italic; }
+.cta p { position: relative; z-index: 2; color: rgba(250,246,238,.65); margin: 18px auto 28px; max-width: 440px; font-size: 15px; }
+
+/* FOOTER */
+footer { background: var(--ink); color: var(--cream); padding: 64px 0 36px; border-top: 4px solid var(--sage); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+@media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+.footer-brand h3 { color: var(--cream); font-size: 30px; margin-bottom: 12px; letter-spacing: -.02em; }
+.footer-brand h3 em { color: var(--sage-light); font-style: italic; }
+.footer-brand p { color: rgba(250,246,238,.55); font-size: 13px; max-width: 280px; line-height: 1.7; }
+.footer-brand .tagline { font-family: var(--f-display); font-style: italic; color: var(--sage-light); font-size: 15px; margin-top: 10px; }
+footer h4 { font-family: var(--f-mono); color: rgba(140,190,130,.8); font-size: 10px; letter-spacing: .28em; text-transform: uppercase; margin-bottom: 16px; font-weight: 500; }
+footer a { display: block; color: rgba(250,246,238,.6); padding: 5px 0; font-size: 13px; transition: color .2s; }
+footer a:hover { color: var(--sage-light); }
+.footer-bot { display: flex; justify-content: space-between; border-top: 1px solid rgba(250,246,238,.1); padding-top: 24px; color: rgba(250,246,238,.35); font-size: 11px; font-family: var(--f-mono); letter-spacing: .1em; }
+@media (max-width: 600px) { .footer-bot { flex-direction: column; gap: 10px; } }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M6 2v20M6 4l12 4-12 4"/></svg>
+      </span>
+      <span>Links Golf Membership</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#benefits" data-i18n="nav.benefits">Benefits</a>
+      <a href="index.html#network" data-i18n="nav.network">Courses</a>
+      <a href="index.html#card" data-i18n="nav.card">Digital ID</a>
+      <a href="faq.html" class="active" data-i18n="nav.faq">FAQ</a>
+      <a href="courses.html" data-i18n="nav.courses">All Courses</a>
+    </div>
+    <div class="nav-cta" style="display:flex;align-items:center;gap:10px;">
+      <button class="lang-toggle" data-lang-toggle type="button" aria-label="Switch language">EN</button>
+      <a href="index.html#join" class="btn btn-primary" id="navDesktopCTA" data-i18n="nav.cta">Get Your Card</a>
+      <button class="mobile-toggle" id="navToggle" data-i18n-attr="nav.menu.aria|aria-label" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+          <path id="menuOpen" d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          <path id="menuClose" d="M6 18L18 6M6 6l12 12" stroke-linecap="round" style="display:none"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="index.html#benefits" data-i18n="nav.benefits">Benefits</a>
+    <a href="index.html#network" data-i18n="nav.network">Courses</a>
+    <a href="index.html#card" data-i18n="nav.card">Digital ID</a>
+    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    <a href="courses.html" data-i18n="nav.courses">All Courses</a>
+    <a href="index.html#join" class="btn btn-primary" style="width:fit-content;margin-top:4px;" data-i18n="nav.cta">Get Your Card</a>
+  </div>
+</nav>
+
+<section class="page-head">
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="crumbs"><a href="index.html" data-i18n="crumb.home">Home</a> / <span data-i18n="faqp.crumb">Frequently Asked Questions</span></div>
+    <h1 data-i18n="faqp.h1">The fine print,<br/><em>no nonsense.</em></h1>
+    <p><span data-i18n="faqp.intro">Everything you might wonder about membership, billing, wallets, and course access. Can't find your answer?</span> <a href="mailto:hello@linksgolf.pr" style="color:var(--sage);border-bottom:1px solid currentColor;" data-i18n="faqp.contact">Contact us →</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap faq-wrap">
+    <nav class="side" id="side">
+      <a href="#membership" class="on" data-i18n="faqp.side.membership">01 · Membership</a>
+      <a href="#wallet" data-i18n="faqp.side.wallet">02 · Wallet &amp; Card</a>
+      <a href="#courses" data-i18n="faqp.side.courses">03 · Courses</a>
+      <a href="#billing" data-i18n="faqp.side.billing">04 · Billing</a>
+      <a href="#account" data-i18n="faqp.side.account">05 · Account</a>
+    </nav>
+
+    <div>
+      <!-- 01 Membership -->
+      <div class="group reveal" id="membership">
+        <h2 data-i18n="faqp.g.membership.h2">01 · <em>Membership</em></h2>
+        <details class="item" open>
+          <summary><div class="q" data-i18n="faqp.m.1.q">What is <em>Links Golf Membership?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.m.1.a">An annual membership unlocking discounted rates at 15 partner courses across Puerto Rico. One card, the whole island — play more, pay less.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.m.2.q">Who is it for?</div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.m.2.a">Residents, frequent visitors, and snowbirds who play more than a handful of rounds a year on the island. The card pays for itself quickly at member rates — typically within 3–4 rounds.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.m.3.q">Is there a <em>family plan?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.m.3.a">Yes — partners and additional family members can add memberships at a reduced rate. Ask at checkout or email <a href="mailto:hello@linksgolf.pr">hello@linksgolf.pr</a> and we'll set you up.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.m.4.q">Is the membership transferable?</div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.m.4.a">No. The membership is non-transferable and photo-bound to the verified member. Sharing a pass voids membership immediately. Each golfer in your group needs their own card.</div>
+        </details>
+      </div>
+
+      <!-- 02 Wallet & Card -->
+      <div class="group reveal" id="wallet">
+        <h2 data-i18n="faqp.g.wallet.h2">02 · <em>Wallet &amp; Card</em></h2>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.w.1.q">How does the <em>digital card</em> work?</div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.w.1.a">After activation you receive a signed Apple Wallet and Google Wallet pass. It lives on your phone like a boarding pass — show it at the pro shop, staff scans it, and your member rate is unlocked instantly.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.w.2.q">Do I need to download an <em>app?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.w.2.a">Not at all. The pass uses native wallet features built into iOS and Android — the same place as your credit cards and boarding passes. No third-party app, no account to manage after setup.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.w.3.q">What if I <em>lose my phone?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.w.3.a">Log into your member account, revoke the old pass in one tap, then add a fresh pass to your new device. Your membership is never interrupted and your member number stays the same.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.w.4.q">Can I use my card <em>offline?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.w.4.a">Yes. Wallet passes work offline — the QR code is stored locally on your device. No signal needed at the course.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.w.5.q">Can I <em>share</em> the card with someone?</div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.w.5.a">No — passes are photo-bound and non-transferable. Sharing voids your membership. Add a family member instead so they get their own verified card.</div>
+        </details>
+      </div>
+
+      <!-- 03 Courses -->
+      <div class="group reveal" id="courses">
+        <h2 data-i18n="faqp.g.courses.h2">03 · <em>Courses</em></h2>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.c.1.q">Which <em>courses</em> participate?</div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.c.1.a">15 partner courses across 9 municipios — from Royal Isabela on the west coast to Palmas Del Mar on the east. See the full list on the <a href="courses.html">course directory</a>.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.c.2.q">Do I need a <em>tee time?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.c.2.a">Yes — book directly with the course as you normally would. Mention that you're a Links Golf Member when booking. Featured resort partners also offer priority tee-time windows for members.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.c.3.q">Does the discount apply to <em>guests</em> in my group?</div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.c.3.a">The primary member rate applies only to the cardholder. Some courses offer a reduced companion rate for guests in a member's group — check with the individual course when booking.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.c.4.q">Are more courses being <em>added?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.c.4.a">Yes. We're actively expanding the network. New partner courses are announced by email to all active members first.</div>
+        </details>
+      </div>
+
+      <!-- 04 Billing -->
+      <div class="group reveal" id="billing">
+        <h2 data-i18n="faqp.g.billing.h2">04 · <em>Billing</em></h2>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.b.1.q">How much does it <em>cost?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.b.1.a">$299 USD per year. Member discounts of 15–25% off green fees typically pay the membership back within 3–4 rounds at partner courses.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.b.2.q">Does it <em>auto-renew?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.b.2.a">Only if you opt in during checkout. We send a reminder email 30 days before expiration — no surprise charges, ever.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.b.3.q">Can I get a <em>refund?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.b.3.a">Yes — full refund within 14 days if you haven't yet used the card at a partner course. After first use, the membership is non-refundable.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.b.4.q">What payment methods do you <em>accept?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.b.4.a">All major credit and debit cards (Visa, Mastercard, Amex, Discover) via Stripe. Payments are encrypted and we never store card details.</div>
+        </details>
+      </div>
+
+      <!-- 05 Account -->
+      <div class="group reveal" id="account">
+        <h2 data-i18n="faqp.g.account.h2">05 · <em>Account</em></h2>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.a.1.q">How do I update my <em>photo?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.a.1.a">Sign in to your member portal, upload a new photo, and your wallet pass refreshes automatically within minutes. The new photo appears on your digital card immediately.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.a.2.q">Can I <em>cancel</em> anytime?</div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.a.2.a">Your membership is annual, but you can disable auto-renewal at any time from your account. Your card stays active through the end of your paid term.</div>
+        </details>
+        <details class="item">
+          <summary><div class="q" data-i18n="faqp.a.3.q">How do I contact <em>support?</em></div><div class="plus"></div></summary>
+          <div class="ans" data-i18n="faqp.a.3.a">Email <a href="mailto:hello@linksgolf.pr">hello@linksgolf.pr</a> — we respond within 1 business day. For urgent issues call or text the number on your welcome email.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2 data-i18n="faqp.cta.h2">Still have <em>questions?</em></h2>
+    <p data-i18n="faqp.cta.p">Our team is based in Puerto Rico and ready to help. One email and you'll hear back the next business day.</p>
+    <a href="mailto:hello@linksgolf.pr" class="btn" style="background:var(--sage);color:white;margin:0 auto;" data-i18n="faqp.cta.btn">Email us →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Links <em>Golf</em><br/>Membership</h3>
+        <p data-i18n="footer.brand.p">One membership. Puerto Rico's finest courses. Exclusive access, digital convenience, genuine savings.</p>
+        <div class="tagline" data-i18n="footer.signature">play more, pay less.</div>
+      </div>
+      <div>
+        <h4 data-i18n="footer.col.explore">Explore</h4>
+        <a href="index.html#benefits" data-i18n="nav.benefits">Benefits</a>
+        <a href="index.html#network" data-i18n="footer.link.network">Our Network</a>
+        <a href="index.html#card" data-i18n="nav.card">Digital ID</a>
+        <a href="courses.html" data-i18n="nav.courses">All Courses</a>
+      </div>
+      <div>
+        <h4 data-i18n="footer.col.support">Support</h4>
+        <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+        <a href="mailto:hello@linksgolf.pr" data-i18n="footer.link.contact">Contact</a>
+        <a href="#" data-i18n="footer.link.terms">Terms of Service</a>
+        <a href="#" data-i18n="footer.link.privacy">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span data-i18n="footer.copyright">© 2026 Links Golf Membership · Puerto Rico</span>
+      <span style="font-family:var(--f-display);font-style:italic;color:rgba(160,210,150,.5);" data-i18n="footer.signature">play more, pay less</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const panel = document.getElementById('mobilePanel');
+  const open = document.getElementById('menuOpen');
+  const close = document.getElementById('menuClose');
+  toggle.addEventListener('click', () => {
+    panel.classList.toggle('open');
+    const isOpen = panel.classList.contains('open');
+    open.style.display = isOpen ? 'none' : '';
+    close.style.display = isOpen ? '' : 'none';
+  });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    panel.classList.remove('open');
+    open.style.display = ''; close.style.display = 'none';
+  }));
+})();
+
+// Sidebar highlight on scroll
+const sideLinks = document.querySelectorAll('#side a');
+const groups = [...document.querySelectorAll('.group')];
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      sideLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, { rootMargin: '-25% 0px -65% 0px' });
+groups.forEach(g => io.observe(g));
+
+// Scroll reveal
+const revealIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+</script>
+<script src="languageManager.js" defer></script>
+</body>
+</html>

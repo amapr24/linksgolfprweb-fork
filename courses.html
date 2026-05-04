@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="doc.title.courses">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Courses · Links Golf Membership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="mobile.css"/>
+<style>
+:root {
+  --bg:         #f0ebe0;
+  --bg2:        #e8e1d3;
+  --cream:      #faf6ee;
+  --ink:        #111a13;
+  --ink-soft:   #2d3e30;
+  --muted:      #6b7260;
+  --line:       rgba(17,26,19,.10);
+  --sage:       oklch(58% 0.09 152);
+  --sage-2:     oklch(48% 0.09 152);
+  --sage-light: oklch(83% 0.07 152);
+  --sage-pale:  oklch(94% 0.04 152);
+  --radius:     12px;
+  --radius-lg:  20px;
+  --f-display:  "DM Serif Display", Georgia, serif;
+  --f-sans:     "Inter", system-ui, sans-serif;
+  --f-mono:     "DM Mono", ui-monospace, monospace;
+}
+*,*::before,*::after { box-sizing: border-box; }
+html,body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--f-sans); background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: .045; mix-blend-mode: multiply; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); background-size: 400px 400px; }
+h1,h2,h3,h4 { font-family: var(--f-display); font-weight: 400; letter-spacing: -.02em; color: var(--ink); margin: 0; text-wrap: balance; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+@media (max-width: 600px) { .wrap { padding: 0 18px; } }
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--line); }
+body { padding-top: 68px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.logo { font-family: var(--f-display); font-size: 22px; letter-spacing: -.01em; display: flex; align-items: center; gap: 11px; }
+.logo-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px rgba(255,255,255,.5), 0 2px 8px rgba(17,26,19,.2); flex-shrink: 0; }
+.logo-mark svg { width: 16px; height: 16px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 12px; font-weight: 500; color: var(--ink-soft); letter-spacing: .06em; text-transform: uppercase; transition: color .2s; position: relative; padding-bottom: 2px; }
+.nav-links a:hover { color: var(--sage); }
+.nav-links a.active { color: var(--sage); }
+.nav-links a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px; background: var(--sage); }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 999px; font-family: var(--f-sans); font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; border: none; transition: all .2s ease; }
+.btn-primary { background: var(--ink); color: var(--cream); }
+.btn-primary:hover { background: var(--sage-2); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.btn-outline:hover { background: var(--ink); color: var(--cream); }
+.lang-toggle { background: transparent; border: 1px solid var(--ink-soft); color: var(--ink); padding: 5px 10px; border-radius: 999px; font-family: var(--f-mono); font-size: 10px; font-weight: 600; letter-spacing: .14em; cursor: pointer; transition: all .2s ease; }
+.lang-toggle:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.eyebrow { font-family: var(--f-mono); font-size: 13px; letter-spacing: .28em; text-transform: uppercase; color: var(--sage); font-weight: 600; }
+.mobile-toggle { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.mobile-toggle svg { width: 20px; height: 20px; stroke: var(--ink); }
+.mobile-panel { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 18px 24px; flex-direction: column; gap: 16px; }
+.mobile-panel a { font-size: 17px; font-family: var(--f-display); }
+.mobile-panel.open { display: flex; }
+@media (max-width: 860px) { .nav-links { display: none; } .mobile-toggle { display: inline-flex; } }
+
+/* PAGE HEAD */
+.page-head { padding: 80px 0 52px; position: relative; overflow: hidden; }
+.page-head::before { content: ""; position: absolute; right: -8%; top: -40%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(88,140,98,.1), transparent 65%); pointer-events: none; }
+.crumbs { font-family: var(--f-mono); font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.crumbs a:hover { color: var(--sage); }
+.page-head h1 { font-size: clamp(44px, 7vw, 96px); line-height: .95; letter-spacing: -.035em; position: relative; z-index: 2; }
+.page-head h1 em { color: var(--sage); font-style: italic; }
+.page-head p { font-size: 16px; color: var(--ink-soft); max-width: 520px; margin: 20px 0 0; position: relative; z-index: 2; line-height: 1.7; }
+
+.stats-strip { display: flex; gap: 40px; margin-top: 40px; flex-wrap: wrap; position: relative; z-index: 2; }
+.stat .n { font-family: var(--f-display); font-size: 40px; line-height: 1; letter-spacing: -.03em; }
+.stat .n em { color: var(--sage); font-style: italic; }
+.stat .l { font-family: var(--f-mono); font-size: 9px; letter-spacing: .22em; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
+
+/* TOOLBAR */
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin: 36px 0 22px; flex-wrap: wrap; }
+.search { position: relative; flex: 1; max-width: 400px; min-width: 220px; }
+.search input { width: 100%; padding: 12px 16px 12px 42px; border-radius: 10px; background: var(--cream); border: 1px solid var(--line); font-family: var(--f-sans); font-size: 14px; color: var(--ink); transition: border-color .2s; outline: none; }
+.search input:focus { border-color: var(--sage); }
+.search input::placeholder { color: var(--muted); }
+.search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+.pills { display: flex; gap: 7px; flex-wrap: wrap; }
+.pill { padding: 8px 16px; border-radius: 999px; background: var(--cream); border: 1px solid var(--line); font-family: var(--f-mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: all .2s; color: var(--ink-soft); }
+.pill:hover { border-color: var(--ink); color: var(--ink); }
+.pill.on { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+.count-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .22em; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; }
+
+/* TABLE */
+.dir { background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+.dir table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.dir thead tr { background: var(--ink); color: var(--cream); }
+.dir thead th { text-align: left; padding: 14px 20px; font-family: var(--f-mono); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; font-weight: 500; }
+.dir thead th.sortable { cursor: pointer; user-select: none; transition: color .15s; }
+.dir thead th.sortable:hover { color: var(--sage-light); }
+.dir thead th .arrow { display: inline-block; margin-left: 5px; opacity: .3; font-size: 8px; transition: opacity .15s, transform .15s; }
+.dir thead th.sorted .arrow { opacity: 1; color: var(--sage-light); }
+.dir thead th.sorted.desc .arrow { transform: rotate(180deg); }
+.dir tbody tr { border-top: 1px solid var(--line); transition: background .2s; }
+.dir tbody tr:hover { background: var(--bg); }
+.dir td { padding: 18px 20px; vertical-align: middle; }
+.dir td.num { font-family: var(--f-mono); font-size: 10px; color: var(--muted); letter-spacing: .1em; width: 52px; }
+.dir td.name { font-family: var(--f-display); font-size: 18px; letter-spacing: -.01em; }
+.dir td.name .featured-tag { display: inline-block; margin-left: 9px; font-family: var(--f-mono); font-size: 8px; letter-spacing: .2em; text-transform: uppercase; background: var(--sage-pale); color: var(--sage-2); border: 1px solid var(--sage-light); padding: 2px 7px; border-radius: 4px; vertical-align: middle; font-weight: 600; }
+.dir td.loc { color: var(--ink-soft); font-size: 13px; }
+.dir td.off { font-family: var(--f-mono); font-weight: 500; color: var(--sage-2); font-size: 13px; }
+.dir tr.featured td.off { color: var(--sage); font-weight: 700; }
+
+.type-badge { display: inline-flex; padding: 4px 9px; border-radius: 999px; font-family: var(--f-mono); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; font-weight: 500; }
+.type-Resort        { background: rgba(88,140,98,.12);  color: var(--sage-2); }
+.type-Semi-Private  { background: rgba(17,26,19,.07);   color: var(--ink-soft); }
+.type-Public        { background: rgba(17,26,19,.05);   color: var(--muted); }
+.type-Country-Club  { background: rgba(88,140,98,.08);  color: var(--sage-2); }
+
+.empty-msg { padding: 56px 20px; text-align: center; color: var(--muted); font-family: var(--f-mono); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; display: none; }
+
+/* Mobile card view */
+@media (max-width: 700px) {
+  .dir thead { display: none; }
+  .dir, .dir tbody, .dir tr, .dir td { display: block; width: 100%; }
+  .dir { background: transparent; border: none; border-radius: 0; }
+  .dir tbody tr { background: var(--cream); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 10px; padding: 14px 16px; }
+  .dir tbody tr:hover { background: var(--cream); }
+  .dir td { padding: 5px 0; border-top: none; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 13px; }
+  .dir td::before { content: attr(data-l); font-family: var(--f-mono); font-size: 9px; letter-spacing: .2em; color: var(--muted); text-transform: uppercase; }
+  .dir td.num { width: auto; }
+  .dir td.name { font-size: 16px; padding-top: 8px; border-top: 1px solid var(--line); margin-top: 4px; flex-direction: column; align-items: flex-start; }
+  .dir td.name::before { display: none; }
+}
+
+/* CTA BANNER */
+.cta-banner { margin-top: 100px; padding: 80px 0; background: var(--ink); color: var(--cream); position: relative; overflow: hidden; }
+.cta-banner::before { content: ""; position: absolute; right: -10%; top: -50%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(88,140,98,.28), transparent 60%); filter: blur(30px); pointer-events: none; }
+.cta-banner .wrap { position: relative; z-index: 2; text-align: center; }
+.cta-banner h2 { font-size: clamp(30px, 4.5vw, 56px); color: var(--cream); line-height: 1.05; }
+.cta-banner h2 em { color: var(--sage-light); font-style: italic; }
+.cta-banner p { color: rgba(250,246,238,.65); margin: 18px auto 28px; max-width: 440px; font-size: 15px; }
+
+/* FOOTER */
+footer { background: var(--ink); color: var(--cream); padding: 64px 0 36px; border-top: 4px solid var(--sage); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+@media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+.footer-brand h3 { color: var(--cream); font-size: 30px; margin-bottom: 12px; letter-spacing: -.02em; }
+.footer-brand h3 em { color: var(--sage-light); font-style: italic; }
+.footer-brand p { color: rgba(250,246,238,.55); font-size: 13px; max-width: 280px; line-height: 1.7; }
+.footer-brand .tagline { font-family: var(--f-display); font-style: italic; color: var(--sage-light); font-size: 15px; margin-top: 10px; }
+footer h4 { font-family: var(--f-mono); color: rgba(140,190,130,.8); font-size: 10px; letter-spacing: .28em; text-transform: uppercase; margin-bottom: 16px; font-weight: 500; }
+footer a { display: block; color: rgba(250,246,238,.6); padding: 5px 0; font-size: 13px; transition: color .2s; }
+footer a:hover { color: var(--sage-light); }
+.footer-bot { display: flex; justify-content: space-between; border-top: 1px solid rgba(250,246,238,.1); padding-top: 24px; color: rgba(250,246,238,.35); font-size: 11px; font-family: var(--f-mono); letter-spacing: .1em; }
+@media (max-width: 600px) { .footer-bot { flex-direction: column; gap: 10px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M6 2v20M6 4l12 4-12 4"/></svg>
+      </span>
+      <span>Links Golf Membership</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#benefits" data-i18n="nav.benefits">Benefits</a>
+      <a href="index.html#network" data-i18n="nav.network">Courses</a>
+      <a href="index.html#card" data-i18n="nav.card">Digital ID</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <a href="courses.html" class="active" data-i18n="nav.courses">All Courses</a>
+    </div>
+    <div class="nav-cta" style="display:flex;align-items:center;gap:10px;">
+      <button class="lang-toggle" data-lang-toggle type="button" aria-label="Switch language">EN</button>
+      <a href="index.html#join" class="btn btn-primary" id="navDesktopCTA" data-i18n="nav.cta">Get Your Card</a>
+      <button class="mobile-toggle" id="navToggle" data-i18n-attr="nav.menu.aria|aria-label" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+          <path id="menuOpen" d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          <path id="menuClose" d="M6 18L18 6M6 6l12 12" stroke-linecap="round" style="display:none"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="index.html#benefits" data-i18n="nav.benefits">Benefits</a>
+    <a href="index.html#network" data-i18n="nav.network">Courses</a>
+    <a href="index.html#card" data-i18n="nav.card">Digital ID</a>
+    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    <a href="courses.html" data-i18n="nav.courses">All Courses</a>
+    <a href="index.html#join" class="btn btn-primary" style="width:fit-content;margin-top:4px;" data-i18n="nav.cta">Get Your Card</a>
+  </div>
+</nav>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html" data-i18n="crumb.home">Home</a> / <span data-i18n="courses.crumb">Course Directory</span></div>
+    <h1 data-i18n="courses.h1">Fifteen courses,<br/><em>one island.</em></h1>
+    <p data-i18n="courses.intro">The full directory of partner courses. Show your Links Golf card at any location to unlock your member rate — from west-coast cliffs to southern shores.</p>
+    <div class="stats-strip">
+      <div class="stat"><div class="n">15<em>.</em></div><div class="l" data-i18n="courses.stat.1">Partner Courses</div></div>
+      <div class="stat"><div class="n">15–25<em>%</em></div><div class="l" data-i18n="courses.stat.2">Member Discount</div></div>
+      <div class="stat"><div class="n">339<em>.</em></div><div class="l" data-i18n="courses.stat.3">Total Holes</div></div>
+      <div class="stat"><div class="n">9<em>.</em></div><div class="l" data-i18n="courses.stat.4">Municipios</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 8px 0 60px;">
+  <div class="wrap">
+    <div class="toolbar">
+      <div class="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="searchInput" type="text" placeholder="Search by name, town or type…" data-i18n-attr="courses.search.placeholder|placeholder"/>
+      </div>
+      <div class="pills" id="filterPills">
+        <button class="pill on" data-f="all" data-i18n="courses.pill.all">All</button>
+        <button class="pill" data-f="Resort" data-i18n="courses.pill.resort">Resort</button>
+        <button class="pill" data-f="Semi-Private" data-i18n="courses.pill.semi">Semi-Private</button>
+        <button class="pill" data-f="Public" data-i18n="courses.pill.public">Public</button>
+        <button class="pill" data-f="Country Club" data-i18n="courses.pill.club">Country Club</button>
+      </div>
+    </div>
+    <div class="count-label" id="countLabel">Showing all 15 courses</div>
+
+    <div class="dir">
+      <table>
+        <thead>
+          <tr id="headRow">
+            <th>#</th>
+            <th class="sortable" data-sort="name"><span data-i18n="courses.th.course">Course</span> <span class="arrow">▲</span></th>
+            <th class="sortable" data-sort="loc"><span data-i18n="courses.th.muni">Municipio</span> <span class="arrow">▲</span></th>
+            <th class="sortable" data-sort="type"><span data-i18n="courses.th.type">Type</span> <span class="arrow">▲</span></th>
+            <th class="sortable" data-sort="holes"><span data-i18n="courses.th.holes">Holes</span> <span class="arrow">▲</span></th>
+            <th class="sortable" data-sort="off"><span data-i18n="courses.th.discount">Discount</span> <span class="arrow">▲</span></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="empty-msg" id="emptyMsg" data-i18n="courses.empty">No courses match your search.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <h2 data-i18n="courses.cta.h2">Ready to play <em>more, pay less?</em></h2>
+    <p data-i18n="courses.cta.p">One card. Fifteen courses. 365 days of better rates across Puerto Rico.</p>
+    <a href="index.html#join" class="btn" style="background:var(--sage);color:white;margin:0 auto;" data-i18n="courses.cta.btn">Get your 2026 card →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Links <em>Golf</em><br/>Membership</h3>
+        <p data-i18n="footer.brand.p">One membership. Puerto Rico's finest courses. Exclusive access, digital convenience, genuine savings.</p>
+        <div class="tagline" data-i18n="footer.signature">play more, pay less.</div>
+      </div>
+      <div>
+        <h4 data-i18n="footer.col.explore">Explore</h4>
+        <a href="index.html#benefits" data-i18n="nav.benefits">Benefits</a>
+        <a href="index.html#network" data-i18n="footer.link.network">Our Network</a>
+        <a href="index.html#card" data-i18n="nav.card">Digital ID</a>
+        <a href="courses.html" data-i18n="nav.courses">All Courses</a>
+      </div>
+      <div>
+        <h4 data-i18n="footer.col.support">Support</h4>
+        <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+        <a href="mailto:hello@linksgolf.pr" data-i18n="footer.link.contact">Contact</a>
+        <a href="#" data-i18n="footer.link.terms">Terms of Service</a>
+        <a href="#" data-i18n="footer.link.privacy">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span data-i18n="footer.copyright">© 2026 Links Golf Membership · Puerto Rico</span>
+      <span style="font-family:var(--f-display);font-style:italic;color:rgba(160,210,150,.5);" data-i18n="footer.signature">play more, pay less</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const COURSES = [
+  { name:"Bahia Beach Resort & Golf Club",       loc:"Rio Grande",    type:"Resort",        holes:18, off:20, featured:false },
+  { name:"Caguas Real Golf & Country Club",      loc:"Caguas",        type:"Semi-Private",  holes:18, off:15, featured:false },
+  { name:"Club Deportivo del Oeste",             loc:"Cabo Rojo",     type:"Public",        holes:18, off:15, featured:false },
+  { name:"Coco Beach Golf & Country Club",       loc:"Rio Grande",    type:"Semi-Private",  holes:36, off:15, featured:false },
+  { name:"Costa Caribe Golf Club",               loc:"Ponce",         type:"Semi-Private",  holes:27, off:15, featured:false },
+  { name:"El Conquistador Resort",               loc:"Las Croabas",   type:"Resort",        holes:18, off:20, featured:false },
+  { name:"El Legado Golf Resort",                loc:"Guayama",       type:"Resort",        holes:18, off:20, featured:false },
+  { name:"Dorado del Mar Beach & Golf Resort",   loc:"Dorado",        type:"Resort",        holes:18, off:20, featured:false },
+  { name:"Fort Buchanan Golf Course",            loc:"Fort Buchanan", type:"Public",        holes:9,  off:15, featured:false },
+  { name:"Palmas Del Mar Country Club",          loc:"Humacao",       type:"Country Club",  holes:36, off:20, featured:false },
+  { name:"Punta Borinquen Golf Course",          loc:"Ramey Base",    type:"Semi-Private",  holes:18, off:15, featured:false },
+  { name:"Rio Bayamon Golf Course",              loc:"Bayamon",       type:"Public",        holes:18, off:15, featured:false },
+  { name:"Royal Isabela Golf Course",            loc:"Isabela",       type:"Resort",        holes:18, off:20, featured:true  },
+  { name:"TPC Dorado Beach Resort & Club",       loc:"Dorado",        type:"Resort",        holes:72, off:25, featured:true  },
+  { name:"Wyndham Grand Rio Mar",                loc:"Rio Grande",    type:"Resort",        holes:36, off:20, featured:true  },
+];
+
+const tbody       = document.getElementById('rows');
+const searchInput = document.getElementById('searchInput');
+const countLabel  = document.getElementById('countLabel');
+const emptyMsg    = document.getElementById('emptyMsg');
+
+let currentFilter = 'all';
+let currentQuery  = '';
+let sortKey       = null;
+let sortDir       = 1;
+
+function sortVal(c, key) {
+  if (key === 'holes') return c.holes;
+  if (key === 'off')   return c.off;
+  return (c[key] || '').toLowerCase();
+}
+
+function renderRows() {
+  const list = COURSES.filter(c => {
+    const matchF = currentFilter === 'all' || c.type === currentFilter;
+    const matchQ = !currentQuery || [c.name, c.loc, c.type].some(s => s.toLowerCase().includes(currentQuery));
+    return matchF && matchQ;
+  });
+
+  if (sortKey) {
+    list.sort((a, b) => {
+      const va = sortVal(a, sortKey), vb = sortVal(b, sortKey);
+      return va < vb ? -sortDir : va > vb ? sortDir : 0;
+    });
+  }
+
+  tbody.innerHTML = list.map((c, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    const typeCls = c.type.replace(/\s/g, '-');
+    const offLabel = c.off + '% OFF';
+    return `<tr class="${c.featured ? 'featured' : ''}">
+      <td class="num" data-l="#">${num}</td>
+      <td class="name" data-l="Course">${c.name}${c.featured ? '<span class="featured-tag">Featured</span>' : ''}</td>
+      <td class="loc"  data-l="Municipio">${c.loc}</td>
+      <td data-l="Type"><span class="type-badge type-${typeCls}">${c.type}</span></td>
+      <td data-l="Holes" style="font-family:var(--f-mono);font-size:13px;">${c.holes}</td>
+      <td class="off"  data-l="Discount">${offLabel}</td>
+    </tr>`;
+  }).join('');
+
+  const total = COURSES.length;
+  const i18n = window.BGC_I18N;
+  const tt = (k, fallback) => (i18n && i18n.t(k)) || fallback;
+  if (list.length === total) {
+    countLabel.textContent = tt('courses.count.all', `Showing all {n} courses`).replace('{n}', total);
+  } else {
+    countLabel.textContent = tt('courses.count.filtered', `Showing {n} of {total} courses`).replace('{n}', list.length).replace('{total}', total);
+  }
+  emptyMsg.style.display = list.length ? 'none' : 'block';
+}
+
+// Re-render count label and rows when language changes (rows have no
+// translatable cells today, but count label needs the new template)
+document.addEventListener('bgc:ready',      () => renderRows());
+document.addEventListener('bgc:langchange', () => renderRows());
+
+// Filter pills
+document.querySelectorAll('.pill').forEach(p => {
+  p.addEventListener('click', () => {
+    document.querySelectorAll('.pill').forEach(x => x.classList.remove('on'));
+    p.classList.add('on');
+    currentFilter = p.dataset.f;
+    renderRows();
+  });
+});
+
+// Search
+searchInput.addEventListener('input', e => {
+  currentQuery = e.target.value.toLowerCase().trim();
+  renderRows();
+});
+
+// Sorting
+document.querySelectorAll('th.sortable').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.sort;
+    if (sortKey === key) { sortDir *= -1; }
+    else { sortKey = key; sortDir = 1; }
+    document.querySelectorAll('th.sortable').forEach(x => x.classList.remove('sorted', 'desc'));
+    th.classList.add('sorted');
+    if (sortDir === -1) th.classList.add('desc');
+    renderRows();
+  });
+});
+
+// Mobile nav
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const panel  = document.getElementById('mobilePanel');
+  const open   = document.getElementById('menuOpen');
+  const close  = document.getElementById('menuClose');
+  toggle.addEventListener('click', () => {
+    panel.classList.toggle('open');
+    const isOpen = panel.classList.contains('open');
+    open.style.display  = isOpen ? 'none' : '';
+    close.style.display = isOpen ? '' : 'none';
+  });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    panel.classList.remove('open');
+    open.style.display = ''; close.style.display = 'none';
+  }));
+})();
+
+renderRows();
+</script>
+<script src="languageManager.js" defer></script>
+</body>
+</html>
