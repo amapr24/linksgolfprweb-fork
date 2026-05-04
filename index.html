@@ -806,13 +806,13 @@ document.getElementById('btn-next-1').addEventListener('click', async () => {
       else photo_url = sb.storage.from('member-photos').getPublicUrl(path).data.publicUrl;
     }
 
-    if (sb) {
-      const { data, error } = await sb.from('members')
-        .insert({ full_name: name, email, phone, address, photo_url, status: 'pending' })
-        .select().single();
-      if (error) throw error;
-      memberRowId = data.id;
-    }
+  if (sb) {
+    const newId = crypto.randomUUID();
+    memberRowId = newId;
+    const { error } = await sb.from('members')
+      .insert({ id: newId, full_name: name, email, phone, address, photo_url, status: 'pending' });
+    if (error) throw error;
+  }
     goStep(2);
   } catch (err) {
     alert('Could not save your details: ' + (err.message || err));
