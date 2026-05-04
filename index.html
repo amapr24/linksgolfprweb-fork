@@ -807,11 +807,29 @@ document.getElementById('btn-next-1').addEventListener('click', async () => {
     }
 
   if (sb) {
-    const newId = crypto.randomUUID();
-    memberRowId = newId;
-    const { error } = await sb.from('members')
-      .insert({ id: newId, full_name: name, email, phone, address, photo_url, status: 'pending' });
-    if (error) throw error;
+    // Check if a pending record already exists for this phone
+    const { data: existing } = await sb
+      .from('members')
+      .select('id')
+      .eq('phone', phone)
+      .eq('status', 'pending')
+      .maybeSingle();
+
+    if (existing) {
+      // Reuse the existing row instead of creating a new one
+      memberRowId = existing.id;
+      const { error } = await sb.from('members')
+        .update({ full_name: name, email, address, photo_url })
+        .eq('id', existing.id);
+      if (error) throw error;
+    } else {
+      // Fresh signup
+      const newId = crypto.randomUUID();
+      memberRowId = newId;
+      const { error } = await sb.from('members')
+        .insert({ id: newId, full_name: name, email, phone, address, photo_url, status: 'pending' });
+      if (error) throw error;
+    }
   }
     goStep(2);
   } catch (err) {
