@@ -834,7 +834,7 @@ document.getElementById('btn-authorize').addEventListener('click', async () => {
     const { error } = await sb.from('members')
       .update({ member_number: num, status: 'active', activated_at: new Date().toISOString() })
       .eq('id', memberRowId);
-    if (error) console.warn('Activation update failed:', error.message);
+    if (error) alert('Activation error: ' + error.message);
   }
 
   document.getElementById('card-num').textContent = num;
