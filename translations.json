@@ -60,15 +60,15 @@
     "en": "01 · Why Links"
   },
   "benefits.h2": {
-    "es": "Diseñado para golfistas que quieren jugar más (¡y ahorrar!).",
-    "en": "Built for golfers who want to play more (and save!)."
+    "es": "Diseñado para golfistas que quieren jugar más y ahorrar.",
+    "en": "Built for golfers who want to play more and save."
   },
   "benefit.1.h3": {
     "es": "Ahorros reales — <em>hasta 25% off</em> en cada ronda.",
     "en": "Real savings — <em>up to 25% off</em> every round."
   },
   "benefit.2.h3": {
-    "es": "Tarjeta de ID digital, <em>siempre en tu bolsillo.</em>",
+    "es": "Tarjeta digital, <em>siempre en tu bolsillo.</em>",
     "en": "Digital ID card, <em>always in your pocket.</em>"
   },
   "benefit.3.h3": {
@@ -76,7 +76,7 @@
     "en": "Non-transferable, <em>verified</em> at check-in."
   },
   "benefit.4.h3": {
-    "es": "Un precio fijo, <em>descuentos todo el año.</em>",
+    "es": "Un solo pago, <em>descuentos todo el año.</em>",
     "en": "One flat price, <em>discounts all year.</em>"
   },
   "network.eyebrow": {
@@ -120,8 +120,8 @@
     "en": "How do I use it?"
   },
   "faq.a.2": {
-    "es": "Escanea tu QR digital desde Apple Wallet o Google Wallet en el pro shop de cualquier campo aliado. El sistema valida tu membresía en segundos y desbloquea tu tarifa de miembro.",
-    "en": "Simply scan your digital QR code from Apple Wallet or Google Wallet at any partner course's pro shop. The system validates your membership in seconds and unlocks your member rate."
+    "es": "Presenta tu ID digital desde Apple Wallet o Google Wallet en el pro shop de cualquier campo aliado. El sistema valida tu membresía en segundos y desbloquea tu tarifa de miembro.",
+    "en": "Simply present your digital ID from Apple Wallet or Google Wallet at any partner course's pro shop. The system validates your membership in seconds and unlocks your member rate."
   },
   "faq.q.3": {
     "es": "¿Y si pierdo mi teléfono?",
