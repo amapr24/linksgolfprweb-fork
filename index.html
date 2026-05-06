@@ -4,10 +4,11 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>Links Golf Membership · Play More, Pay Less</title>
+<link rel="icon" type="image/png" href="images/links golf membership social media kit_photo profile 1.png"/>
+<link rel="apple-touch-icon" href="images/links golf membership social media kit_photo profile 1.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <link rel="stylesheet" href="mobile.css"/>
@@ -43,11 +44,19 @@ a { color: inherit; text-decoration: none; }
 
 /* NAV */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--line); }
-body { padding-top: 68px; }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+body { padding-top: 80px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+@media (max-width:600px) { body { padding-top: 68px; } .nav-inner { height: 68px; } }
 .logo { font-family: var(--f-display); font-size: 22px; letter-spacing: -.01em; display: flex; align-items: center; gap: 11px; }
 .logo-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px rgba(255,255,255,.5), 0 2px 8px rgba(17,26,19,.2); flex-shrink: 0; }
 .logo-mark svg { width: 16px; height: 16px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+/* Brand logo images */
+.logo-img { height: 60px; width: auto; display: block; max-width: 240px; object-fit: contain; }
+@media (max-width:600px) { .logo-img { height: 48px; max-width: 200px; } }
+.mc-brand-img { height: 66px; width: auto; display: block; object-fit: contain; }
+@media (max-width:600px) { .mc-brand-img { height: 54px; } }
+.footer-brand-img { height: 96px; width: auto; display: block; object-fit: contain; margin-bottom: 14px; }
+@media (max-width:600px) { .footer-brand-img { height: 76px; } }
 .nav-links { display: flex; gap: 28px; }
 .nav-links a { font-size: 12px; font-weight: 500; color: var(--ink-soft); letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
 .nav-links a:hover { color: var(--sage); }
@@ -65,7 +74,7 @@ body { padding-top: 68px; }
 .mobile-panel.open { display: flex; }
 @media (max-width:860px) { .nav-links { display: none; } .mobile-toggle { display: inline-flex; } }
 
-/* HERO — tighter padding */
+/* HERO */
 .hero { padding: 24px 0 16px; position: relative; overflow: hidden; }
 .hero::before { content: ""; position: absolute; right: -8%; top: -30%; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(88,140,98,.12), transparent 65%); pointer-events: none; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 24px; align-items: stretch; }
@@ -84,35 +93,41 @@ body { padding-top: 68px; }
 @media (max-width:860px) { .headline { white-space: normal; font-size: clamp(36px, 9vw, 56px); } }
 
 .hero-sub { font-size: 16px; color: var(--ink-soft); max-width: 580px; margin-bottom: 22px; line-height: 1.65; }
-.hero-cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; margin-bottom: auto; }
+.hero-cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 0; margin-bottom: 0; }
 .hero-right { display: flex; flex-direction: column; justify-content: center; }
 
-/* CARD STAGE — flat, no 3D tilt */
+/* CARD STAGE */
 .card-stage { position: relative; display: flex; align-items: center; justify-content: flex-end; }
 .card-stage::before { content: ""; position: absolute; width: 110%; height: 110%; background: radial-gradient(ellipse at 50% 50%, rgba(88,140,98,.18), transparent 60%); filter: blur(30px); z-index: 0; animation: drift 22s linear infinite; }
 @keyframes drift { to { transform: rotate(360deg); } }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* Membership Card — flat (no preserve-3d, no tilt) */
-.m-card { position: relative; z-index: 3; width: min(420px, 100%); aspect-ratio: 1.586 / 1; border-radius: 20px; color: var(--cream); background: radial-gradient(ellipse at 80% 10%, rgba(120,170,110,.18), transparent 55%), radial-gradient(ellipse at 10% 90%, rgba(60,100,65,.2), transparent 55%), linear-gradient(135deg, #0c1a0e 0%, #152a17 45%, #1a3320 100%); box-shadow: 0 1px 0 rgba(255,255,255,.07) inset, 0 0 0 1px rgba(140,190,130,.2), 0 28px 70px -18px rgba(17,26,19,.6), 0 12px 32px -8px rgba(88,140,98,.18); overflow: hidden; }
-.m-card::after { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(160,200,140,.04) 0 2px, transparent 2px 6px); pointer-events: none; }
-.mc-inner { position: relative; padding: 24px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
-.mc-top { display: flex; justify-content: space-between; align-items: flex-start; }
+/* Membership Card - Restored SVG & Premium Fixes */
+.m-card { position: relative; z-index: 3; width: min(420px, 100%); aspect-ratio: 1.586 / 1; border-radius: 20px; color: var(--cream); background: radial-gradient(ellipse at 80% 10%, rgba(120,170,110,.18), transparent 55%), radial-gradient(ellipse at 10% 90%, rgba(60,100,65,.2), transparent 55%), linear-gradient(135deg, #0c1a0e 0%, #152a17 45%, #1a3320 100%); box-shadow: 0 1px 0 rgba(255,255,255,.07) inset, 0 0 0 1px rgba(140,190,130,.2), 0 28px 70px -18px rgba(17,26,19,.6), 0 12px 32px -8px rgba(88,140,98,.18); overflow: hidden; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.m-card:hover { transform: translateY(-4px) scale(1.01); }
+.m-card::before { content: ""; position: absolute; top: 0; left: -150%; width: 60%; height: 100%; background: linear-gradient(to right, transparent 0%, rgba(200, 240, 190, 0.08) 50%, transparent 100%); transform: skewX(-20deg); z-index: 4; pointer-events: none; animation: shimmer 4.5s infinite linear; }
+.m-card::after { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(160,200,140,.03) 0 2px, transparent 2px 6px); pointer-events: none; z-index: 5; }
+.mc-inner { position: relative; padding: 26px 28px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; z-index: 6; }
+.mc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
 .mc-brand { font-family: var(--f-display); font-size: 17px; letter-spacing: -.01em; line-height: 1.05; }
 .mc-brand span { color: var(--sage-light); }
 .mc-brand small { display: block; font-family: var(--f-mono); font-size: 8px; letter-spacing: .3em; color: rgba(160,210,150,.7); margin-top: 5px; font-weight: 500; }
-.mc-photo { width: 60px; height: 76px; border-radius: 5px; overflow: hidden; box-shadow: 0 0 0 1px rgba(160,210,150,.6) inset, 0 0 0 2px rgba(17,26,19,.4), 0 4px 10px rgba(0,0,0,.3); background: linear-gradient(180deg, #3a5040, #253530); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.mc-photo svg { width: 32px; height: 32px; fill: rgba(160,210,150,.5); }
+.mc-photo { width: 96px; height: 120px; border-radius: 6px; overflow: hidden; box-shadow: 0 0 0 1px rgba(160,210,150,.4) inset, 0 0 0 2px rgba(17,26,19,.4), 0 8px 16px rgba(0,0,0,0.4); background: linear-gradient(180deg, #3a5040, #253530); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.mc-photo svg { width: 48px; height: 48px; fill: rgba(160,210,150,.5); }
 .mc-photo img { width: 100%; height: 100%; object-fit: cover; }
-.mc-mid { }
-.mc-name { font-family: var(--f-display); font-size: 19px; font-weight: 400; letter-spacing: .01em; }
-.mc-role { font-family: var(--f-mono); font-size: 9px; letter-spacing: .25em; color: rgba(160,210,150,.8); text-transform: uppercase; margin-top: 4px; }
-.mc-bot { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
-.mc-num { font-family: var(--f-mono); font-size: 13px; letter-spacing: .08em; }
-.mc-num small { display: block; font-size: 8px; letter-spacing: .3em; color: rgba(160,210,150,.7); margin-bottom: 3px; text-transform: uppercase; }
-.mc-qr { width: 50px; height: 50px; border-radius: 6px; background: #fff; padding: 4px; display: grid; grid-template-columns: repeat(9,1fr); gap: 1px; }
-.mc-qr i { background: var(--ink); border-radius: 1px; }
-.mc-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--sage-2) 0 50%, var(--sage-light) 50%); transform: translateZ(0); backface-visibility: hidden; will-change: transform; }
+.mc-mid { margin-top: -45px; position: relative; }
+.mc-name { font-family: var(--f-display); font-size: 24px; font-weight: 400; letter-spacing: .01em; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+.mc-role { font-family: var(--f-mono); font-size: 11px; letter-spacing: .25em; color: rgba(160,210,150,.8); text-transform: uppercase; margin-top: 6px; }
+.mc-bot { display: flex; justify-content: space-between; align-items: flex-end; gap: 14px; }
+.mc-meta { display: flex; align-items: flex-end; gap: 40px; }
+.mc-num { font-family: var(--f-mono); font-size: 15px; letter-spacing: .08em; }
+.mc-num small { display: block; font-size: 9px; letter-spacing: .3em; color: rgba(160,210,150,.7); margin-bottom: 4px; text-transform: uppercase; }
+.mc-qr { width: 60px; height: 60px; border-radius: 7px; background: #fff; padding: 6px; display: grid; grid-template-columns: repeat(9,1fr); gap: 1px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.mc-qr i { background: var(--ink); border-radius: 0.5px; }
+.mc-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--sage-2) 0 50%, var(--sage-light) 50%); }
+
+/* Animations */
+@keyframes shimmer { 0% { left: -150%; } 35% { left: 150%; } 100% { left: 150%; } }
 
 /* MARQUEE */
 .marquee { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--ink); color: var(--cream); padding: 14px 0; overflow: hidden; }
@@ -121,7 +136,7 @@ body { padding-top: 68px; }
 .marquee-sep { color: rgba(255,255,255,.25); margin: 0 24px; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
-/* SECTIONS — reduced padding */
+/* SECTIONS */
 .section { padding: 32px 0; position: relative; }
 .section.alt { background: var(--bg2); }
 .section-head { text-align: center; max-width: 1000px; margin: 0 auto 24px; }
@@ -130,9 +145,9 @@ body { padding-top: 68px; }
 .section-head h2 em { color: var(--sage); font-style: italic; }
 .section-head p { margin: 14px auto 0; color: var(--ink-soft); font-size: 15px; max-width: 720px; }
 
-/* BENEFITS TILES — 2×2 editorial grid replaces vertical list */
+/* BENEFITS TILES */
 .benefits-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; max-width: 900px; margin: 0 auto; }
-.benefit-tile { background: var(--bg); padding: 36px 32px; display: flex; flex-direction: column; gap: 16px; transition: background .3s; }
+.benefit-tile { background: var(--bg); padding: 22px 32px; display: flex; flex-direction: column; gap: 10px; transition: background .3s; }
 .benefit-tile:hover { background: var(--cream); }
 .tile-num { font-family: var(--f-mono); font-size: 10px; letter-spacing: .28em; color: var(--sage); font-weight: 600; }
 .benefit-tile h3 { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.02em; margin: 0; }
@@ -140,7 +155,7 @@ body { padding-top: 68px; }
 .benefit-tile p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
 @media (max-width: 640px) { .benefits-tiles { grid-template-columns: 1fr; } }
 
-/* BENEFITS — vertical list, headline-only, shrink to content */
+/* BENEFITS */
 .benefits-grid { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; width: max-content; max-width: 100%; margin: 0 auto; }
 .benefit { padding: 24px 28px; background: var(--bg); display: flex; align-items: center; gap: 24px; transition: background .3s; }
 .benefit:hover { background: var(--cream); }
@@ -162,16 +177,11 @@ body { padding-top: 68px; }
 .big-num .label { display: block; font-family: var(--f-mono); font-size: 10px; letter-spacing: .3em; color: var(--muted); margin-top: 14px; text-transform: uppercase; }
 
 /* PR MAP */
-.map-wrap { position: relative; background: var(--ink); border-radius: var(--radius-lg); padding: 32px; color: var(--cream); overflow: hidden; }
-.map-wrap::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 20%, rgba(88,140,98,.2), transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(60,100,65,.1), transparent 50%); pointer-events: none; }
-.map-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 24px; position: relative; z-index: 2; }
-.map-header h3 { font-size: 36px; line-height: 1; color: var(--cream); letter-spacing: -.02em; }
-.map-header h3 em { color: var(--sage-light); font-style: italic; }
-.map-header p { font-family: var(--f-mono); font-size: 11px; letter-spacing: .18em; color: rgba(250,246,238,.55); margin: 0; }
-.map-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; position: relative; z-index: 2; }
+.map-wrap { position: relative; max-width: 964px; margin: 0 auto; }
+.map-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; position: relative; }
 @media (max-width:900px) { .map-grid { grid-template-columns: 1fr; } }
-.pr-map { position: relative; aspect-ratio: 2.6/1; background: rgba(250,246,238,.03); border: 1px solid rgba(140,190,130,.15); border-radius: 12px; overflow: hidden; }
-.pr-map::before { content: ""; position: absolute; inset: 0; background: url("https://upload.wikimedia.org/wikipedia/commons/6/6d/Puerto-Rico-blank.svg") no-repeat; background-size: 136.8% auto; background-position: 91.4% 50%; filter: invert(1) sepia(1) saturate(3) hue-rotate(80deg) brightness(.55); opacity: .7; pointer-events: none; }
+.pr-map { position: relative; aspect-ratio: 2.6/1; background: transparent; border-radius: 12px; overflow: hidden; }
+.pr-map::before { content: ""; position: absolute; inset: 0; background: url("https://upload.wikimedia.org/wikipedia/commons/6/6d/Puerto-Rico-blank.svg") no-repeat; background-size: 136.8% auto; background-position: 91.4% 50%; filter: invert(1) sepia(1) saturate(3) hue-rotate(80deg) brightness(.55); opacity: .85; pointer-events: none; }
 .pin { position: absolute; transform: translate(-50%, -100%); cursor: pointer; z-index: 3; }
 .pin-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--sage-light); box-shadow: 0 0 0 0 rgba(160,210,150,.5); transition: transform .3s ease; position: relative; }
 .pin-dot::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid rgba(160,210,150,.45); animation: pin-pulse 2.5s ease-out infinite; }
@@ -181,16 +191,23 @@ body { padding-top: 68px; }
 .pin-label { position: absolute; left: 50%; bottom: calc(100% + 4px); transform: translateX(-50%); white-space: nowrap; font-family: var(--f-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; background: var(--cream); color: var(--ink); padding: 2px 6px; border-radius: 3px; opacity: 0; transition: opacity .25s ease; pointer-events: none; }
 .pin:hover { z-index: 4; }
 .pin:hover .pin-label, .pin.active .pin-label { opacity: 1; }
-.map-aside { display: flex; flex-direction: column; gap: 10px; aspect-ratio: 1.3 / 1; overflow-y: auto; overflow-x: hidden; padding-right: 4px; }
-@media (max-width:900px) { .map-aside { aspect-ratio: auto; max-height: 360px; } }
-.map-aside::-webkit-scrollbar { width: 3px; }
-.map-aside::-webkit-scrollbar-thumb { background: rgba(140,190,130,.3); border-radius: 2px; }
-.course-pill { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 14px; border: 1px solid rgba(140,190,130,.15); border-radius: 10px; background: rgba(250,246,238,.03); cursor: pointer; transition: all .25s ease; }
-.course-pill:hover, .course-pill.active { background: rgba(140,190,130,.08); border-color: rgba(140,190,130,.4); }
-.course-pill .c-name { font-family: var(--f-display); font-size: 14px; color: var(--cream); }
-.course-pill .c-loc { font-family: var(--f-mono); font-size: 9px; letter-spacing: .18em; color: rgba(140,190,130,.7); text-transform: uppercase; margin-top: 2px; }
-.course-pill .c-off { font-family: var(--f-mono); font-size: 11px; font-weight: 600; color: var(--sage-light); white-space: nowrap; }
-.course-pill.featured .c-off { color: oklch(78% 0.1 152); }
+.map-aside-wrap { position: relative; min-height: 0; }
+.map-aside { position: absolute; inset: 0; display: flex; flex-direction: column; row-gap: max(10px, calc((100% - 210px) / 2)); overflow-y: auto; overflow-x: hidden; padding-right: 4px; }
+@media (max-width:900px) {
+  .map-aside-wrap { position: static; }
+  .map-aside { position: static; max-height: 360px; row-gap: 10px; }
+}
+.map-aside { scrollbar-width: thin; scrollbar-color: rgba(88,140,98,.55) rgba(88,140,98,.1); }
+.map-aside::-webkit-scrollbar { width: 6px; }
+.map-aside::-webkit-scrollbar-track { background: rgba(88,140,98,.1); border-radius: 3px; }
+.map-aside::-webkit-scrollbar-thumb { background: rgba(88,140,98,.55); border-radius: 3px; }
+.map-aside::-webkit-scrollbar-thumb:hover { background: rgba(88,140,98,.75); }
+.course-pill { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.4); cursor: pointer; transition: all .25s ease; }
+.course-pill:hover, .course-pill.active { background: var(--cream); border-color: rgba(88,140,98,.4); }
+.course-pill .c-name { font-family: var(--f-display); font-size: 17px; color: var(--ink); }
+.course-pill .c-loc { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; color: var(--muted); text-transform: uppercase; margin-top: 3px; }
+.course-pill .c-off { font-family: var(--f-mono); font-size: 13px; font-weight: 600; color: var(--sage); white-space: nowrap; }
+.course-pill.featured .c-off { color: var(--sage-2); }
 
 /* DIGITAL CARD SECTION */
 .card-show-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
@@ -200,7 +217,7 @@ body { padding-top: 68px; }
 .checklist li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink-soft); }
 .check-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
 
-/* Digital card — matched to hero card */
+/* Digital card */
 .digital-card-col { display: flex; flex-direction: column; align-items: center; gap: 14px; justify-content: flex-start; padding-top: 28px; }
 .d-card { width: min(420px, 100%); aspect-ratio: 1.586 / 1; border-radius: 20px; color: var(--cream); background: radial-gradient(ellipse at 80% 10%, rgba(120,170,110,.18), transparent 55%), radial-gradient(ellipse at 10% 90%, rgba(60,100,65,.2), transparent 55%), linear-gradient(135deg, #0c1a0e 0%, #152a17 45%, #1a3320 100%); box-shadow: 0 1px 0 rgba(255,255,255,.07) inset, 0 0 0 1px rgba(140,190,130,.2), 0 28px 70px -18px rgba(17,26,19,.6), 0 12px 32px -8px rgba(88,140,98,.18); overflow: hidden; position: relative; }
 .d-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 30%, rgba(160,210,150,.15) 45%, rgba(220,245,210,.35) 50%, rgba(160,210,150,.15) 55%, transparent 70%); mix-blend-mode: overlay; transform: translateX(var(--sheen, -50%)); transition: transform .3s ease; pointer-events: none; }
@@ -224,21 +241,30 @@ body { padding-top: 68px; }
 .d-card-qr i { background: var(--ink); border-radius: 1px; }
 .d-card-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--sage-2) 0 50%, var(--sage-light) 50%); transform: translateZ(0); backface-visibility: hidden; will-change: transform; }
 
-/* Wallet add buttons — span full card width */
+/* Wallet add buttons */
 .wallet-actions { display: flex; gap: 10px; width: min(400px, 100%); margin-top: auto; }
 .wallet-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px; border: 1px solid var(--line); border-radius: 10px; background: var(--cream); font-size: 11px; font-weight: 600; color: var(--ink); transition: background .2s; cursor: pointer; }
 .wallet-btn:hover { background: var(--bg2); }
 .wallet-btn svg { width: 16px; height: 16px; }
 
-/* FAQ — dark contrasting background */
-.faq-dark { background: var(--ink); }
-.faq-dark .eyebrow { color: var(--sage-light); }
-.faq-dark h2 { color: var(--cream); }
-.faq-dark h2 em { color: var(--sage-light); }
+/* FAQ */
+.faq-dark { background: var(--bg2); }
+.faq-dark .eyebrow { color: var(--sage); }
+.faq-dark h2 { color: var(--ink); }
+.faq-dark h2 em { color: var(--sage); }
+.faq-dark .faq-item { border-bottom: 1px solid var(--line); }
+.faq-dark .faq-item:nth-child(-n+2) { border-top: 1px solid var(--line); }
+@media (max-width: 640px) { .faq-dark .faq-item:nth-child(-n+2) { border-top: 0; } .faq-dark .faq-item:first-child { border-top: 1px solid var(--line); } }
+.faq-dark .faq-q { color: var(--ink); }
+.faq-dark .faq-icon { border-color: rgba(17,26,19,.25); }
+.faq-dark .faq-icon::before, .faq-dark .faq-icon::after { background: var(--ink-soft); }
+.faq-dark .faq-item[open] .faq-icon::before, .faq-dark .faq-item[open] .faq-icon::after { background: white; }
+.faq-dark .faq-a { color: var(--ink-soft); }
 .faq-list { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 56px; }
 @media (max-width: 640px) { .faq-list { grid-template-columns: 1fr; } }
 .faq-item { border-bottom: 1px solid rgba(250,246,238,.1); }
-.faq-item:first-child { border-top: 1px solid rgba(250,246,238,.1); }
+.faq-item:nth-child(-n+2) { border-top: 1px solid rgba(250,246,238,.1); }
+@media (max-width: 640px) { .faq-item:nth-child(-n+2) { border-top: 0; } .faq-item:first-child { border-top: 1px solid rgba(250,246,238,.1); } }
 .faq-item summary { list-style: none; display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 20px 0; cursor: pointer; }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-q { font-family: var(--f-display); font-size: clamp(19px, 2.4vw, 28px); letter-spacing: -.02em; line-height: 1.2; font-weight: 400; color: var(--cream); }
@@ -253,14 +279,14 @@ body { padding-top: 68px; }
 /* JOIN */
 .join-wrap { background: var(--ink); color: var(--cream); border-radius: var(--radius-lg); padding: 36px; position: relative; overflow: hidden; }
 @media (max-width:700px) { .join-wrap { padding: 28px 18px; border-radius: 0; } }
-.join-wrap::before { content: ""; position: absolute; inset: -20% -5% auto auto; width: 500px; height: 500px; background: radial-gradient(circle, rgba(88,140,98,.25), transparent 60%); filter: blur(30px); pointer-events: none; }
+.join-wrap::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 20%, rgba(88,140,98,.2), transparent 180%), radial-gradient(ellipse at 80% 80%, rgba(60,100,65,.1), transparent 100%); pointer-events: none; }
 .join-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; position: relative; z-index: 2; align-items: start; }
 @media (max-width:860px) { .join-grid { grid-template-columns: 1fr; } }
 .join-left h2 { color: var(--cream); font-size: clamp(30px, 3.8vw, 48px); line-height: 1.05; }
 .join-left h2 em { color: var(--sage-light); font-style: italic; }
 .join-left p { color: rgba(250,246,238,.7); margin-top: 14px; font-size: 14px; }
 
-/* Price block — spans full left column */
+/* Price block */
 .price-block { margin-top: 24px; padding: 20px; border: 1px solid rgba(140,190,130,.2); border-radius: 14px; background: rgba(250,246,238,.03); }
 .price-block .price { font-family: var(--f-display); font-size: 64px; line-height: 1; letter-spacing: -.03em; color: var(--sage-light); }
 .price-block .price small { font-size: 18px; color: rgba(250,246,238,.55); vertical-align: super; }
@@ -279,18 +305,27 @@ body { padding-top: 68px; }
 .form-panel { background: rgba(250,246,238,.04); border: 1px solid rgba(140,190,130,.15); border-radius: 14px; padding: 22px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
 @media (max-width:600px) { .form-row { grid-template-columns: 1fr; } }
-.field label { display: block; font-family: var(--f-mono); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: rgba(140,190,130,.8); margin-bottom: 6px; }
-.field input, .field select { width: 100%; padding: 11px 13px; border-radius: 9px; background: rgba(250,246,238,.05); border: 1px solid rgba(140,190,130,.2); color: var(--cream); font-family: var(--f-sans); font-size: 14px; transition: all .2s; outline: none; }
-.field input:focus, .field select:focus { border-color: var(--sage-light); background: rgba(250,246,238,.08); }
-.field input::placeholder { color: rgba(250,246,238,.28); }
+.field label { display: block; font-family: var(--f-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: rgba(250,246,238,.85); margin-bottom: 6px; }
+.field input, .field select { width: 100%; padding: 11px 13px; border-radius: 9px; background: rgba(250,246,238,.06); border: 1px solid rgba(250,246,238,.18); color: var(--cream); font-family: var(--f-sans); font-size: 14px; transition: all .2s; outline: none; }
+.field input:focus, .field select:focus { border-color: var(--sage-light); background: rgba(250,246,238,.1); }
+.field input::placeholder { color: rgba(250,246,238,.42); }
+.field input.error { border-color: rgba(200,60,60,.6); }
 .submit { width: 100%; padding: 14px; margin-top: 18px; background: var(--sage); color: white; border: none; border-radius: 10px; font-family: var(--f-sans); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; transition: all .3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
 .submit:hover { background: var(--sage-2); transform: translateY(-1px); box-shadow: 0 10px 24px -8px rgba(88,140,98,.4); }
 .fine { font-family: var(--f-mono); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: rgba(250,246,238,.4); text-align: center; margin-top: 12px; }
+
+/* Inline error messages — used in both panels */
+.inline-error { display: none; margin-top: 12px; background: rgba(200,60,60,.15); border: 1px solid rgba(200,60,60,.3); color: #f4a4a4; font-size: 13px; border-radius: 8px; padding: 10px 14px; line-height: 1.5; }
+.inline-error.show { display: block; }
+/* Special info style for "already a member" — green instead of red */
+.inline-error.info { background: rgba(88,140,98,.15); border-color: rgba(140,190,130,.35); color: var(--sage-light); }
+
 #payment-error { display: none; margin-top: 10px; background: rgba(200,60,60,.15); border: 1px solid rgba(200,60,60,.3); color: #f4a4a4; font-size: 13px; border-radius: 8px; padding: 10px 14px; }
 
 /* Selfie */
 .selfie-wrap { display: flex; align-items: center; gap: 12px; }
-.selfie-preview { width: 50px; height: 50px; border-radius: 50%; border: 1.5px dashed rgba(140,190,130,.4); background: rgba(250,246,238,.04); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
+.selfie-preview { width: 50px; height: 50px; border-radius: 50%; border: 1.5px dashed rgba(140,190,130,.4); background: rgba(250,246,238,.04); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; transition: border-color .2s; }
+.selfie-preview.error { border-color: rgba(200,60,60,.6); }
 .selfie-preview img { width: 100%; height: 100%; object-fit: cover; display: none; }
 .selfie-preview svg { width: 20px; height: 20px; fill: rgba(140,190,130,.4); }
 .selfie-label { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; background: rgba(250,246,238,.08); border: 1px solid rgba(140,190,130,.2); border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 600; color: var(--cream); transition: background .2s; }
@@ -306,24 +341,31 @@ body { padding-top: 68px; }
 .pay-total { display: flex; justify-content: space-between; font-size: 11px; color: rgba(250,246,238,.5); }
 .pay-total strong { color: var(--cream); }
 .secure-badge { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; background: rgba(88,140,98,.1); border: 1px solid rgba(140,190,130,.2); border-radius: 8px; padding: 9px; }
-.secure-badge span { font-family: var(--f-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: rgba(140,190,130,.8); }
+.secure-badge span { font-family: var(--f-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: rgba(250,246,238,.8); }
 .secure-badge svg { width: 13px; height: 13px; stroke: var(--sage-light); fill: none; }
 #card-element { background: rgba(250,246,238,.05); border: 1px solid rgba(140,190,130,.2); border-radius: 9px; padding: 13px; transition: border-color .2s; }
 .back-btn { padding: 10px 16px; background: rgba(250,246,238,.07); border: 1px solid rgba(250,246,238,.1); color: rgba(250,246,238,.6); border-radius: 9px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background .2s; }
 .back-btn:hover { background: rgba(250,246,238,.12); }
 
 /* Success step */
-.id-success { text-align: center; padding: 16px 0; }
-.id-success .checkmark { width: 60px; height: 60px; border-radius: 50%; background: var(--sage); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-.id-success .checkmark svg { width: 26px; height: 26px; stroke: white; stroke-width: 2.5; fill: none; }
-.id-success h3 { font-size: 26px; color: var(--cream); margin-bottom: 8px; }
-.id-success p { color: rgba(250,246,238,.65); font-size: 13px; }
-.id-wallet-btns { display: flex; flex-direction: column; gap: 9px; max-width: 240px; margin: 16px auto 0; }
+.id-success { text-align: center; padding: 4px 0 0; }
+.id-success .checkmark { width: 44px; height: 44px; border-radius: 50%; background: var(--sage); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+.id-success .checkmark svg { width: 20px; height: 20px; stroke: white; stroke-width: 2.5; fill: none; }
+.id-success h3 { font-size: 19px; color: var(--cream); margin-bottom: 4px; }
+.id-success p { color: rgba(250,246,238,.6); font-size: 12px; line-height: 1.5; }
+/* Success-card: same look as hero .m-card, sized to fit the form panel */
+.success-card-wrap { display: flex; justify-content: center; margin: 18px auto 0; }
+.success-card-wrap .m-card { width: 100%; max-width: 360px; }
+.success-meta { display: flex; justify-content: space-between; gap: 12px; max-width: 360px; margin: 12px auto 0; font-family: var(--f-mono); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(160,210,150,.7); }
+.success-meta strong { font-weight: 600; color: var(--cream); letter-spacing: .12em; }
+.id-wallet-btns { display: flex; flex-direction: column; gap: 8px; max-width: 360px; margin: 14px auto 0; }
 .id-wallet-btn { display: flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 18px; background: rgba(250,246,238,.08); border: 1px solid rgba(140,190,130,.25); border-radius: 10px; color: var(--cream); font-size: 12px; font-weight: 600; cursor: pointer; transition: background .2s; }
 .id-wallet-btn:hover { background: rgba(250,246,238,.14); }
 
 /* FOOTER */
-footer { background: var(--ink); color: var(--cream); padding: 52px 0 32px; border-top: 4px solid var(--sage); }
+footer { background: var(--ink); color: var(--cream); padding: 52px 0 32px; border-top: 4px solid var(--sage); position: relative; overflow: hidden; }
+footer::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 20%, rgba(88,140,98,.2), transparent 180%), radial-gradient(ellipse at 80% 80%, rgba(60,100,65,.1), transparent 100%); pointer-events: none; z-index: 0; }
+footer .wrap { position: relative; z-index: 1; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; margin-bottom: 40px; }
 @media (max-width:700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 .footer-brand h3 { color: var(--cream); font-size: 28px; margin-bottom: 10px; letter-spacing: -.02em; }
@@ -356,13 +398,12 @@ footer a:hover { color: var(--sage-light); }
 <!-- NAV -->
 <nav class="nav">
   <div class="wrap nav-inner">
-    <a href="/" class="logo">
-      <span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M6 2v20M6 4l12 4-12 4"/></svg></span>
-      <span>Links Golf Membership</span>
+    <a href="/" class="logo" aria-label="Links Golf Membership - Home">
+      <img class="logo-img" src="images/links-golf-membership-3.png" alt="Links Golf Membership"/>
     </a>
     <div class="nav-links">
       <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
-      <a href="#network" data-i18n="nav.network">Courses</a>
+      <a href="#network" data-i18n="nav.network">Our Network</a>
       <a href="faq.html" data-i18n="nav.faq">FAQ</a>
       <a href="courses.html" data-i18n="nav.courses">All Courses</a>
     </div>
@@ -376,7 +417,7 @@ footer a:hover { color: var(--sage-light); }
   </div>
   <div class="mobile-panel" id="mobilePanel">
     <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
-    <a href="#network" data-i18n="nav.network">Courses</a>
+    <a href="#network" data-i18n="nav.network">Our Network</a>
     <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     <a href="courses.html" data-i18n="nav.courses">All Courses</a>
     <a href="#join" class="btn btn-primary" style="width:fit-content;margin-top:4px;" data-i18n="nav.cta">Get Your Card</a>
@@ -397,33 +438,34 @@ footer a:hover { color: var(--sage-light); }
         <a href="#join" class="btn btn-primary" data-i18n="hero.cta.primary">Get Your Card →</a>
       </div>
     </div>
-    <!-- Card + stats below -->
     <div class="hero-right">
-    <div class="card-stage" id="cardStage">
-      <article class="m-card" id="mCard">
-        <div class="mc-inner">
-          <div class="mc-top">
-            <div class="mc-brand">Links <span>Golf</span><br/>Membership<small data-i18n="mcard.tier">Elite Member · 2026</small></div>
-            <div class="mc-photo"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
+      <div class="card-stage" id="cardStage">
+        <article class="m-card" id="mCard">
+          <div class="mc-inner">
+            <div class="mc-top">
+              <div class="mc-brand"><img class="mc-brand-img" src="images/links-golf-membership-4.png" alt="Links Golf Membership"/></div>
+              <div class="mc-photo"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
+            </div>
+            <div class="mc-mid">
+              <div class="mc-name" id="card-name" data-i18n="mcard.placeholder.name">YOUR NAME HERE</div>
+              <div class="mc-role" data-i18n="mcard.role">Founding Member · 2026–27</div>
+            </div>
+            <div class="mc-bot">
+              <div class="mc-meta">
+                <div class="mc-num"><small data-i18n="mcard.num.label">Member No.</small><span id="card-num">LGM-#####</span></div>
+                <div class="mc-num"><small data-i18n="mcard.valid.label">Valid Until</small><span id="card-valid">## / ##</span></div>
+              </div>
+              <div class="mc-qr" id="mcQr" aria-hidden="true"></div>
+            </div>
           </div>
-          <div class="mc-mid">
-            <div class="mc-name" id="card-name" data-i18n="mcard.placeholder.name">YOUR NAME HERE</div>
-            <div class="mc-role" data-i18n="mcard.role">Founding Member · 2026</div>
-          </div>
-          <div class="mc-bot">
-            <div class="mc-num"><small data-i18n="mcard.num.label">Member No.</small><span id="card-num">LGM-#####</span></div>
-            <div class="mc-qr" id="mcQr" aria-hidden="true"></div>
-          </div>
-        </div>
-        <div class="mc-bar"></div>
-      </article>
-    </div>
+          <div class="mc-bar"></div>
+        </article>
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- BENEFITS — 2 cols -->
+<!-- BENEFITS -->
 <section class="section alt" id="benefits">
   <div class="wrap">
     <div class="section-head reveal">
@@ -434,28 +476,24 @@ footer a:hover { color: var(--sage-light); }
       <div class="benefit-tile reveal d1">
         <div class="tile-num">/ 01</div>
         <h3 data-i18n="benefit.1.h3">Real savings — <em>up to 25% off</em> every round.</h3>
-        <p data-i18n="benefit.1.p">Member rates on green fees, cart, and range at every partner course, year-round.</p>
       </div>
       <div class="benefit-tile reveal d2">
         <div class="tile-num">/ 02</div>
         <h3 data-i18n="benefit.2.h3">Digital ID card, <em>always in your pocket.</em></h3>
-        <p data-i18n="benefit.2.p">A signed Apple &amp; Google Wallet pass. Scan at any pro shop — no apps, no plastic.</p>
       </div>
       <div class="benefit-tile reveal d1">
         <div class="tile-num">/ 03</div>
         <h3 data-i18n="benefit.3.h3">Non-transferable, <em>verified</em> at check-in.</h3>
-        <p data-i18n="benefit.3.p">Photo-bound ID and revocable QR — secure, refreshable, always yours.</p>
       </div>
       <div class="benefit-tile reveal d2">
         <div class="tile-num">/ 04</div>
-        <h3 data-i18n="benefit.4.h3">One price, <em>all year long.</em></h3>
-        <p data-i18n="benefit.4.p">$299 annually — pays for itself in as few as 3 rounds at any partner course.</p>
+        <h3 data-i18n="benefit.4.h3">One flat price, <em>discounts all year.</em></h3>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NETWORK — PR Map -->
+<!-- NETWORK -->
 <section class="section" id="network">
   <div class="wrap">
     <div class="section-head reveal">
@@ -471,17 +509,9 @@ footer a:hover { color: var(--sage-light); }
       </div>
     </div>
     <div class="map-wrap reveal">
-      <div class="map-header">
-        <h3 data-i18n="network.map.h3">The club <em>map</em></h3>
-        <p class="mono" data-i18n="network.map.coords">18°12'N · 66°30'W · 15 courses</p>
-      </div>
       <div class="map-grid">
-        <div class="pr-map" id="prMap">
-          <!-- Pins injected by JS -->
-        </div>
-        <div class="map-aside" id="mapAside">
-          <!-- Pills injected by JS -->
-        </div>
+        <div class="pr-map" id="prMap"></div>
+        <div class="map-aside-wrap"><div class="map-aside" id="mapAside"></div></div>
       </div>
     </div>
     <div style="text-align:center;margin-top:24px;" class="reveal">
@@ -490,7 +520,7 @@ footer a:hover { color: var(--sage-light); }
   </div>
 </section>
 
-<!-- FAQ — dark contrasting background -->
+<!-- FAQ -->
 <section class="section faq-dark" id="faq">
   <div class="wrap">
     <div class="section-head reveal" style="text-align:center;margin:0 auto 28px;max-width:none;">
@@ -499,7 +529,7 @@ footer a:hover { color: var(--sage-light); }
     </div>
     <div class="faq-list">
       <details class="faq-item reveal">
-        <summary><span class="faq-q" data-i18n="faq.q.1">What is the Links Golf Membership card?</span><span class="faq-icon"></span></summary>
+        <summary><span class="faq-q" data-i18n="faq.q.1">What is Links Golf Membership?</span><span class="faq-icon"></span></summary>
         <p class="faq-a" data-i18n="faq.a.1">Your all-in-one membership to premium golf across Puerto Rico. Instant access to exclusive discounts at every partner course, a digital wallet pass, and a verified photo ID — no physical card needed.</p>
       </details>
       <details class="faq-item reveal">
@@ -507,7 +537,7 @@ footer a:hover { color: var(--sage-light); }
         <p class="faq-a" data-i18n="faq.a.4">Not at all. Your pass lives in your built-in Wallet — the same place as your boarding passes and credit cards.</p>
       </details>
       <details class="faq-item reveal">
-        <summary><span class="faq-q" data-i18n="faq.q.2">How do I use the card?</span><span class="faq-icon"></span></summary>
+        <summary><span class="faq-q" data-i18n="faq.q.2">How do I use it?</span><span class="faq-icon"></span></summary>
         <p class="faq-a" data-i18n="faq.a.2">Simply scan your digital QR code from Apple Wallet or Google Wallet at any partner course's pro shop. The system validates your membership in seconds and unlocks your member rate.</p>
       </details>
       <details class="faq-item reveal">
@@ -549,16 +579,43 @@ footer a:hover { color: var(--sage-light); }
             <div class="step" id="step-2"><span class="n">02 </span>Payment</div>
             <div class="step" id="step-3"><span class="n">03 </span>Digital ID</div>
           </div>
-          <!-- Panel 1 -->
+
+          <!-- ═══ PANEL 1 — Player Details ═══ -->
           <div class="form-panel" id="panel-1">
+
+            <!-- Split first / last name -->
             <div class="form-row">
-              <div class="field"><label>Full Legal Name</label><input id="inp-name" type="text" placeholder="Juan Pérez"/></div>
-              <div class="field"><label>Mobile</label><input id="inp-phone" type="tel" placeholder="+1 (787) 000-0000"/></div>
+              <div class="field">
+                <label>First Name *</label>
+                <input id="inp-firstname" type="text" placeholder="Juan"/>
+              </div>
+              <div class="field">
+                <label>Last Name *</label>
+                <input id="inp-lastname" type="text" placeholder="Pérez"/>
+              </div>
             </div>
-            <div class="field" style="margin-bottom:12px;"><label>Email Address</label><input id="inp-email" type="email" placeholder="juan@example.com"/></div>
-            <div class="field" style="margin-bottom:12px;"><label>Address</label><input id="inp-address" type="text" placeholder="Street, City, PR, ZIP"/></div>
+
+            <!-- Phone + Email side by side -->
+            <div class="form-row">
+              <div class="field">
+                <label>Mobile *</label>
+                <input id="inp-phone" type="tel" placeholder="+1 (787) 000-0000"/>
+              </div>
+              <div class="field">
+                <label>Email Address *</label>
+                <input id="inp-email" type="email" placeholder="juan@example.com"/>
+              </div>
+            </div>
+
+            <!-- Address full width -->
+            <div class="field" style="margin-bottom:12px;">
+              <label>Address</label>
+              <input id="inp-address" type="text" placeholder="Street, City, PR, ZIP"/>
+            </div>
+
+            <!-- Photo — required -->
             <div class="field" style="margin-bottom:18px;">
-              <label>Verification Photo</label>
+              <label>Verification Photo *</label>
               <div class="selfie-wrap">
                 <div class="selfie-preview" id="selfiePreview">
                   <img id="selfieImg" alt=""/>
@@ -570,14 +627,22 @@ footer a:hover { color: var(--sage-light); }
                     Take or Upload Photo
                   </label>
                   <input type="file" id="selfieInput" accept="image/*" style="display:none;"/>
-                  <p style="font-size:11px;color:rgba(250,246,238,.4);margin:5px 0 0;">Front-facing. Used for your Digital ID only.</p>
+                  <p style="font-size:11px;color:rgba(250,246,238,.4);margin:5px 0 0;">Required · Front-facing · Used for your Digital ID only.</p>
                 </div>
               </div>
             </div>
-            <button class="submit" id="btn-next-1">Continue to Payment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+
+            <!-- Inline error message -->
+            <div id="form-error-1" class="inline-error"></div>
+
+            <button class="submit" id="btn-next-1">
+              Continue to Payment
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
             <div class="fine">By continuing, you agree to our Terms of Service.</div>
           </div>
-          <!-- Panel 2 -->
+
+          <!-- ═══ PANEL 2 — Payment ═══ -->
           <div class="form-panel" id="panel-2" style="display:none;">
             <div class="pay-summary">
               <div class="pay-summary-row">
@@ -587,7 +652,13 @@ footer a:hover { color: var(--sage-light); }
               <hr class="pay-divider"/>
               <div class="pay-total"><span>Total (USD)</span><strong>$299.00</strong></div>
             </div>
-            <div class="field" style="margin-bottom:12px;"><label>Cardholder Name</label><input id="inp-cardname" type="text" placeholder="Name on card"/></div>
+
+            <!-- Cardholder name — prefilled from step 1, editable -->
+            <div class="field" style="margin-bottom:12px;">
+              <label>Cardholder Name</label>
+              <input id="inp-cardname" type="text" placeholder="Name on card"/>
+            </div>
+
             <div class="field" style="margin-bottom:0;"><label>Card Details</label><div id="card-element"></div></div>
             <div class="secure-badge">
               <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s-8-4-8-11V5l8-3 8 3v6c0 7-8 11-8 11z"/></svg>
@@ -603,18 +674,52 @@ footer a:hover { color: var(--sage-light); }
             </div>
             <div class="fine">We never store your card details. Processed securely via Stripe.</div>
           </div>
-          <!-- Panel 3 -->
+
+          <!-- ═══ PANEL 3 — Success ═══ -->
           <div class="form-panel" id="panel-3" style="display:none;">
             <div class="id-success">
               <div class="checkmark"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <h3>Welcome to Links Golf!</h3>
-              <p>Your membership is active. Check your email for your digital pass link.</p>
-              <div class="id-wallet-btns">
-                <button class="id-wallet-btn"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09z"/></svg>Add to Apple Wallet</button>
-                <button class="id-wallet-btn"><svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;"><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke="#4285F4" stroke-width="2"/><circle cx="17" cy="12" r="1.5" fill="#EA4335"/></svg>Add to Google Wallet</button>
-              </div>
+              <h3>You're in.</h3>
+              <p>Membership active. A confirmation has been sent to your email.</p>
+            </div>
+
+            <!-- Live membership card preview -->
+            <div class="success-card-wrap">
+              <article class="m-card" id="successCard">
+                <div class="mc-inner">
+                  <div class="mc-top">
+                    <div class="mc-brand"><img class="mc-brand-img" src="images/links-golf-membership-4.png" alt="Links Golf Membership"/></div>
+                    <div class="mc-photo" id="success-photo"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
+                  </div>
+                  <div class="mc-mid">
+                    <div class="mc-name" id="success-card-name">YOUR NAME HERE</div>
+                    <div class="mc-role">Founding Member · 2026–27</div>
+                  </div>
+                  <div class="mc-bot">
+                    <div class="mc-meta">
+                      <div class="mc-num"><small>Member No.</small><span id="success-card-num">LGM-#####</span></div>
+                      <div class="mc-num"><small>Valid Until</small><span id="success-card-valid">## / ##</span></div>
+                    </div>
+                    <div class="mc-qr" id="successQr" aria-hidden="true"></div>
+                  </div>
+                </div>
+                <div class="mc-bar"></div>
+              </article>
+            </div>
+
+            <!-- Compact meta strip below card -->
+            <div class="success-meta">
+              <span>Valid Until <strong id="success-expires">—</strong></span>
+              <span>ID <strong id="success-member-num">—</strong></span>
+            </div>
+
+            <!-- Wallet buttons -->
+            <div class="id-wallet-btns">
+              <button class="id-wallet-btn"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09z"/></svg>Add to Apple Wallet</button>
+              <button class="id-wallet-btn"><svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;"><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke="#4285F4" stroke-width="2"/><circle cx="17" cy="12" r="1.5" fill="#EA4335"/></svg>Add to Google Wallet</button>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -626,7 +731,7 @@ footer a:hover { color: var(--sage-light); }
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h3>Links <em>Golf</em><br/>Membership</h3>
+        <img class="footer-brand-img" src="images/links-golf-membership-4.png" alt="Links Golf Membership"/>
         <p data-i18n="footer.brand.p">One membership. Puerto Rico's finest courses. Exclusive access, digital convenience, genuine savings.</p>
         <div class="tagline" data-i18n="footer.signature">play more, pay less.</div>
       </div>
@@ -661,7 +766,7 @@ footer a:hover { color: var(--sage-light); }
 </div>
 
 <script>
-// QR pixel pattern
+// ─── QR pixel pattern ───────────────────────────────────────────────────────
 function buildQR(el) {
   if (!el) return;
   const p = [1,1,1,0,1,0,1,1,0, 1,0,1,1,0,1,0,0,1, 1,1,1,0,0,0,1,1,0, 0,0,0,1,1,1,0,0,1, 0,1,0,0,1,0,1,0,0, 1,0,1,1,0,1,0,1,1, 0,1,0,1,1,0,1,0,1, 1,1,0,0,1,1,0,1,0, 0,0,1,1,0,0,1,1,0];
@@ -670,8 +775,9 @@ function buildQR(el) {
 }
 buildQR(document.getElementById('mcQr'));
 buildQR(document.getElementById('dCardQr'));
+buildQR(document.getElementById('successQr'));
 
-// PR Map
+// ─── PR Map ──────────────────────────────────────────────────────────────────
 const COURSES = [
   { name:"Punta Borinquen",          loc:"Aguadilla",     off:"15% OFF", x:9.0,  y:22.0, featured:false },
   { name:"Royal Isabela",            loc:"Isabela",       off:"20% OFF", x:14.0, y:18.5, featured:true  },
@@ -689,51 +795,57 @@ const COURSES = [
   { name:"Costa Caribe",             loc:"Ponce",         off:"15% OFF", x:33.5, y:75.0, featured:false },
   { name:"El Legado",                loc:"Guayama",       off:"20% OFF", x:57.5, y:79.0, featured:false },
 ];
-
 const map = document.getElementById('prMap');
 const aside = document.getElementById('mapAside');
-
 function activateCourse(idx) {
-  document.querySelectorAll('.pin').forEach((p,i) => p.classList.toggle('active', i === idx));
-  document.querySelectorAll('.course-pill').forEach((p,i) => p.classList.toggle('active', i === idx));
+  document.querySelectorAll('.pin').forEach(p => p.classList.toggle('active', +p.dataset.idx === idx));
+  document.querySelectorAll('.course-pill').forEach(p => p.classList.toggle('active', +p.dataset.idx === idx));
 }
-
+// Render pins in geographic (source) order so positions are stable
 COURSES.forEach((c, i) => {
-  // Pins
   const pin = document.createElement('div');
-  pin.className = 'pin' + (c.featured ? ' featured' : '');
+  pin.className = 'pin';
+  pin.dataset.idx = i;
   pin.style.cssText = `left:${c.x}%;top:${c.y}%`;
   pin.innerHTML = `<div class="pin-dot"></div><div class="pin-label">${c.name}</div>`;
   pin.addEventListener('click', () => activateCourse(i));
   map.appendChild(pin);
-
-  // Pills
+});
+// Render pills in a randomized order so no single course appears "featured" by position
+const pillOrder = COURSES.map((_, i) => i).sort(() => Math.random() - 0.5);
+pillOrder.forEach(i => {
+  const c = COURSES[i];
   const pill = document.createElement('div');
-  pill.className = 'course-pill' + (c.featured ? ' featured' : '');
+  pill.className = 'course-pill';
+  pill.dataset.idx = i;
   pill.innerHTML = `<div><div class="c-name">${c.name}</div><div class="c-loc">${c.loc}</div></div><div class="c-off">${c.off}</div>`;
   pill.addEventListener('click', () => activateCourse(i));
   aside.appendChild(pill);
 });
 
-// Mobile nav
+// ─── Mobile nav ──────────────────────────────────────────────────────────────
 (function() {
   const toggle = document.getElementById('navToggle');
-  const panel = document.getElementById('mobilePanel');
-  const open = document.getElementById('menuOpen');
-  const close = document.getElementById('menuClose');
+  const panel  = document.getElementById('mobilePanel');
+  const open   = document.getElementById('menuOpen');
+  const close  = document.getElementById('menuClose');
   toggle.addEventListener('click', () => {
     panel.classList.toggle('open');
     const isOpen = panel.classList.contains('open');
     open.style.display = isOpen ? 'none' : ''; close.style.display = isOpen ? '' : 'none';
   });
-  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { panel.classList.remove('open'); open.style.display = ''; close.style.display = 'none'; }));
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    panel.classList.remove('open'); open.style.display = ''; close.style.display = 'none';
+  }));
 })();
 
-// Scroll reveal
-const revealIO = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } }); }, { threshold: 0.08 });
+// ─── Scroll reveal ───────────────────────────────────────────────────────────
+const revealIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } });
+}, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
 
-// Selfie
+// ─── Selfie preview ──────────────────────────────────────────────────────────
 document.getElementById('selfieInput').addEventListener('change', function() {
   const f = this.files[0]; if (!f) return;
   const r = new FileReader();
@@ -741,33 +853,62 @@ document.getElementById('selfieInput').addEventListener('change', function() {
     const img = document.getElementById('selfieImg');
     img.src = e.target.result; img.style.display = 'block';
     img.nextElementSibling && (img.nextElementSibling.style.display = 'none');
-    const mc = document.querySelector('.mc-photo');
-    mc.innerHTML = `<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;" alt=""/>`;
+    // Clear any photo error styling
+    document.getElementById('selfiePreview').classList.remove('error');
+    // Update hero card photo (first .mc-photo only)
+    const mc = document.querySelector('#mCard .mc-photo');
+    if (mc) mc.innerHTML = `<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;" alt=""/>`;
+    // Update success card photo
+    const sp = document.getElementById('success-photo');
+    if (sp) sp.innerHTML = `<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;" alt=""/>`;
+    // Update digital card photo if present
     const di = document.getElementById('dCardImg');
     if (di) { di.src = e.target.result; di.style.display = 'block'; di.nextElementSibling && (di.nextElementSibling.style.display = 'none'); }
   };
   r.readAsDataURL(f);
 });
 
-// Name live update — both cards
-document.getElementById('inp-name').addEventListener('input', function() {
-  const v = this.value.trim() || 'YOUR NAME HERE';
-  document.getElementById('card-name').textContent = v;
-  const dn = document.getElementById('d-card-name'); if (dn) dn.textContent = v;
-});
+// ─── Name live update — combines first + last on both cards ──────────────────
+function updateCardName() {
+  const first = document.getElementById('inp-firstname').value.trim();
+  const last  = document.getElementById('inp-lastname').value.trim();
+  const full  = [first, last].filter(Boolean).join(' ') || 'YOUR NAME HERE';
+  document.getElementById('card-name').textContent = full;
+  const dn = document.getElementById('d-card-name'); if (dn) dn.textContent = full;
+  const sn = document.getElementById('success-card-name'); if (sn) sn.textContent = full;
+}
+document.getElementById('inp-firstname').addEventListener('input', updateCardName);
+document.getElementById('inp-lastname').addEventListener('input', updateCardName);
 
-// Stepper
+// ─── Stepper ─────────────────────────────────────────────────────────────────
 function goStep(n) {
   [1,2,3].forEach(i => {
     document.getElementById('panel-'+i).style.display = i === n ? '' : 'none';
     const s = document.getElementById('step-'+i);
     s.classList.remove('active','done');
     if (i === n) s.classList.add('active');
-    if (i < n) s.classList.add('done');
+    if (i < n)  s.classList.add('done');
   });
 }
 
-// Supabase — public/anon (publishable) key, safe to ship in client
+// ─── Inline error helpers ────────────────────────────────────────────────────
+function showError(id, msg, isInfo = false) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  el.className = 'inline-error show' + (isInfo ? ' info' : '');
+}
+function hideError(id) {
+  const el = document.getElementById(id);
+  if (el) { el.className = 'inline-error'; el.textContent = ''; }
+}
+
+// ─── Phone normalizer — strips everything except digits ──────────────────────
+function normalizePhone(raw) {
+  return raw.replace(/\D/g, '');
+}
+
+// ─── Supabase ────────────────────────────────────────────────────────────────
 const SUPABASE_URL = 'https://kmnyjtzdjhrezzwekbko.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImttbnlqdHpkamhyZXp6d2VrYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4NjgzMzMsImV4cCI6MjA5MzQ0NDMzM30._gpVTG5PSs4EmbsrEXmfsyPytwc6aT1odgHpW_O3lSk';
 let sb = null;
@@ -775,30 +916,63 @@ let memberRowId = null;
 try { sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY); }
 catch (e) { console.warn('Supabase init failed:', e); }
 
-// Stripe
+// ─── Stripe ──────────────────────────────────────────────────────────────────
+// TODO: Replace 'pk_test_...' with your real Stripe publishable key once you
+// sign up at stripe.com. The key lives only here — never use the secret key
+// in client-side code.
 let stripe, cardElement;
 try {
-  stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+  stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx'); // ← REPLACE WITH REAL KEY
   const els = stripe.elements();
   cardElement = els.create('card', { style: { base: { fontFamily: 'Inter, sans-serif', fontSize: '14px', color: '#faf6ee', '::placeholder': { color: 'rgba(250,246,238,.28)' } }, invalid: { color: '#f4a4a4' } } });
   cardElement.mount('#card-element');
-  cardElement.on('change', e => { const err = document.getElementById('payment-error'); err.style.display = e.error ? '' : 'none'; if (e.error) err.textContent = e.error.message; });
+  cardElement.on('change', e => {
+    const err = document.getElementById('payment-error');
+    err.style.display = e.error ? '' : 'none';
+    if (e.error) err.textContent = e.error.message;
+  });
 } catch(e) { console.warn('Stripe:', e); }
 
+// ─── Step 1 — Player Details submit ─────────────────────────────────────────
 document.getElementById('btn-next-1').addEventListener('click', async () => {
-  const name = document.getElementById('inp-name').value.trim();
-  const email = document.getElementById('inp-email').value.trim();
-  if (!name || !email) { alert('Please enter your full name and email.'); return; }
-  const phone = document.getElementById('inp-phone').value.trim() || null;
-  const address = document.getElementById('inp-address').value.trim() || null;
+  hideError('form-error-1');
+
+  const firstName = document.getElementById('inp-firstname').value.trim();
+  const lastName  = document.getElementById('inp-lastname').value.trim();
+  const email     = document.getElementById('inp-email').value.trim();
+  const phoneRaw  = document.getElementById('inp-phone').value.trim();
+  const address   = document.getElementById('inp-address').value.trim() || null;
+  const file      = document.getElementById('selfieInput').files[0];
+
+  // ── Validation ──────────────────────────────────────────────────────────
+  if (!firstName || !lastName) {
+    showError('form-error-1', 'Please enter your first and last name.');
+    return;
+  }
+  if (!email || !email.includes('@')) {
+    showError('form-error-1', 'Please enter a valid email address.');
+    return;
+  }
+  if (!phoneRaw) {
+    showError('form-error-1', 'A mobile number is required to create your unique member ID.');
+    return;
+  }
+  if (!file) {
+    document.getElementById('selfiePreview').classList.add('error');
+    showError('form-error-1', 'A verification photo is required. It will appear on your digital membership card.');
+    return;
+  }
+
+  const full_name = `${firstName} ${lastName}`;
+  const phone     = normalizePhone(phoneRaw); // digits only for storage & matching
 
   const btn = document.getElementById('btn-next-1');
   const originalBtnHtml = btn.innerHTML;
   btn.disabled = true; btn.textContent = 'Saving…';
 
   try {
+    // ── Upload photo ────────────────────────────────────────────────────
     let photo_url = null;
-    const file = document.getElementById('selfieInput').files[0];
     if (file && sb) {
       const path = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
       const { error: upErr } = await sb.storage.from('member-photos').upload(path, file);
@@ -806,39 +980,93 @@ document.getElementById('btn-next-1').addEventListener('click', async () => {
       else photo_url = sb.storage.from('member-photos').getPublicUrl(path).data.publicUrl;
     }
 
-  if (sb) {
-    // Check if a pending record already exists for this phone
-    const { data: existing } = await sb
-      .from('members')
-      .select('id')
-      .eq('phone', phone)
-      .eq('status', 'pending')
-      .maybeSingle();
+    if (sb) {
+      // Email is stored lowercased for clean lookups, but is NOT unique —
+      // families may legitimately share an email (e.g. dad pays for son).
+      // Identity is enforced via phone uniqueness only.
+      const emailLower = email.toLowerCase();
 
-    if (existing) {
-      // Reuse the existing row instead of creating a new one
-      memberRowId = existing.id;
-      const { error } = await sb.from('members')
-        .update({ full_name: name, email, address, photo_url })
-        .eq('id', existing.id);
-      if (error) throw error;
-    } else {
-      // Fresh signup
-      const newId = crypto.randomUUID();
-      memberRowId = newId;
-      const { error } = await sb.from('members')
-        .insert({ id: newId, full_name: name, email, phone, address, photo_url, status: 'pending' });
-      if (error) throw error;
+      // ── Check for ACTIVE member with same phone ──────────────────────
+      const { data: activeMember } = await sb
+        .from('members')
+        .select('id')
+        .eq('phone', phone)
+        .eq('status', 'active')
+        .maybeSingle();
+
+      if (activeMember) {
+        showError('form-error-1',
+          'This phone number already has an active Links Golf membership. ' +
+          'If you need help accessing your account, contact us at hello@linksgolf.pr.',
+          true /* info style */
+        );
+        return;
+      }
+
+      // ── Check for PENDING member with same phone (drop-off reuse) ────
+      const { data: pendingMember } = await sb
+        .from('members')
+        .select('id')
+        .eq('phone', phone)
+        .eq('status', 'pending')
+        .maybeSingle();
+
+      if (pendingMember) {
+        // Reuse existing pending row, update details in case anything changed
+        memberRowId = pendingMember.id;
+        const { error } = await sb.from('members')
+          .update({ full_name, first_name: firstName, last_name: lastName, email: emailLower, address, photo_url })
+          .eq('id', pendingMember.id);
+        if (error) throw error;
+      } else {
+        // Fresh signup
+        const newId = crypto.randomUUID();
+        memberRowId = newId;
+        const { error } = await sb.from('members')
+          .insert({ id: newId, full_name, first_name: firstName, last_name: lastName, email: emailLower, phone, address, photo_url, status: 'pending' });
+        if (error) {
+          // Catch phone unique constraint violation (race-condition safety net)
+          if (error.code === '23505') {
+            showError('form-error-1',
+              'This phone number is already registered. ' +
+              'If you started signing up before, please continue or contact hello@linksgolf.pr.'
+            );
+            return;
+          }
+          throw error;
+        }
+      }
     }
-  }
+
+    // ── Prefill cardholder name from step 1 ─────────────────────────────
+    document.getElementById('inp-cardname').value = full_name;
+
     goStep(2);
+
   } catch (err) {
-    alert('Could not save your details: ' + (err.message || err));
+    showError('form-error-1', 'Could not save your details: ' + (err.message || err));
   } finally {
     btn.disabled = false; btn.innerHTML = originalBtnHtml;
   }
 });
+
+// ─── Step 2 — Back button ────────────────────────────────────────────────────
 document.getElementById('btn-back-2').addEventListener('click', () => goStep(1));
+
+// ─── Step 2 — Authorize & Activate ──────────────────────────────────────────
+// TODO (Stripe): Before the fake delays below, add real payment confirmation:
+//
+//   const { paymentMethod, error: pmError } = await stripe.createPaymentMethod({
+//     type: 'card',
+//     card: cardElement,
+//     billing_details: { name: document.getElementById('inp-cardname').value }
+//   });
+//   if (pmError) { showPaymentError(pmError.message); overlay.classList.remove('show'); return; }
+//
+//   Then send paymentMethod.id to your server/Edge Function to create a
+//   Stripe PaymentIntent and confirm it. Only call the Supabase activation
+//   update AFTER payment succeeds on the server.
+//
 document.getElementById('btn-authorize').addEventListener('click', async () => {
   const overlay = document.getElementById('processing-overlay');
   overlay.classList.add('show');
@@ -846,17 +1074,47 @@ document.getElementById('btn-authorize').addEventListener('click', async () => {
   await new Promise(r => setTimeout(r, 1800));
   document.getElementById('proc-msg').textContent = 'Activating Your Card...';
   await new Promise(r => setTimeout(r, 1200));
-  const num = 'LGM-' + String(Math.floor(10000 + Math.random()*90000));
+
+  const num       = 'LGM-' + String(Math.floor(10000 + Math.random() * 90000));
+  const activatedAt = new Date();
+  const expiresAt   = new Date(activatedAt);
+  expiresAt.setFullYear(expiresAt.getFullYear() + 1); // exactly 1 year
 
   if (sb && memberRowId) {
     const { error } = await sb.from('members')
-      .update({ member_number: num, status: 'active', activated_at: new Date().toISOString() })
+      .update({
+        member_number: num,
+        status:        'active',
+        activated_at:  activatedAt.toISOString(),
+        expires_at:    expiresAt.toISOString()
+      })
       .eq('id', memberRowId);
-    if (error) alert('Activation error: ' + error.message);
+    if (error) {
+      overlay.classList.remove('show');
+      showError('form-error-1', 'Activation error: ' + error.message);
+      goStep(1);
+      return;
+    }
   }
 
+  // Update hero card number
   document.getElementById('card-num').textContent = num;
   const dnum = document.getElementById('d-card-num'); if (dnum) dnum.textContent = num;
+
+  // Populate the success-card (in panel 3)
+  const fullName = `${document.getElementById('inp-firstname').value.trim()} ${document.getElementById('inp-lastname').value.trim()}`.trim() || 'YOUR NAME HERE';
+  const sCardName = document.getElementById('success-card-name');
+  const sCardNum  = document.getElementById('success-card-num');
+  if (sCardName) sCardName.textContent = fullName;
+  if (sCardNum)  sCardNum.textContent  = num;
+
+  // Populate the meta strip
+  const expiryFormatted = expiresAt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  const snEl = document.getElementById('success-member-num');
+  const seEl = document.getElementById('success-expires');
+  if (snEl) snEl.textContent = num;
+  if (seEl) seEl.textContent = expiryFormatted;
+
   overlay.classList.remove('show');
   goStep(3);
 });
