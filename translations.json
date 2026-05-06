@@ -1,510 +1,186 @@
 {
-  "nav.benefits": {
-    "es": "Beneficios",
-    "en": "Benefits"
-  },
-  "nav.network": {
-    "es": "Nuestra Red",
-    "en": "Our Network"
-  },
-  "nav.card": {
-    "es": "ID Digital",
-    "en": "Digital ID"
-  },
-  "nav.faq": {
-    "es": "FAQ",
-    "en": "FAQ"
-  },
-  "nav.courses": {
-    "es": "Todos los campos",
-    "en": "All Courses"
-  },
-  "nav.cta": {
-    "es": "Obtén tu tarjeta",
-    "en": "Get Your Card"
-  },
-  "hero.headline.1": {
-    "es": "Juega Más,",
-    "en": "Play More,"
-  },
-  "hero.headline.2": {
-    "es": "¡Paga Menos!",
-    "en": "Pay Less!"
-  },
-  "hero.sub": {
-    "es": "Una sola membresía. Los mejores campos de Puerto Rico — desde los acantilados costeros de Royal Isabela hasta las vistas a las colinas y al mar de Palmas del Mar. Acceso exclusivo, conveniencia digital, ahorros reales.",
-    "en": "One membership. Puerto Rico's finest courses — from the ocean cliffs of Royal Isabela to the hills and ocean views of Palmas del Mar. Exclusive access, digital convenience, genuine savings."
-  },
-  "hero.cta.primary": {
-    "es": "Obtén tu tarjeta →",
-    "en": "Get Your Card →"
-  },
-  "hero.cta.secondary": {
-    "es": "Todos los campos",
-    "en": "All Courses"
-  },
-  "mcard.placeholder.name": {
-    "es": "TU NOMBRE AQUÍ",
-    "en": "YOUR NAME HERE"
-  },
-  "mcard.role": {
-    "es": "Miembro Fundador · 2026–27",
-    "en": "Founding Member · 2026–27"
-  },
-  "mcard.num.label": {
-    "es": "No. Miembro",
-    "en": "Member No."
-  },
-  "benefits.eyebrow": {
-    "es": "01 · Por qué Links",
-    "en": "01 · Why Links"
-  },
-  "benefits.h2": {
-    "es": "Diseñado para golfistas que quieren jugar más (¡y ahorrar!).",
-    "en": "Built for golfers who want to play more (and save!)."
-  },
-  "benefit.1.h3": {
-    "es": "Ahorros reales — <em>hasta 25% off</em> en cada ronda.",
-    "en": "Real savings — <em>up to 25% off</em> every round."
-  },
-  "benefit.2.h3": {
-    "es": "Tarjeta de ID digital, <em>siempre en tu bolsillo.</em>",
-    "en": "Digital ID card, <em>always in your pocket.</em>"
-  },
-  "benefit.3.h3": {
-    "es": "No transferible, <em>verificada</em> al registrarse.",
-    "en": "Non-transferable, <em>verified</em> at check-in."
-  },
-  "benefit.4.h3": {
-    "es": "Un precio fijo, <em>descuentos todo el año.</em>",
-    "en": "One flat price, <em>discounts all year.</em>"
-  },
-  "network.eyebrow": {
-    "es": "02 · Nuestra Red",
-    "en": "02 · Our Network"
-  },
-  "network.bignum.label": {
-    "es": "Campos aliados · Toda la isla",
-    "en": "Partner courses · Island-wide"
-  },
-  "network.h2": {
-    "es": "Los mejores greens de la isla.",
-    "en": "The island's best greens."
-  },
-  "network.p": {
-    "es": "Diseños de campeonatos, joyas municipales escondidas, y todo lo que cabe entre ambos — siempre un lugar extraordinario.",
-    "en": "Championship resort layouts, tucked-away municipal gems, and everything between — always somewhere remarkable."
-  },
-  "network.cta": {
-    "es": "Ver el directorio completo →",
-    "en": "View Full Course Directory →"
-  },
-  "faq.eyebrow": {
-    "es": "03 · FAQ",
-    "en": "03 · FAQ"
-  },
-  "faq.h2": {
-    "es": "Preguntas <em>comunes.</em>",
-    "en": "Common <em>questions.</em>"
-  },
-  "faq.q.1": {
-    "es": "¿Qué es Links Golf Membership?",
-    "en": "What is Links Golf Membership?"
-  },
-  "faq.a.1": {
-    "es": "Tu membresía todo-en-uno para el mejor golf de Puerto Rico. Acceso instantáneo a descuentos exclusivos en cada campo aliado, un pase digital en tu wallet, e ID con foto verificada — sin tarjeta física.",
-    "en": "Your all-in-one membership to premium golf across Puerto Rico. Instant access to exclusive discounts at every partner course, a digital wallet pass, and a verified photo ID — no physical card needed."
-  },
-  "faq.q.2": {
-    "es": "¿Cómo lo uso?",
-    "en": "How do I use it?"
-  },
-  "faq.a.2": {
-    "es": "Escanea tu QR digital desde Apple Wallet o Google Wallet en el pro shop de cualquier campo aliado. El sistema valida tu membresía en segundos y desbloquea tu tarifa de miembro.",
-    "en": "Simply scan your digital QR code from Apple Wallet or Google Wallet at any partner course's pro shop. The system validates your membership in seconds and unlocks your member rate."
-  },
-  "faq.q.3": {
-    "es": "¿Y si pierdo mi teléfono?",
-    "en": "What if I lose my phone?"
-  },
-  "faq.a.3": {
-    "es": "No hay problema. Invalida tu QR actual al instante. Cuando tengas un dispositivo nuevo, te reemitimos el pase de inmediato — sin formularios, sin esperar.",
-    "en": "No problem. Instantly invalidate your current QR code. As soon as you have a new device, we re-issue your pass immediately — no forms, no waiting."
-  },
-  "faq.q.4": {
-    "es": "¿Necesito descargar una app?",
-    "en": "Do I need to download an app?"
-  },
-  "faq.a.4": {
-    "es": "Para nada. Tu pase vive en el Wallet integrado — el mismo lugar donde guardas tus boarding passes y tarjetas de crédito.",
-    "en": "Not at all. Your pass lives in your built-in Wallet — the same place as your boarding passes and credit cards."
-  },
-  "faq.q.5": {
-    "es": "¿La membresía es transferible?",
-    "en": "Is the membership transferable?"
-  },
-  "faq.a.5": {
-    "es": "No. La membresía no es transferible y está vinculada a tu foto verificada. Cada miembro tiene un QR único atado a su identidad.",
-    "en": "No. The membership is non-transferable and bound to your verified photo. Each member has a unique QR code tied to their identity."
-  },
-  "faq.cta": {
-    "es": "Ver todas las FAQs →",
-    "en": "View All FAQs →"
-  },
-  "footer.brand.p": {
-    "es": "Una sola membresía. Los mejores campos de Puerto Rico. Acceso exclusivo, conveniencia digital, ahorros reales.",
-    "en": "One membership. Puerto Rico's finest courses. Exclusive access, digital convenience, genuine savings."
-  },
-  "footer.signature": {
-    "es": "juega más, paga menos.",
-    "en": "play more, pay less."
-  },
-  "footer.col.explore": {
-    "es": "Explora",
-    "en": "Explore"
-  },
-  "footer.col.support": {
-    "es": "Soporte",
-    "en": "Support"
-  },
-  "footer.link.network": {
-    "es": "Nuestra Red",
-    "en": "Our Network"
-  },
-  "footer.link.contact": {
-    "es": "Contacto",
-    "en": "Contact"
-  },
-  "footer.link.terms": {
-    "es": "Términos de Servicio",
-    "en": "Terms of Service"
-  },
-  "footer.link.privacy": {
-    "es": "Política de Privacidad",
-    "en": "Privacy Policy"
-  },
-  "footer.copyright": {
-    "es": "© 2026 Links Golf Membership · Puerto Rico",
-    "en": "© 2026 Links Golf Membership · Puerto Rico"
-  },
-  "crumb.home": {
-    "es": "Inicio",
-    "en": "Home"
-  },
-  "courses.crumb": {
-    "es": "Directorio de Campos",
-    "en": "Course Directory"
-  },
-  "courses.h1": {
-    "es": "Quince campos,<br/><em>una isla.</em>",
-    "en": "Fifteen courses,<br/><em>one island.</em>"
-  },
-  "courses.intro": {
-    "es": "El directorio completo de campos aliados. Muestra tu tarjeta Links Golf en cualquier ubicación para desbloquear tu tarifa de miembro — desde los acantilados de la costa oeste hasta las costas del sur.",
-    "en": "The full directory of partner courses. Show your Links Golf card at any location to unlock your member rate — from west-coast cliffs to southern shores."
-  },
-  "courses.stat.1": {
-    "es": "Campos aliados",
-    "en": "Partner Courses"
-  },
-  "courses.stat.2": {
-    "es": "Descuento de miembro",
-    "en": "Member Discount"
-  },
-  "courses.stat.3": {
-    "es": "Hoyos totales",
-    "en": "Total Holes"
-  },
-  "courses.stat.4": {
-    "es": "Municipios",
-    "en": "Municipios"
-  },
-  "courses.pill.all": {
-    "es": "Todos",
-    "en": "All"
-  },
-  "courses.pill.resort": {
-    "es": "Resort",
-    "en": "Resort"
-  },
-  "courses.pill.semi": {
-    "es": "Semi-Privado",
-    "en": "Semi-Private"
-  },
-  "courses.pill.public": {
-    "es": "Público",
-    "en": "Public"
-  },
-  "courses.pill.club": {
-    "es": "Country Club",
-    "en": "Country Club"
-  },
-  "courses.empty": {
-    "es": "Ningún campo coincide con tu búsqueda.",
-    "en": "No courses match your search."
-  },
-  "courses.th.course": {
-    "es": "Campo",
-    "en": "Course"
-  },
-  "courses.th.muni": {
-    "es": "Municipio",
-    "en": "Municipio"
-  },
-  "courses.th.type": {
-    "es": "Tipo",
-    "en": "Type"
-  },
-  "courses.th.holes": {
-    "es": "Hoyos",
-    "en": "Holes"
-  },
-  "courses.th.discount": {
-    "es": "Descuento",
-    "en": "Discount"
-  },
-  "courses.cta.h2": {
-    "es": "¿Listo para jugar <em>más, pagar menos?</em>",
-    "en": "Ready to play <em>more, pay less?</em>"
-  },
-  "courses.cta.p": {
-    "es": "Una tarjeta. Quince campos. 365 días de mejores tarifas en Puerto Rico.",
-    "en": "One card. Fifteen courses. 365 days of better rates across Puerto Rico."
-  },
-  "courses.cta.btn": {
-    "es": "Obtén tu tarjeta 2026 →",
-    "en": "Get your 2026 card →"
-  },
-  "faqp.crumb": {
-    "es": "Preguntas Frecuentes",
-    "en": "Frequently Asked Questions"
-  },
-  "faqp.h1": {
-    "es": "La letra pequeña,<br/><em>sin tonterías.</em>",
-    "en": "The fine print,<br/><em>no nonsense.</em>"
-  },
-  "faqp.intro": {
-    "es": "Todo lo que pudieras preguntar sobre membresía, facturación, wallets y acceso a los campos. ¿No encuentras tu respuesta?",
-    "en": "Everything you might wonder about membership, billing, wallets, and course access. Can't find your answer?"
-  },
-  "faqp.contact": {
-    "es": "Escríbenos →",
-    "en": "Contact us →"
-  },
-  "faqp.side.membership": {
-    "es": "01 · Membresía",
-    "en": "01 · Membership"
-  },
-  "faqp.side.wallet": {
-    "es": "02 · Wallet y Tarjeta",
-    "en": "02 · Wallet & Card"
-  },
-  "faqp.side.courses": {
-    "es": "03 · Campos",
-    "en": "03 · Courses"
-  },
-  "faqp.side.billing": {
-    "es": "04 · Facturación",
-    "en": "04 · Billing"
-  },
-  "faqp.side.account": {
-    "es": "05 · Cuenta",
-    "en": "05 · Account"
-  },
-  "faqp.g.membership.h2": {
-    "es": "01 · <em>Membresía</em>",
-    "en": "01 · <em>Membership</em>"
-  },
-  "faqp.g.wallet.h2": {
-    "es": "02 · <em>Wallet y Tarjeta</em>",
-    "en": "02 · <em>Wallet &amp; Card</em>"
-  },
-  "faqp.g.courses.h2": {
-    "es": "03 · <em>Campos</em>",
-    "en": "03 · <em>Courses</em>"
-  },
-  "faqp.g.billing.h2": {
-    "es": "04 · <em>Facturación</em>",
-    "en": "04 · <em>Billing</em>"
-  },
-  "faqp.g.account.h2": {
-    "es": "05 · <em>Cuenta</em>",
-    "en": "05 · <em>Account</em>"
-  },
-  "faqp.m.1.q": {
-    "es": "¿Qué es <em>Links Golf Membership?</em>",
-    "en": "What is <em>Links Golf Membership?</em>"
-  },
-  "faqp.m.1.a": {
-    "es": "Una membresía anual que desbloquea tarifas con descuento en 15 campos aliados a través de Puerto Rico. Una tarjeta, toda la isla — juega más, paga menos.",
-    "en": "An annual membership unlocking discounted rates at 15 partner courses across Puerto Rico. One card, the whole island — play more, pay less."
-  },
-  "faqp.m.2.q": {
-    "es": "¿Para quién es?",
-    "en": "Who is it for?"
-  },
-  "faqp.m.2.a": {
-    "es": "Residentes, visitantes frecuentes y snowbirds que juegan más de un puñado de rondas al año en la isla. La tarjeta se paga rápido a tarifas de miembro — típicamente en 3–4 rondas.",
-    "en": "Residents, frequent visitors, and snowbirds who play more than a handful of rounds a year on the island. The card pays for itself quickly at member rates — typically within 3–4 rounds."
-  },
-  "faqp.m.3.q": {
-    "es": "¿Hay un <em>plan familiar?</em>",
-    "en": "Is there a <em>family plan?</em>"
-  },
-  "faqp.m.3.a": {
-    "es": "Sí — parejas y familiares adicionales pueden añadir membresías a tarifa reducida. Pregunta al pagar o escribe a <a href=\"mailto:hello@linksgolf.pr\">hello@linksgolf.pr</a> y te ayudamos.",
-    "en": "Yes — partners and additional family members can add memberships at a reduced rate. Ask at checkout or email <a href=\"mailto:hello@linksgolf.pr\">hello@linksgolf.pr</a> and we'll set you up."
-  },
-  "faqp.m.4.q": {
-    "es": "¿La membresía es transferible?",
-    "en": "Is the membership transferable?"
-  },
-  "faqp.m.4.a": {
-    "es": "No. La membresía no es transferible y está atada con foto al miembro verificado. Compartir un pase anula la membresía de inmediato. Cada golfista en tu grupo necesita su propia tarjeta.",
-    "en": "No. The membership is non-transferable and photo-bound to the verified member. Sharing a pass voids membership immediately. Each golfer in your group needs their own card."
-  },
-  "faqp.w.1.q": {
-    "es": "¿Cómo funciona la <em>tarjeta digital?</em>",
-    "en": "How does the <em>digital card</em> work?"
-  },
-  "faqp.w.1.a": {
-    "es": "Después de la activación recibes un pase firmado para Apple Wallet y Google Wallet. Vive en tu teléfono como un boarding pass — muéstralo en el pro shop, el personal lo escanea, y tu tarifa de miembro se desbloquea al instante.",
-    "en": "After activation you receive a signed Apple Wallet and Google Wallet pass. It lives on your phone like a boarding pass — show it at the pro shop, staff scans it, and your member rate is unlocked instantly."
-  },
-  "faqp.w.2.q": {
-    "es": "¿Necesito descargar una <em>app?</em>",
-    "en": "Do I need to download an <em>app?</em>"
-  },
-  "faqp.w.2.a": {
-    "es": "Para nada. El pase usa funciones nativas del wallet integradas en iOS y Android — el mismo lugar donde guardas tarjetas de crédito y boarding passes. Sin apps de terceros, sin cuenta que manejar después del setup.",
-    "en": "Not at all. The pass uses native wallet features built into iOS and Android — the same place as your credit cards and boarding passes. No third-party app, no account to manage after setup."
-  },
-  "faqp.w.3.q": {
-    "es": "¿Y si <em>pierdo mi teléfono?</em>",
-    "en": "What if I <em>lose my phone?</em>"
-  },
-  "faqp.w.3.a": {
-    "es": "Inicia sesión en tu cuenta de miembro, revoca el pase viejo con un toque, y añade un pase nuevo a tu nuevo dispositivo. Tu membresía nunca se interrumpe y tu número de miembro se mantiene igual.",
-    "en": "Log into your member account, revoke the old pass in one tap, then add a fresh pass to your new device. Your membership is never interrupted and your member number stays the same."
-  },
-  "faqp.w.4.q": {
-    "es": "¿Puedo usar mi tarjeta <em>sin conexión?</em>",
-    "en": "Can I use my card <em>offline?</em>"
-  },
-  "faqp.w.4.a": {
-    "es": "Sí. Los pases de Wallet funcionan sin conexión — el QR está guardado localmente en tu dispositivo. No se necesita señal en el campo.",
-    "en": "Yes. Wallet passes work offline — the QR code is stored locally on your device. No signal needed at the course."
-  },
-  "faqp.w.5.q": {
-    "es": "¿Puedo <em>compartir</em> la tarjeta con alguien?",
-    "en": "Can I <em>share</em> the card with someone?"
-  },
-  "faqp.w.5.a": {
-    "es": "No — los pases están atados a tu foto y son no transferibles. Compartir anula tu membresía. Mejor añade a un familiar para que tenga su propia tarjeta verificada.",
-    "en": "No — passes are photo-bound and non-transferable. Sharing voids your membership. Add a family member instead so they get their own verified card."
-  },
-  "faqp.c.1.q": {
-    "es": "¿Qué <em>campos</em> participan?",
-    "en": "Which <em>courses</em> participate?"
-  },
-  "faqp.c.1.a": {
-    "es": "15 campos aliados a través de 9 municipios — desde Royal Isabela en la costa oeste hasta Palmas Del Mar en el este. Mira la lista completa en el <a href=\"courses.html\">directorio de campos</a>.",
-    "en": "15 partner courses across 9 municipios — from Royal Isabela on the west coast to Palmas Del Mar on the east. See the full list on the <a href=\"courses.html\">course directory</a>."
-  },
-  "faqp.c.2.q": {
-    "es": "¿Necesito una <em>reservación de tee time?</em>",
-    "en": "Do I need a <em>tee time?</em>"
-  },
-  "faqp.c.2.a": {
-    "es": "Sí — reserva directamente con el campo como lo harías normalmente. Menciona que eres miembro de Links Golf al reservar. Algunos resorts aliados también ofrecen ventanas prioritarias de tee time para miembros.",
-    "en": "Yes — book directly with the course as you normally would. Mention that you're a Links Golf Member when booking. Featured resort partners also offer priority tee-time windows for members."
-  },
-  "faqp.c.3.q": {
-    "es": "¿El descuento aplica a <em>invitados</em> en mi grupo?",
-    "en": "Does the discount apply to <em>guests</em> in my group?"
-  },
-  "faqp.c.3.a": {
-    "es": "La tarifa principal de miembro aplica solo al titular de la tarjeta. Algunos campos ofrecen una tarifa reducida de acompañante para invitados en el grupo del miembro — verifica con cada campo al reservar.",
-    "en": "The primary member rate applies only to the cardholder. Some courses offer a reduced companion rate for guests in a member's group — check with the individual course when booking."
-  },
-  "faqp.c.4.q": {
-    "es": "¿Se están <em>añadiendo</em> más campos?",
-    "en": "Are more courses being <em>added?</em>"
-  },
-  "faqp.c.4.a": {
-    "es": "Sí. Estamos expandiendo la red activamente. Los nuevos campos aliados se anuncian por correo a todos los miembros activos primero.",
-    "en": "Yes. We're actively expanding the network. New partner courses are announced by email to all active members first."
-  },
-  "faqp.b.1.q": {
-    "es": "¿Cuánto <em>cuesta?</em>",
-    "en": "How much does it <em>cost?</em>"
-  },
-  "faqp.b.1.a": {
-    "es": "$299 USD al año. Los descuentos de miembro de 15–25% en green fees típicamente pagan la membresía en 3–4 rondas en campos aliados.",
-    "en": "$299 USD per year. Member discounts of 15–25% off green fees typically pay the membership back within 3–4 rounds at partner courses."
-  },
-  "faqp.b.2.q": {
-    "es": "¿Se <em>renueva automáticamente?</em>",
-    "en": "Does it <em>auto-renew?</em>"
-  },
-  "faqp.b.2.a": {
-    "es": "Solo si seleccionas opt-in al pagar. Enviamos un correo de recordatorio 30 días antes del vencimiento — sin cargos sorpresa, nunca.",
-    "en": "Only if you opt in during checkout. We send a reminder email 30 days before expiration — no surprise charges, ever."
-  },
-  "faqp.b.3.q": {
-    "es": "¿Puedo obtener un <em>reembolso?</em>",
-    "en": "Can I get a <em>refund?</em>"
-  },
-  "faqp.b.3.a": {
-    "es": "Sí — reembolso completo dentro de 14 días si aún no has usado la tarjeta en un campo aliado. Después del primer uso, la membresía no es reembolsable.",
-    "en": "Yes — full refund within 14 days if you haven't yet used the card at a partner course. After first use, the membership is non-refundable."
-  },
-  "faqp.b.4.q": {
-    "es": "¿Qué métodos de pago <em>aceptan?</em>",
-    "en": "What payment methods do you <em>accept?</em>"
-  },
-  "faqp.b.4.a": {
-    "es": "Todas las tarjetas principales de crédito y débito (Visa, Mastercard, Amex, Discover) vía Stripe. Los pagos están encriptados y nunca guardamos los detalles de la tarjeta.",
-    "en": "All major credit and debit cards (Visa, Mastercard, Amex, Discover) via Stripe. Payments are encrypted and we never store card details."
-  },
-  "faqp.a.1.q": {
-    "es": "¿Cómo actualizo mi <em>foto?</em>",
-    "en": "How do I update my <em>photo?</em>"
-  },
-  "faqp.a.1.a": {
-    "es": "Inicia sesión en tu portal de miembro, sube una nueva foto, y tu pase se refresca automáticamente en minutos. La nueva foto aparece en tu tarjeta digital de inmediato.",
-    "en": "Sign in to your member portal, upload a new photo, and your wallet pass refreshes automatically within minutes. The new photo appears on your digital card immediately."
-  },
-  "faqp.a.2.q": {
-    "es": "¿Puedo <em>cancelar</em> en cualquier momento?",
-    "en": "Can I <em>cancel</em> anytime?"
-  },
-  "faqp.a.2.a": {
-    "es": "Tu membresía es anual, pero puedes desactivar la auto-renovación en cualquier momento desde tu cuenta. Tu tarjeta se mantiene activa hasta el final del término pagado.",
-    "en": "Your membership is annual, but you can disable auto-renewal at any time from your account. Your card stays active through the end of your paid term."
-  },
-  "faqp.a.3.q": {
-    "es": "¿Cómo contacto a <em>soporte?</em>",
-    "en": "How do I contact <em>support?</em>"
-  },
-  "faqp.a.3.a": {
-    "es": "Escribe a <a href=\"mailto:hello@linksgolf.pr\">hello@linksgolf.pr</a> — respondemos dentro de 1 día hábil. Para temas urgentes llama o envía mensaje al número en tu correo de bienvenida.",
-    "en": "Email <a href=\"mailto:hello@linksgolf.pr\">hello@linksgolf.pr</a> — we respond within 1 business day. For urgent issues call or text the number on your welcome email."
-  },
-  "faqp.cta.h2": {
-    "es": "¿Aún tienes <em>preguntas?</em>",
-    "en": "Still have <em>questions?</em>"
-  },
-  "faqp.cta.p": {
-    "es": "Nuestro equipo está en Puerto Rico, listo para ayudar. Un correo y respondemos al siguiente día hábil.",
-    "en": "Our team is based in Puerto Rico and ready to help. One email and you'll hear back the next business day."
-  },
-  "faqp.cta.btn": {
-    "es": "Escríbenos →",
-    "en": "Email us →"
-  },
-  "mcard.valid.label": {
-    "es": "Válido Hasta",
-    "en": "Valid Until"
-  }
+  "meta.lang.label": { "es": "ES", "en": "EN" },
+  "meta.lang.aria":  { "es": "Cambiar idioma a inglés", "en": "Switch language to Spanish" },
+
+  "doc.title.home":    { "es": "Links Golf Membership · Juega Más, Paga Menos", "en": "Links Golf Membership · Play More, Pay Less" },
+  "doc.title.courses": { "es": "Campos · Links Golf Membership", "en": "Courses · Links Golf Membership" },
+  "doc.title.faq":     { "es": "Preguntas Frecuentes · Links Golf Membership", "en": "FAQ · Links Golf Membership" },
+
+  "logo.sub": { "es": "Juega Más · Paga Menos", "en": "Play More · Pay Less" },
+
+  "nav.benefits": { "es": "Beneficios",        "en": "Benefits" },
+  "nav.network":  { "es": "Campos",            "en": "Courses" },
+  "nav.card":     { "es": "ID Digital",        "en": "Digital ID" },
+  "nav.faq":      { "es": "FAQ",               "en": "FAQ" },
+  "nav.courses":  { "es": "Todos los campos",  "en": "All Courses" },
+  "nav.cta":      { "es": "Obtén tu tarjeta",  "en": "Get Your Card" },
+  "nav.menu.aria":{ "es": "Menú",              "en": "Menu" },
+
+  "hero.headline.1":    { "es": "Juega Más,",   "en": "Play More," },
+  "hero.headline.2":    { "es": "¡Paga Menos!", "en": "Pay Less!" },
+  "hero.sub":           { "es": "Una sola membresía. Los mejores campos de Puerto Rico — desde los acantilados costeros de Royal Isabela hasta las vistas a las colinas y al mar de Palmas del Mar. Acceso exclusivo, conveniencia digital, ahorros reales.", "en": "One membership. Puerto Rico's finest courses — from the ocean cliffs of Royal Isabela to the hills and ocean views of Palmas del Mar. Exclusive access, digital convenience, genuine savings." },
+  "hero.cta.primary":   { "es": "Obtén tu tarjeta →", "en": "Get Your Card →" },
+  "hero.cta.secondary": { "es": "Todos los campos",   "en": "All Courses" },
+  "hero.stat.1.label":  { "es": "Campos aliados",    "en": "Partner Courses" },
+  "hero.stat.2.label":  { "es": "Hasta de descuento", "en": "Up to off fees" },
+  "hero.stat.3.label":  { "es": "Hoyos de golf",     "en": "Holes of Golf" },
+
+  "mcard.tier":      { "es": "Miembro Elite · 2026",    "en": "Elite Member · 2026" },
+  "mcard.placeholder.name": { "es": "TU NOMBRE AQUÍ",   "en": "YOUR NAME HERE" },
+  "mcard.role":      { "es": "Miembro Fundador · 2026", "en": "Founding Member · 2026" },
+  "mcard.num.label": { "es": "No. Miembro",             "en": "Member No." },
+
+  "benefits.eyebrow": { "es": "01 · Por qué Links", "en": "01 · Why Links" },
+  "benefits.h2":      { "es": "Diseñado para golfistas que quieren jugar más y ahorrar.", "en": "Built for golfers who want to play more and save." },
+  "benefits.p":       { "es": "Una membresía anual abre cada campo importante de Puerto Rico. Sin adivinanzas, sin fricción.", "en": "One annual membership opens every major course in Puerto Rico. No guesswork, no friction." },
+
+  "benefit.1.h3": { "es": "Ahorros reales — <em>hasta 25% off</em> en cada ronda.", "en": "Real savings — <em>up to 25% off</em> every round." },
+  "benefit.1.p":  { "es": "Tarifas de miembro en green fees, carrito y range en cada campo aliado, todo el año.", "en": "Member rates on green fees, cart, and range at every partner course, year-round." },
+  "benefit.1.q":  { "es": "«Juega más, paga menos.»", "en": "«Play more, pay less.»" },
+
+  "benefit.2.h3": { "es": "Tarjeta de ID digital, <em>siempre en tu bolsillo.</em>", "en": "Digital ID card, <em>always in your pocket.</em>" },
+  "benefit.2.p":  { "es": "Un pase firmado para Apple y Google Wallet. Escanea en cualquier pro shop — sin apps, sin plástico.", "en": "A signed Apple & Google Wallet pass. Scan at any pro shop — no apps, no plastic." },
+  "benefit.2.q":  { "es": "«Sin apps, sin estrés.»", "en": "«No apps, no stress.»" },
+
+  "benefit.3.h3": { "es": "No transferible, <em>verificada</em> al registrarse.", "en": "Non-transferable, <em>verified</em> at check-in." },
+  "benefit.3.p":  { "es": "ID con foto y QR revocable — segura, actualizable, siempre tuya.", "en": "Photo-bound ID and revocable QR — secure, refreshable, always yours." },
+  "benefit.3.q":  { "es": "«Tu tarjeta, tu identidad.»", "en": "«Your card, your identity.»" },
+
+  "benefit.4.h3": { "es": "Un solo precio, <em>todo el año.</em>", "en": "One price, <em>all year long.</em>" },
+  "benefit.4.p":  { "es": "$299 al año — se paga sola en tan solo 3 rondas en cualquier campo aliado.", "en": "$299 annually — pays for itself in as few as 3 rounds at any partner course." },
+  "benefit.4.q":  { "es": "«Una membresía, acceso todo el año.»", "en": "«One membership, all year access.»" },
+
+  "network.eyebrow":      { "es": "02 · Nuestra Red", "en": "02 · Our Network" },
+  "network.bignum.label": { "es": "Campos aliados · Toda la isla", "en": "Partner courses · Island-wide" },
+  "network.h2":           { "es": "Los mejores greens de la isla — una sola tarjeta.", "en": "The island's best greens — one card." },
+  "network.p":            { "es": "Diseños de campeonatos, joyas municipales escondidas, y todo lo que cabe entre ambos — siempre un lugar extraordinario.", "en": "Championship resort layouts, tucked-away municipal gems, and everything between — always somewhere remarkable." },
+  "network.map.h3":       { "es": "El <em>mapa</em> del club", "en": "The club <em>map</em>" },
+  "network.map.coords":   { "es": "18°12'N · 66°30'O · 15 campos", "en": "18°12'N · 66°30'W · 15 courses" },
+  "network.cta":          { "es": "Ver el directorio completo →", "en": "View Full Course Directory →" },
+
+  "card.eyebrow": { "es": "03 · ID Digital", "en": "03 · Digital ID" },
+  "card.h2":      { "es": "Una tarjeta,<br/><em>¡mucho golf!</em>", "en": "One card,<br/><em>a lot of golf!</em>" },
+  "card.p":       { "es": "Un pase firmado para Apple y Google Wallet vive en tu teléfono. No transferible. Con foto. Revocable con un toque.", "en": "A signed Apple & Google Wallet pass lives on your phone. Non-transferable. Photo-bound. Revocable in one tap." },
+  "card.li.1":    { "es": "Escanea en cualquier pro shop — tarifa de miembro al instante", "en": "Scan at any pro shop — instant member rate" },
+  "card.li.2":    { "es": "Funciona sin conexión, no requiere señal", "en": "Works offline, no signal required" },
+  "card.li.3":    { "es": "Revocable y reemitible al instante", "en": "Instantly revocable and re-issuable" },
+  "card.li.4":    { "es": "Disponibilidad 24/7 — tu tarjeta nunca cierra", "en": "24/7 availability — your card never closes" },
+  "card.cta":     { "es": "Crea mi ID digital →", "en": "Create My Digital ID →" },
+
+  "faq.eyebrow": { "es": "03 · FAQ", "en": "03 · FAQ" },
+  "faq.h2":      { "es": "Preguntas <em>comunes.</em>", "en": "Common <em>questions.</em>" },
+  "faq.q.1": { "es": "¿Qué es la tarjeta Links Golf Membership?", "en": "What is the Links Golf Membership card?" },
+  "faq.a.1": { "es": "Tu membresía todo-en-uno para el mejor golf de Puerto Rico. Acceso instantáneo a descuentos exclusivos en cada campo aliado, un pase digital en tu wallet, e ID con foto verificada — sin tarjeta física.", "en": "Your all-in-one membership to premium golf across Puerto Rico. Instant access to exclusive discounts at every partner course, a digital wallet pass, and a verified photo ID — no physical card needed." },
+  "faq.q.2": { "es": "¿Cómo uso la tarjeta?", "en": "How do I use the card?" },
+  "faq.a.2": { "es": "Escanea tu QR digital desde Apple Wallet o Google Wallet en el pro shop de cualquier campo aliado. El sistema valida tu membresía en segundos y desbloquea tu tarifa de miembro.", "en": "Simply scan your digital QR code from Apple Wallet or Google Wallet at any partner course's pro shop. The system validates your membership in seconds and unlocks your member rate." },
+  "faq.q.3": { "es": "¿Y si pierdo mi teléfono?", "en": "What if I lose my phone?" },
+  "faq.a.3": { "es": "No hay problema. Invalida tu QR actual al instante. Cuando tengas un dispositivo nuevo, te reemitimos el pase de inmediato — sin formularios, sin esperar.", "en": "No problem. Instantly invalidate your current QR code. As soon as you have a new device, we re-issue your pass immediately — no forms, no waiting." },
+  "faq.q.4": { "es": "¿Necesito descargar una app?", "en": "Do I need to download an app?" },
+  "faq.a.4": { "es": "Para nada. Tu pase vive en el Wallet integrado — el mismo lugar donde guardas tus boarding passes y tarjetas de crédito.", "en": "Not at all. Your pass lives in your built-in Wallet — the same place as your boarding passes and credit cards." },
+  "faq.q.5": { "es": "¿La membresía es transferible?", "en": "Is the membership transferable?" },
+  "faq.a.5": { "es": "No. La membresía no es transferible y está vinculada a tu foto verificada. Cada miembro tiene un QR único atado a su identidad.", "en": "No. The membership is non-transferable and bound to your verified photo. Each member has a unique QR code tied to their identity." },
+  "faq.cta": { "es": "Ver todas las FAQs →", "en": "View All FAQs →" },
+
+  "footer.brand.p":    { "es": "Una sola membresía. Los mejores campos de Puerto Rico. Acceso exclusivo, conveniencia digital, ahorros reales.", "en": "One membership. Puerto Rico's finest courses. Exclusive access, digital convenience, genuine savings." },
+  "footer.signature":  { "es": "juega más, paga menos.", "en": "play more, pay less." },
+  "footer.col.explore":{ "es": "Explora",  "en": "Explore" },
+  "footer.col.support":{ "es": "Soporte",  "en": "Support" },
+  "footer.link.network":{ "es": "Nuestra Red",        "en": "Our Network" },
+  "footer.link.contact":{ "es": "Contacto",           "en": "Contact" },
+  "footer.link.terms":  { "es": "Términos de Servicio","en": "Terms of Service" },
+  "footer.link.privacy":{ "es": "Política de Privacidad","en": "Privacy Policy" },
+  "footer.copyright":   { "es": "© 2026 Links Golf Membership · Puerto Rico", "en": "© 2026 Links Golf Membership · Puerto Rico" },
+
+  "crumb.home": { "es": "Inicio", "en": "Home" },
+
+  "courses.crumb":           { "es": "Directorio de Campos", "en": "Course Directory" },
+  "courses.h1":              { "es": "Quince campos,<br/><em>una isla.</em>", "en": "Fifteen courses,<br/><em>one island.</em>" },
+  "courses.intro":           { "es": "El directorio completo de campos aliados. Muestra tu tarjeta Links Golf en cualquier ubicación para desbloquear tu tarifa de miembro — desde los acantilados de la costa oeste hasta las costas del sur.", "en": "The full directory of partner courses. Show your Links Golf card at any location to unlock your member rate — from west-coast cliffs to southern shores." },
+  "courses.stat.1":          { "es": "Campos aliados",       "en": "Partner Courses" },
+  "courses.stat.2":          { "es": "Descuento de miembro", "en": "Member Discount" },
+  "courses.stat.3":          { "es": "Hoyos totales",        "en": "Total Holes" },
+  "courses.stat.4":          { "es": "Municipios",           "en": "Municipios" },
+  "courses.search.placeholder":{ "es": "Buscar por nombre, pueblo o tipo…", "en": "Search by name, town or type…" },
+  "courses.pill.all":        { "es": "Todos",         "en": "All" },
+  "courses.pill.resort":     { "es": "Resort",        "en": "Resort" },
+  "courses.pill.semi":       { "es": "Semi-Privado",  "en": "Semi-Private" },
+  "courses.pill.public":     { "es": "Público",       "en": "Public" },
+  "courses.pill.club":       { "es": "Country Club",  "en": "Country Club" },
+  "courses.count.all":       { "es": "Mostrando los {n} campos",         "en": "Showing all {n} courses" },
+  "courses.count.filtered":  { "es": "Mostrando {n} de {total} campos",  "en": "Showing {n} of {total} courses" },
+  "courses.empty":           { "es": "Ningún campo coincide con tu búsqueda.", "en": "No courses match your search." },
+  "courses.th.course":       { "es": "Campo",     "en": "Course" },
+  "courses.th.muni":         { "es": "Municipio", "en": "Municipio" },
+  "courses.th.type":         { "es": "Tipo",      "en": "Type" },
+  "courses.th.holes":        { "es": "Hoyos",     "en": "Holes" },
+  "courses.th.discount":     { "es": "Descuento", "en": "Discount" },
+  "courses.cta.h2":          { "es": "¿Listo para jugar <em>más, pagar menos?</em>", "en": "Ready to play <em>more, pay less?</em>" },
+  "courses.cta.p":           { "es": "Una tarjeta. Quince campos. 365 días de mejores tarifas en Puerto Rico.", "en": "One card. Fifteen courses. 365 days of better rates across Puerto Rico." },
+  "courses.cta.btn":         { "es": "Obtén tu tarjeta 2026 →", "en": "Get your 2026 card →" },
+
+  "faqp.crumb":   { "es": "Preguntas Frecuentes", "en": "Frequently Asked Questions" },
+  "faqp.h1":      { "es": "La letra pequeña,<br/><em>sin tonterías.</em>", "en": "The fine print,<br/><em>no nonsense.</em>" },
+  "faqp.intro":   { "es": "Todo lo que pudieras preguntar sobre membresía, facturación, wallets y acceso a los campos. ¿No encuentras tu respuesta?", "en": "Everything you might wonder about membership, billing, wallets, and course access. Can't find your answer?" },
+  "faqp.contact": { "es": "Escríbenos →", "en": "Contact us →" },
+
+  "faqp.side.membership": { "es": "01 · Membresía",        "en": "01 · Membership" },
+  "faqp.side.wallet":     { "es": "02 · Wallet y Tarjeta", "en": "02 · Wallet & Card" },
+  "faqp.side.courses":    { "es": "03 · Campos",           "en": "03 · Courses" },
+  "faqp.side.billing":    { "es": "04 · Facturación",      "en": "04 · Billing" },
+  "faqp.side.account":    { "es": "05 · Cuenta",           "en": "05 · Account" },
+
+  "faqp.g.membership.h2": { "es": "01 · <em>Membresía</em>",        "en": "01 · <em>Membership</em>" },
+  "faqp.g.wallet.h2":     { "es": "02 · <em>Wallet y Tarjeta</em>", "en": "02 · <em>Wallet &amp; Card</em>" },
+  "faqp.g.courses.h2":    { "es": "03 · <em>Campos</em>",           "en": "03 · <em>Courses</em>" },
+  "faqp.g.billing.h2":    { "es": "04 · <em>Facturación</em>",      "en": "04 · <em>Billing</em>" },
+  "faqp.g.account.h2":    { "es": "05 · <em>Cuenta</em>",           "en": "05 · <em>Account</em>" },
+
+  "faqp.m.1.q": { "es": "¿Qué es <em>Links Golf Membership?</em>", "en": "What is <em>Links Golf Membership?</em>" },
+  "faqp.m.1.a": { "es": "Una membresía anual que desbloquea tarifas con descuento en 15 campos aliados a través de Puerto Rico. Una tarjeta, toda la isla — juega más, paga menos.", "en": "An annual membership unlocking discounted rates at 15 partner courses across Puerto Rico. One card, the whole island — play more, pay less." },
+  "faqp.m.2.q": { "es": "¿Para quién es?", "en": "Who is it for?" },
+  "faqp.m.2.a": { "es": "Residentes, visitantes frecuentes y snowbirds que juegan más de un puñado de rondas al año en la isla. La tarjeta se paga rápido a tarifas de miembro — típicamente en 3–4 rondas.", "en": "Residents, frequent visitors, and snowbirds who play more than a handful of rounds a year on the island. The card pays for itself quickly at member rates — typically within 3–4 rounds." },
+  "faqp.m.3.q": { "es": "¿Hay un <em>plan familiar?</em>", "en": "Is there a <em>family plan?</em>" },
+  "faqp.m.3.a": { "es": "Sí — parejas y familiares adicionales pueden añadir membresías a tarifa reducida. Pregunta al pagar o escribe a <a href=\"mailto:hello@linksgolf.pr\">hello@linksgolf.pr</a> y te ayudamos.", "en": "Yes — partners and additional family members can add memberships at a reduced rate. Ask at checkout or email <a href=\"mailto:hello@linksgolf.pr\">hello@linksgolf.pr</a> and we'll set you up." },
+  "faqp.m.4.q": { "es": "¿La membresía es transferible?", "en": "Is the membership transferable?" },
+  "faqp.m.4.a": { "es": "No. La membresía no es transferible y está atada con foto al miembro verificado. Compartir un pase anula la membresía de inmediato. Cada golfista en tu grupo necesita su propia tarjeta.", "en": "No. The membership is non-transferable and photo-bound to the verified member. Sharing a pass voids membership immediately. Each golfer in your group needs their own card." },
+
+  "faqp.w.1.q": { "es": "¿Cómo funciona la <em>tarjeta digital?</em>", "en": "How does the <em>digital card</em> work?" },
+  "faqp.w.1.a": { "es": "Después de la activación recibes un pase firmado para Apple Wallet y Google Wallet. Vive en tu teléfono como un boarding pass — muéstralo en el pro shop, el personal lo escanea, y tu tarifa de miembro se desbloquea al instante.", "en": "After activation you receive a signed Apple Wallet and Google Wallet pass. It lives on your phone like a boarding pass — show it at the pro shop, staff scans it, and your member rate is unlocked instantly." },
+  "faqp.w.2.q": { "es": "¿Necesito descargar una <em>app?</em>", "en": "Do I need to download an <em>app?</em>" },
+  "faqp.w.2.a": { "es": "Para nada. El pase usa funciones nativas del wallet integradas en iOS y Android — el mismo lugar donde guardas tarjetas de crédito y boarding passes. Sin apps de terceros, sin cuenta que manejar después del setup.", "en": "Not at all. The pass uses native wallet features built into iOS and Android — the same place as your credit cards and boarding passes. No third-party app, no account to manage after setup." },
+  "faqp.w.3.q": { "es": "¿Y si <em>pierdo mi teléfono?</em>", "en": "What if I <em>lose my phone?</em>" },
+  "faqp.w.3.a": { "es": "Inicia sesión en tu cuenta de miembro, revoca el pase viejo con un toque, y añade un pase nuevo a tu nuevo dispositivo. Tu membresía nunca se interrumpe y tu número de miembro se mantiene igual.", "en": "Log into your member account, revoke the old pass in one tap, then add a fresh pass to your new device. Your membership is never interrupted and your member number stays the same." },
+  "faqp.w.4.q": { "es": "¿Puedo usar mi tarjeta <em>sin conexión?</em>", "en": "Can I use my card <em>offline?</em>" },
+  "faqp.w.4.a": { "es": "Sí. Los pases de Wallet funcionan sin conexión — el QR está guardado localmente en tu dispositivo. No se necesita señal en el campo.", "en": "Yes. Wallet passes work offline — the QR code is stored locally on your device. No signal needed at the course." },
+  "faqp.w.5.q": { "es": "¿Puedo <em>compartir</em> la tarjeta con alguien?", "en": "Can I <em>share</em> the card with someone?" },
+  "faqp.w.5.a": { "es": "No — los pases están atados a tu foto y son no transferibles. Compartir anula tu membresía. Mejor añade a un familiar para que tenga su propia tarjeta verificada.", "en": "No — passes are photo-bound and non-transferable. Sharing voids your membership. Add a family member instead so they get their own verified card." },
+
+  "faqp.c.1.q": { "es": "¿Qué <em>campos</em> participan?", "en": "Which <em>courses</em> participate?" },
+  "faqp.c.1.a": { "es": "15 campos aliados a través de 9 municipios — desde Royal Isabela en la costa oeste hasta Palmas Del Mar en el este. Mira la lista completa en el <a href=\"courses.html\">directorio de campos</a>.", "en": "15 partner courses across 9 municipios — from Royal Isabela on the west coast to Palmas Del Mar on the east. See the full list on the <a href=\"courses.html\">course directory</a>." },
+  "faqp.c.2.q": { "es": "¿Necesito una <em>reservación de tee time?</em>", "en": "Do I need a <em>tee time?</em>" },
+  "faqp.c.2.a": { "es": "Sí — reserva directamente con el campo como lo harías normalmente. Menciona que eres miembro de Links Golf al reservar. Algunos resorts aliados también ofrecen ventanas prioritarias de tee time para miembros.", "en": "Yes — book directly with the course as you normally would. Mention that you're a Links Golf Member when booking. Featured resort partners also offer priority tee-time windows for members." },
+  "faqp.c.3.q": { "es": "¿El descuento aplica a <em>invitados</em> en mi grupo?", "en": "Does the discount apply to <em>guests</em> in my group?" },
+  "faqp.c.3.a": { "es": "La tarifa principal de miembro aplica solo al titular de la tarjeta. Algunos campos ofrecen una tarifa reducida de acompañante para invitados en el grupo del miembro — verifica con cada campo al reservar.", "en": "The primary member rate applies only to the cardholder. Some courses offer a reduced companion rate for guests in a member's group — check with the individual course when booking." },
+  "faqp.c.4.q": { "es": "¿Se están <em>añadiendo</em> más campos?", "en": "Are more courses being <em>added?</em>" },
+  "faqp.c.4.a": { "es": "Sí. Estamos expandiendo la red activamente. Los nuevos campos aliados se anuncian por correo a todos los miembros activos primero.", "en": "Yes. We're actively expanding the network. New partner courses are announced by email to all active members first." },
+
+  "faqp.b.1.q": { "es": "¿Cuánto <em>cuesta?</em>", "en": "How much does it <em>cost?</em>" },
+  "faqp.b.1.a": { "es": "$299 USD al año. Los descuentos de miembro de 15–25% en green fees típicamente pagan la membresía en 3–4 rondas en campos aliados.", "en": "$299 USD per year. Member discounts of 15–25% off green fees typically pay the membership back within 3–4 rounds at partner courses." },
+  "faqp.b.2.q": { "es": "¿Se <em>renueva automáticamente?</em>", "en": "Does it <em>auto-renew?</em>" },
+  "faqp.b.2.a": { "es": "Solo si seleccionas opt-in al pagar. Enviamos un correo de recordatorio 30 días antes del vencimiento — sin cargos sorpresa, nunca.", "en": "Only if you opt in during checkout. We send a reminder email 30 days before expiration — no surprise charges, ever." },
+  "faqp.b.3.q": { "es": "¿Puedo obtener un <em>reembolso?</em>", "en": "Can I get a <em>refund?</em>" },
+  "faqp.b.3.a": { "es": "Sí — reembolso completo dentro de 14 días si aún no has usado la tarjeta en un campo aliado. Después del primer uso, la membresía no es reembolsable.", "en": "Yes — full refund within 14 days if you haven't yet used the card at a partner course. After first use, the membership is non-refundable." },
+  "faqp.b.4.q": { "es": "¿Qué métodos de pago <em>aceptan?</em>", "en": "What payment methods do you <em>accept?</em>" },
+  "faqp.b.4.a": { "es": "Todas las tarjetas principales de crédito y débito (Visa, Mastercard, Amex, Discover) vía Stripe. Los pagos están encriptados y nunca guardamos los detalles de la tarjeta.", "en": "All major credit and debit cards (Visa, Mastercard, Amex, Discover) via Stripe. Payments are encrypted and we never store card details." },
+
+  "faqp.a.1.q": { "es": "¿Cómo actualizo mi <em>foto?</em>", "en": "How do I update my <em>photo?</em>" },
+  "faqp.a.1.a": { "es": "Inicia sesión en tu portal de miembro, sube una nueva foto, y tu pase se refresca automáticamente en minutos. La nueva foto aparece en tu tarjeta digital de inmediato.", "en": "Sign in to your member portal, upload a new photo, and your wallet pass refreshes automatically within minutes. The new photo appears on your digital card immediately." },
+  "faqp.a.2.q": { "es": "¿Puedo <em>cancelar</em> en cualquier momento?", "en": "Can I <em>cancel</em> anytime?" },
+  "faqp.a.2.a": { "es": "Tu membresía es anual, pero puedes desactivar la auto-renovación en cualquier momento desde tu cuenta. Tu tarjeta se mantiene activa hasta el final del término pagado.", "en": "Your membership is annual, but you can disable auto-renewal at any time from your account. Your card stays active through the end of your paid term." },
+  "faqp.a.3.q": { "es": "¿Cómo contacto a <em>soporte?</em>", "en": "How do I contact <em>support?</em>" },
+  "faqp.a.3.a": { "es": "Escribe a <a href=\"mailto:hello@linksgolf.pr\">hello@linksgolf.pr</a> — respondemos dentro de 1 día hábil. Para temas urgentes llama o envía mensaje al número en tu correo de bienvenida.", "en": "Email <a href=\"mailto:hello@linksgolf.pr\">hello@linksgolf.pr</a> — we respond within 1 business day. For urgent issues call or text the number on your welcome email." },
+
+  "faqp.cta.h2":  { "es": "¿Aún tienes <em>preguntas?</em>", "en": "Still have <em>questions?</em>" },
+  "faqp.cta.p":   { "es": "Nuestro equipo está en Puerto Rico, listo para ayudar. Un correo y respondemos al siguiente día hábil.", "en": "Our team is based in Puerto Rico and ready to help. One email and you'll hear back the next business day." },
+  "faqp.cta.btn": { "es": "Escríbenos →", "en": "Email us →" }
 }
