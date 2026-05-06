@@ -1,28 +1,4 @@
 {
-  "meta.lang.label": {
-    "es": "ES",
-    "en": "EN"
-  },
-  "meta.lang.aria": {
-    "es": "Cambiar idioma a inglés",
-    "en": "Switch language to Spanish"
-  },
-  "doc.title.home": {
-    "es": "Links Golf Membership · Juega Más, Paga Menos",
-    "en": "Links Golf Membership · Play More, Pay Less"
-  },
-  "doc.title.courses": {
-    "es": "Campos · Links Golf Membership",
-    "en": "Courses · Links Golf Membership"
-  },
-  "doc.title.faq": {
-    "es": "Preguntas Frecuentes · Links Golf Membership",
-    "en": "FAQ · Links Golf Membership"
-  },
-  "logo.sub": {
-    "es": "Juega Más · Paga Menos",
-    "en": "Play More · Pay Less"
-  },
   "nav.benefits": {
     "es": "Beneficios",
     "en": "Benefits"
@@ -47,10 +23,6 @@
     "es": "Obtén tu tarjeta",
     "en": "Get Your Card"
   },
-  "nav.menu.aria": {
-    "es": "Menú",
-    "en": "Menu"
-  },
   "hero.headline.1": {
     "es": "Juega Más,",
     "en": "Play More,"
@@ -71,22 +43,6 @@
     "es": "Todos los campos",
     "en": "All Courses"
   },
-  "hero.stat.1.label": {
-    "es": "Campos aliados",
-    "en": "Partner Courses"
-  },
-  "hero.stat.2.label": {
-    "es": "Hasta de descuento",
-    "en": "Up to off fees"
-  },
-  "hero.stat.3.label": {
-    "es": "Hoyos de golf",
-    "en": "Holes of Golf"
-  },
-  "mcard.tier": {
-    "es": "Miembro Elite · 2026",
-    "en": "Elite Member · 2026"
-  },
   "mcard.placeholder.name": {
     "es": "TU NOMBRE AQUÍ",
     "en": "YOUR NAME HERE"
@@ -104,60 +60,24 @@
     "en": "01 · Why Links"
   },
   "benefits.h2": {
-    "es": "Diseñado para golfistas que quieren jugar más y ahorrar.",
-    "en": "Built for golfers who want to play more and save."
-  },
-  "benefits.p": {
-    "es": "Una membresía anual abre cada campo importante de Puerto Rico. Sin adivinanzas, sin fricción.",
-    "en": "One annual membership opens every major course in Puerto Rico. No guesswork, no friction."
+    "es": "Diseñado para golfistas que quieren jugar más (¡y ahorrar!).",
+    "en": "Built for golfers who want to play more (and save!)."
   },
   "benefit.1.h3": {
     "es": "Ahorros reales — <em>hasta 25% off</em> en cada ronda.",
     "en": "Real savings — <em>up to 25% off</em> every round."
   },
-  "benefit.1.p": {
-    "es": "Tarifas de miembro en green fees, carrito y range en cada campo aliado, todo el año.",
-    "en": "Member rates on green fees, cart, and range at every partner course, year-round."
-  },
-  "benefit.1.q": {
-    "es": "«Juega más, paga menos.»",
-    "en": "«Play more, pay less.»"
-  },
   "benefit.2.h3": {
     "es": "Tarjeta de ID digital, <em>siempre en tu bolsillo.</em>",
     "en": "Digital ID card, <em>always in your pocket.</em>"
-  },
-  "benefit.2.p": {
-    "es": "Un pase firmado para Apple y Google Wallet. Escanea en cualquier pro shop — sin apps, sin plástico.",
-    "en": "A signed Apple & Google Wallet pass. Scan at any pro shop — no apps, no plastic."
-  },
-  "benefit.2.q": {
-    "es": "«Sin apps, sin estrés.»",
-    "en": "«No apps, no stress.»"
   },
   "benefit.3.h3": {
     "es": "No transferible, <em>verificada</em> al registrarse.",
     "en": "Non-transferable, <em>verified</em> at check-in."
   },
-  "benefit.3.p": {
-    "es": "ID con foto y QR revocable — segura, actualizable, siempre tuya.",
-    "en": "Photo-bound ID and revocable QR — secure, refreshable, always yours."
-  },
-  "benefit.3.q": {
-    "es": "«Tu tarjeta, tu identidad.»",
-    "en": "«Your card, your identity.»"
-  },
   "benefit.4.h3": {
     "es": "Un precio fijo, <em>descuentos todo el año.</em>",
     "en": "One flat price, <em>discounts all year.</em>"
-  },
-  "benefit.4.p": {
-    "es": "$299 al año — se paga sola en tan solo 3 rondas en cualquier campo aliado.",
-    "en": "$299 annually — pays for itself in as few as 3 rounds at any partner course."
-  },
-  "benefit.4.q": {
-    "es": "«Una membresía, acceso todo el año.»",
-    "en": "«One membership, all year access.»"
   },
   "network.eyebrow": {
     "es": "02 · Nuestra Red",
@@ -175,49 +95,9 @@
     "es": "Diseños de campeonatos, joyas municipales escondidas, y todo lo que cabe entre ambos — siempre un lugar extraordinario.",
     "en": "Championship resort layouts, tucked-away municipal gems, and everything between — always somewhere remarkable."
   },
-  "network.map.h3": {
-    "es": "El <em>mapa</em> del club",
-    "en": "The club <em>map</em>"
-  },
-  "network.map.coords": {
-    "es": "18°12'N · 66°30'O · 15 campos",
-    "en": "18°12'N · 66°30'W · 15 courses"
-  },
   "network.cta": {
     "es": "Ver el directorio completo →",
     "en": "View Full Course Directory →"
-  },
-  "card.eyebrow": {
-    "es": "03 · ID Digital",
-    "en": "03 · Digital ID"
-  },
-  "card.h2": {
-    "es": "Una tarjeta,<br/><em>¡mucho golf!</em>",
-    "en": "One card,<br/><em>a lot of golf!</em>"
-  },
-  "card.p": {
-    "es": "Un pase firmado para Apple y Google Wallet vive en tu teléfono. No transferible. Con foto. Revocable con un toque.",
-    "en": "A signed Apple & Google Wallet pass lives on your phone. Non-transferable. Photo-bound. Revocable in one tap."
-  },
-  "card.li.1": {
-    "es": "Escanea en cualquier pro shop — tarifa de miembro al instante",
-    "en": "Scan at any pro shop — instant member rate"
-  },
-  "card.li.2": {
-    "es": "Funciona sin conexión, no requiere señal",
-    "en": "Works offline, no signal required"
-  },
-  "card.li.3": {
-    "es": "Revocable y reemitible al instante",
-    "en": "Instantly revocable and re-issuable"
-  },
-  "card.li.4": {
-    "es": "Disponibilidad 24/7 — tu tarjeta nunca cierra",
-    "en": "24/7 availability — your card never closes"
-  },
-  "card.cta": {
-    "es": "Crea mi ID digital →",
-    "en": "Create My Digital ID →"
   },
   "faq.eyebrow": {
     "es": "03 · FAQ",
@@ -339,10 +219,6 @@
     "es": "Municipios",
     "en": "Municipios"
   },
-  "courses.search.placeholder": {
-    "es": "Buscar por nombre, pueblo o tipo…",
-    "en": "Search by name, town or type…"
-  },
   "courses.pill.all": {
     "es": "Todos",
     "en": "All"
@@ -362,14 +238,6 @@
   "courses.pill.club": {
     "es": "Country Club",
     "en": "Country Club"
-  },
-  "courses.count.all": {
-    "es": "Mostrando los {n} campos",
-    "en": "Showing all {n} courses"
-  },
-  "courses.count.filtered": {
-    "es": "Mostrando {n} de {total} campos",
-    "en": "Showing {n} of {total} courses"
   },
   "courses.empty": {
     "es": "Ningún campo coincide con tu búsqueda.",
