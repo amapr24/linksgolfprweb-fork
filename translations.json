@@ -76,6 +76,11 @@
     "es": "No. La membresía no es transferible y está vinculada a tu foto verificada. Cada miembro tiene un QR único atado a su identidad.",
     "en": "No. The membership is non-transferable and bound to your verified photo. Each member has a unique QR code tied to their identity."
   },
+  "faq.q.6": { "es": "¿Quién puede afiliarse?", "en": "Who can join?" },
+  "faq.a.6": {
+    "es": "Por el momento, la membresía está abierta solo a residentes de Puerto Rico. Podemos solicitar prueba de residencia al activar tu cuenta.",
+    "en": "Membership is currently open to Puerto Rico residents only. Proof of residency may be requested at activation."
+  },
   "faq.cta": { "es": "Ver todas las FAQs →", "en": "View All FAQs →" },
   "footer.brand.p": {
     "es": "Una sola membresía. Los mejores campos de Puerto Rico. Acceso exclusivo, conveniencia digital, ahorros reales.",
@@ -179,8 +184,16 @@
   },
   "faqp.m.2.q": { "es": "¿Para quién es?", "en": "Who is it for?" },
   "faqp.m.2.a": {
-    "es": "Residentes, visitantes frecuentes y snowbirds que juegan más de un puñado de rondas al año en la isla. La tarjeta se paga rápido a tarifas de miembro — típicamente en 3–4 rondas.",
-    "en": "Residents, frequent visitors, and snowbirds who play more than a handful of rounds a year on the island. The card pays for itself quickly at member rates — typically within 3–4 rounds."
+    "es": "Residentes de Puerto Rico que juegan más de un puñado de rondas al año. La tarjeta se paga rápido a tarifas de miembro — típicamente en 3–4 rondas.",
+    "en": "Puerto Rico residents who play more than a handful of rounds a year. The card pays for itself quickly at member rates — typically within 3–4 rounds."
+  },
+  "faqp.m.5.q": {
+    "es": "¿Necesito ser <em>residente de Puerto Rico?</em>",
+    "en": "Do I need to be a <em>Puerto Rico resident?</em>"
+  },
+  "faqp.m.5.a": {
+    "es": "Sí. Por el momento, Links Golf Membership está abierta solo a residentes de Puerto Rico. Podemos solicitar prueba de residencia al activar tu cuenta o al registrarte en el campo. Si visitas la isla con frecuencia pero vives fuera, escríbenos a <a href=\"mailto:hello@linksgolf.pr\">hello@linksgolf.pr</a> — estamos evaluando un programa para visitantes.",
+    "en": "Yes. Links Golf Membership is currently open to Puerto Rico residents only. Proof of residency may be requested at activation or at check-in. If you visit the island regularly but live elsewhere, email <a href=\"mailto:hello@linksgolf.pr\">hello@linksgolf.pr</a> — we're exploring a visitor program."
   },
   "faqp.m.3.q": { "es": "¿Hay un <em>plan familiar?</em>", "en": "Is there a <em>family plan?</em>" },
   "faqp.m.3.a": {
@@ -287,6 +300,10 @@
     "en": "Unlock every major course in Puerto Rico. Pays for itself in as few as 3–4 rounds.",
     "es": "Accede a todos los campos principales de Puerto Rico. Se paga solo en tan solo 3–4 rondas."
   },
+  "join.eligibility": {
+    "en": "Puerto Rico residents only",
+    "es": "Solo para residentes de Puerto Rico"
+  },
   "join.price.per": {
     "en": "Per year · Annual membership",
     "es": "Por año · Membresía anual"
@@ -312,8 +329,8 @@
   "join.field.photo.btn": { "en": "Take or Upload Photo", "es": "Tomar o Subir Foto" },
   "join.btn.continue": { "en": "Continue to Payment", "es": "Continuar al Pago" },
   "join.fine": {
-    "en": "By continuing, you agree to our Terms of Service.",
-    "es": "Al continuar, aceptas nuestros Términos de Servicio."
+    "en": "By continuing, you confirm you are a Puerto Rico resident and agree to our Terms of Service.",
+    "es": "Al continuar, confirmas que eres residente de Puerto Rico y aceptas nuestros Términos de Servicio."
   },
   "join.payment.title": { "en": "Links Golf Membership — Annual", "es": "Links Golf Membership — Anual" },
   "join.payment.sub": { "en": "12 months · 15 partner courses", "es": "12 meses · 15 campos aliados" },
