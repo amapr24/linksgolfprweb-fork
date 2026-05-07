@@ -176,8 +176,8 @@ footer a:hover { color: var(--sage-light); }
     </div>
     <div class="nav-cta" style="display:flex;align-items:center;gap:10px;">
       <button class="lang-toggle" data-lang-toggle type="button" aria-label="Switch language">EN</button>
-      <a href="index.html#join" class="btn btn-primary" id="navDesktopCTA" data-i18n="nav.cta">Get Your Card</a>
-      <button class="mobile-toggle" id="navToggle" data-i18n-attr="nav.menu.aria|aria-label" aria-label="Menu">
+      <a href="index.html#join" class="btn btn-primary" data-i18n="nav.cta">Get Your Card</a>
+      <button class="mobile-toggle" id="navToggle" aria-label="Menu">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
           <path id="menuOpen" d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
           <path id="menuClose" d="M6 18L18 6M6 6l12 12" stroke-linecap="round" style="display:none"/>
@@ -214,7 +214,10 @@ footer a:hover { color: var(--sage-light); }
     <div class="toolbar">
       <div class="search">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-        <input id="searchInput" type="text" placeholder="Search by name, town or type…" data-i18n-attr="courses.search.placeholder|placeholder"/>
+        <!-- FIX: data-i18n-attr wires the placeholder to the i18n system -->
+        <input id="searchInput" type="text"
+          placeholder="Search by name, town or type…"
+          data-i18n-attr="courses.search.placeholder|placeholder"/>
       </div>
       <div class="pills" id="filterPills">
         <button class="pill on" data-f="all" data-i18n="courses.pill.all">All</button>
@@ -357,12 +360,9 @@ function renderRows() {
   emptyMsg.style.display = list.length ? 'none' : 'block';
 }
 
-// Re-render count label and rows when language changes (rows have no
-// translatable cells today, but count label needs the new template)
 document.addEventListener('bgc:ready',      () => renderRows());
 document.addEventListener('bgc:langchange', () => renderRows());
 
-// Filter pills
 document.querySelectorAll('.pill').forEach(p => {
   p.addEventListener('click', () => {
     document.querySelectorAll('.pill').forEach(x => x.classList.remove('on'));
@@ -372,13 +372,11 @@ document.querySelectorAll('.pill').forEach(p => {
   });
 });
 
-// Search
 searchInput.addEventListener('input', e => {
   currentQuery = e.target.value.toLowerCase().trim();
   renderRows();
 });
 
-// Sorting
 document.querySelectorAll('th.sortable').forEach(th => {
   th.addEventListener('click', () => {
     const key = th.dataset.sort;
@@ -391,7 +389,6 @@ document.querySelectorAll('th.sortable').forEach(th => {
   });
 });
 
-// Mobile nav
 (function() {
   const toggle = document.getElementById('navToggle');
   const panel  = document.getElementById('mobilePanel');
