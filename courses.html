@@ -237,7 +237,7 @@ footer a:hover { color: var(--sage-light); }
             <th class="sortable" data-sort="loc"><span data-i18n="courses.th.muni">Municipio</span> <span class="arrow">▲</span></th>
             <th class="sortable" data-sort="type"><span data-i18n="courses.th.type">Type</span> <span class="arrow">▲</span></th>
             <th class="sortable" data-sort="holes"><span data-i18n="courses.th.holes">Holes</span> <span class="arrow">▲</span></th>
-            <th class="sortable" data-sort="off"><span data-i18n="courses.th.discount">Discount</span> <span class="arrow">▲</span></th>
+            <th class="sortable sorted desc" data-sort="off"><span data-i18n="courses.th.discount">Discount</span> <span class="arrow">▲</span></th>
           </tr>
         </thead>
         <tbody id="rows"></tbody>
@@ -311,8 +311,8 @@ const emptyMsg    = document.getElementById('emptyMsg');
 
 let currentFilter = 'all';
 let currentQuery  = '';
-let sortKey       = null;
-let sortDir       = 1;
+let sortKey       = 'off';
+let sortDir       = -1;
 
 function sortVal(c, key) {
   if (key === 'holes') return c.holes;
