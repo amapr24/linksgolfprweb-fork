@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="doc.title.terms">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Terms of Service · Links Golf Membership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="mobile.css"/>
+<style>
+:root {
+  --bg:         #f0ebe0;
+  --bg2:        #e8e1d3;
+  --cream:      #faf6ee;
+  --ink:        #111a13;
+  --ink-soft:   #2d3e30;
+  --muted:      #6b7260;
+  --line:       rgba(17,26,19,.10);
+  --sage:       oklch(58% 0.09 152);
+  --sage-2:     oklch(48% 0.09 152);
+  --sage-light: oklch(83% 0.07 152);
+  --radius:     12px;
+  --radius-lg:  20px;
+  --f-display:  "DM Serif Display", Georgia, serif;
+  --f-sans:     "Inter", system-ui, sans-serif;
+  --f-mono:     "DM Mono", ui-monospace, monospace;
+}
+*,*::before,*::after { box-sizing: border-box; }
+html,body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; overflow-x: hidden; }
+body { font-family: var(--f-sans); background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: .045; mix-blend-mode: multiply; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); background-size: 400px 400px; }
+h1,h2,h3,h4 { font-family: var(--f-display); font-weight: 400; letter-spacing: -.02em; color: var(--ink); margin: 0; text-wrap: balance; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+@media (max-width:600px) { .wrap { padding: 0 18px; } }
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--line); }
+body { padding-top: 80px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+@media (max-width:600px) { body { padding-top: 68px; } .nav-inner { height: 68px; } }
+.logo-img { height: 60px; width: auto; display: block; max-width: 240px; object-fit: contain; }
+@media (max-width:600px) { .logo-img { height: 48px; max-width: 200px; } }
+.footer-brand-img { height: 96px; width: auto; display: block; object-fit: contain; margin-bottom: 14px; }
+@media (max-width:600px) { .footer-brand-img { height: 76px; } }
+.logo { font-family: var(--f-display); font-size: 22px; letter-spacing: -.01em; display: flex; align-items: center; gap: 11px; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 12px; font-weight: 500; color: var(--ink-soft); letter-spacing: .06em; text-transform: uppercase; transition: color .2s; position: relative; padding-bottom: 2px; }
+.nav-links a:hover { color: var(--sage); }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; transition: all .25s ease; cursor: pointer; border: 1px solid transparent; }
+.btn-primary { background: var(--ink); color: var(--cream); }
+.btn-primary:hover { background: var(--sage-2); transform: translateY(-1px); box-shadow: 0 8px 20px -6px rgba(17,26,19,.35); }
+.lang-toggle { background: transparent; border: 1px solid var(--line); color: var(--ink-soft); font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; padding: 7px 14px; border-radius: 999px; cursor: pointer; transition: all .2s; }
+.lang-toggle:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.mobile-toggle { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.mobile-toggle svg { width: 20px; height: 20px; stroke: var(--ink); }
+.mobile-panel { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 18px 24px; flex-direction: column; gap: 16px; }
+.mobile-panel a { font-size: 17px; font-family: var(--f-display); }
+.mobile-panel.open { display: flex; }
+@media (max-width:860px) { .nav-links { display: none; } .mobile-toggle { display: inline-flex; } }
+
+/* PLACEHOLDER WARNING */
+.placeholder-warning { background: #b1352a; color: #fef9f7; text-align: center; padding: 14px 18px; font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em; line-height: 1.55; }
+.placeholder-warning strong { display: block; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 4px; }
+.placeholder-warning a { color: inherit; border-bottom: 1px solid currentColor; }
+@media (max-width:600px) { .placeholder-warning { padding: 12px 16px; font-size: 11px; } }
+
+/* PAGE HEAD */
+.page-head { padding: 32px 0 24px; position: relative; overflow: hidden; }
+@media (max-width:860px) { .page-head { padding: 20px 0 16px; } }
+.page-head::before { content: ""; position: absolute; right: -8%; top: -40%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(88,140,98,.1), transparent 65%); pointer-events: none; }
+.crumbs { font-family: var(--f-mono); font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.crumbs a:hover { color: var(--sage); }
+.page-head h1 { font-size: clamp(36px, 5vw, 64px); line-height: 1.0; letter-spacing: -.03em; position: relative; z-index: 2; }
+.page-head h1 em { color: var(--sage); font-style: italic; }
+.page-head p { font-size: 16px; color: var(--ink-soft); max-width: 620px; margin: 16px 0 0; position: relative; z-index: 2; line-height: 1.65; }
+
+/* LEGAL BODY */
+.legal-wrap { padding: 16px 0 80px; }
+.legal-body { max-width: 760px; }
+.legal-section { padding: 28px 0; border-top: 1px solid var(--line); }
+.legal-section:first-child { border-top: 0; padding-top: 8px; }
+.legal-section h2 { font-family: var(--f-display); font-size: clamp(22px, 2.4vw, 28px); margin-bottom: 14px; letter-spacing: -.02em; }
+.legal-section h2 em { color: var(--sage); font-style: italic; }
+.legal-section p { color: var(--ink-soft); line-height: 1.75; margin: 0 0 14px; }
+.legal-section p:last-child { margin-bottom: 0; }
+.legal-section ul { color: var(--ink-soft); line-height: 1.75; margin: 0 0 14px; padding-left: 20px; }
+.legal-section ul li { margin-bottom: 6px; }
+.legal-section a { color: var(--sage-2); border-bottom: 1px solid currentColor; transition: opacity .2s; }
+.legal-section a:hover { opacity: .65; }
+
+/* FOOTER */
+footer { background: var(--ink); color: var(--cream); padding: 64px 0 36px; border-top: 4px solid var(--sage); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; margin-bottom: 40px; }
+@media (max-width:700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+.footer-brand h3 { color: var(--cream); font-size: 30px; margin-bottom: 12px; letter-spacing: -.02em; }
+.footer-brand h3 em { color: var(--sage-light); font-style: italic; }
+.footer-brand p { color: rgba(250,246,238,.55); font-size: 13px; max-width: 280px; line-height: 1.7; }
+.footer-brand .tagline { font-family: var(--f-display); font-style: italic; color: var(--sage-light); font-size: 15px; margin-top: 10px; }
+footer h4 { font-family: var(--f-mono); color: rgba(140,190,130,.8); font-size: 10px; letter-spacing: .28em; text-transform: uppercase; margin-bottom: 14px; font-weight: 500; }
+footer a { display: block; color: rgba(250,246,238,.6); padding: 4px 0; font-size: 13px; transition: color .2s; }
+footer a:hover { color: var(--sage-light); }
+.footer-bot { display: flex; justify-content: space-between; border-top: 1px solid rgba(250,246,238,.1); padding-top: 24px; color: rgba(250,246,238,.35); font-size: 11px; font-family: var(--f-mono); letter-spacing: .1em; }
+@media (max-width:600px) { .footer-bot { flex-direction: column; gap: 10px; } }
+</style>
+</head>
+<body>
+
+<div class="placeholder-warning" role="alert">
+  <strong data-i18n="legal.placeholder.title">⚠ Placeholder Document</strong>
+  <span data-i18n="legal.placeholder.body">This is sample boilerplate text for layout review only. It has not been reviewed by counsel and must not be relied upon. Replace with final legal copy before launch.</span>
+</div>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="Links Golf Membership - Home">
+      <img class="logo-img" src="images/links-golf-membership-3.png" alt="Links Golf Membership"/>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="index.html#benefits" data-i18n="nav.benefits">Benefits</a>
+      <a href="index.html#network" data-i18n="nav.network">Our Network</a>
+      <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="courses.html" data-i18n="nav.courses">All Courses</a>
+    </div>
+    <div class="nav-cta" style="display:flex;align-items:center;gap:10px;">
+      <button class="lang-toggle" data-lang-toggle type="button" aria-label="Switch language">EN</button>
+      <a href="index.html#join" class="btn btn-primary" data-i18n="nav.cta">Get Your Card</a>
+      <button class="mobile-toggle" id="navToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+          <path id="menuOpen" d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          <path id="menuClose" d="M6 18L18 6M6 6l12 12" stroke-linecap="round" style="display:none"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="index.html#benefits" data-i18n="nav.benefits">Benefits</a>
+    <a href="index.html#network" data-i18n="nav.network">Our Network</a>
+    <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="courses.html" data-i18n="nav.courses">All Courses</a>
+    <a href="index.html#join" class="btn btn-primary" style="width:fit-content;margin-top:4px;" data-i18n="nav.cta">Get Your Card</a>
+  </div>
+</nav>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html" data-i18n="crumb.home">Home</a> / <span data-i18n="crumb.terms">Terms of Service</span></div>
+    <h1 data-i18n="terms.h1">Terms of <em>Service.</em></h1>
+    <p data-i18n="terms.intro">Last updated: 2026-05-07. Sample boilerplate provided for layout review only — not legally binding.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap legal-wrap">
+    <div class="legal-body">
+
+      <article class="legal-section">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing or using Links Golf Membership (the "Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not access or use the Service. We may update these Terms from time to time; continued use of the Service after changes constitutes acceptance of the revised Terms.</p>
+      </article>
+
+      <article class="legal-section">
+        <h2>2. Eligibility &amp; Account Registration</h2>
+        <p>You must be at least 18 years of age and capable of entering into a binding contract to register for a membership. You agree to provide accurate, current, and complete information during registration and to keep your account information up to date.</p>
+        <p>You are responsible for safeguarding your account credentials and for any activity that occurs under your account.</p>
+      </article>
+
+      <article class="legal-section">
+        <h2>3. Membership &amp; Billing</h2>
+        <p>Annual membership is $129 USD, payable upon registration. Memberships are valid for twelve (12) months from the activation date and do not auto-renew unless explicitly enabled by the member. Refunds are governed by our refund policy and applicable law.</p>
+        <ul>
+          <li>Payments are processed by our payment provider; we do not store full card details.</li>
+          <li>Taxes, where applicable, are the responsibility of the member.</li>
+          <li>Membership is non-transferable.</li>
+        </ul>
+      </article>
+
+      <article class="legal-section">
+        <h2>4. Use of the Service</h2>
+        <p>Your digital ID is issued solely to the registered member and is non-transferable. Misuse of the membership card — including but not limited to sharing, duplication, or fraudulent presentation — may result in immediate suspension or termination of your account without refund. The verification photo is used only to confirm member identity at participating courses.</p>
+      </article>
+
+      <article class="legal-section">
+        <h2>5. Course Access &amp; Conduct</h2>
+        <p>Member discounts and access privileges are subject to each partner course's availability, booking policies, dress codes, and rules of play. Links Golf Membership is not responsible for course-specific restrictions, blackout periods, or changes to a partner course's discount terms.</p>
+        <p>Members are expected to conduct themselves in accordance with each course's standards. Repeated violations reported by partner courses may result in termination of membership.</p>
+      </article>
+
+      <article class="legal-section">
+        <h2>6. Limitation of Liability</h2>
+        <p>The Service is provided on an "as is" and "as available" basis without warranties of any kind, express or implied. To the maximum extent permitted by law, Links Golf Membership shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from or related to your use of the Service.</p>
+      </article>
+
+      <article class="legal-section">
+        <h2>7. Termination</h2>
+        <p>We may suspend or terminate your access to the Service at any time, with or without notice, for any breach of these Terms or for any other reason at our sole discretion. You may cancel your membership at any time by contacting support; cancellation does not entitle you to a pro-rated refund unless required by law.</p>
+      </article>
+
+      <article class="legal-section">
+        <h2>8. Governing Law &amp; Contact</h2>
+        <p>These Terms are governed by the laws of the Commonwealth of Puerto Rico, without regard to its conflict of laws principles. Any disputes arising from or related to these Terms shall be resolved in the courts of San Juan, Puerto Rico.</p>
+        <p>Questions about these Terms? Contact <a href="mailto:hello@linksgolf.pr">hello@linksgolf.pr</a>.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="footer-brand-img" src="images/links-golf-membership-4.png" alt="Links Golf Membership"/>
+        <p data-i18n="footer.brand.p">One membership. Puerto Rico's finest courses. Exclusive access, digital convenience, genuine savings.</p>
+        <div class="tagline" data-i18n="footer.signature">play more, pay less.</div>
+      </div>
+      <div>
+        <h4 data-i18n="footer.col.explore">Explore</h4>
+        <a href="index.html#benefits" data-i18n="nav.benefits">Benefits</a>
+        <a href="index.html#network" data-i18n="footer.link.network">Our Network</a>
+        <a href="index.html#card" data-i18n="nav.card">Digital ID</a>
+        <a href="courses.html" data-i18n="nav.courses">All Courses</a>
+      </div>
+      <div>
+        <h4 data-i18n="footer.col.support">Support</h4>
+        <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+        <a href="mailto:hello@linksgolf.pr" data-i18n="footer.link.contact">Contact</a>
+        <a href="terms.html" data-i18n="footer.link.terms">Terms of Service</a>
+        <a href="privacy.html" data-i18n="footer.link.privacy">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span data-i18n="footer.copyright">© 2026 Links Golf Membership · Puerto Rico</span>
+      <span style="font-family:var(--f-display);font-style:italic;color:rgba(160,210,150,.5);" data-i18n="footer.signature">play more, pay less</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const panel = document.getElementById('mobilePanel');
+  const open = document.getElementById('menuOpen');
+  const close = document.getElementById('menuClose');
+  toggle.addEventListener('click', () => {
+    panel.classList.toggle('open');
+    const isOpen = panel.classList.contains('open');
+    open.style.display = isOpen ? 'none' : '';
+    close.style.display = isOpen ? '' : 'none';
+  });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    panel.classList.remove('open');
+    open.style.display = ''; close.style.display = 'none';
+  }));
+})();
+</script>
+<script src="languageManager.js" defer></script>
+</body>
+</html>

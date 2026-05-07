@@ -95,6 +95,16 @@
   "crumb.home": { "es": "Inicio", "en": "Home" },
   "nav.home": { "es": "Inicio", "en": "Home" },
   "courses.crumb": { "es": "Directorio de Campos", "en": "Course Directory" },
+  "crumb.terms": { "es": "Términos de Servicio", "en": "Terms of Service" },
+  "crumb.privacy": { "es": "Política de Privacidad", "en": "Privacy Policy" },
+  "doc.title.terms": { "es": "Términos de Servicio · Links Golf Membership", "en": "Terms of Service · Links Golf Membership" },
+  "doc.title.privacy": { "es": "Política de Privacidad · Links Golf Membership", "en": "Privacy Policy · Links Golf Membership" },
+  "terms.h1": { "es": "Términos de <em>Servicio.</em>", "en": "Terms of <em>Service.</em>" },
+  "terms.intro": { "es": "Última actualización: 2026-05-07. Texto de muestra para revisión de diseño únicamente — no es legalmente vinculante.", "en": "Last updated: 2026-05-07. Sample boilerplate provided for layout review only — not legally binding." },
+  "privacy.h1": { "es": "Política de <em>Privacidad.</em>", "en": "Privacy <em>Policy.</em>" },
+  "privacy.intro": { "es": "Última actualización: 2026-05-07. Texto de muestra para revisión de diseño únicamente — no es un aviso de privacidad vinculante.", "en": "Last updated: 2026-05-07. Sample boilerplate provided for layout review only — not a binding privacy notice." },
+  "legal.placeholder.title": { "es": "⚠ Documento de Marcador de Posición", "en": "⚠ Placeholder Document" },
+  "legal.placeholder.body": { "es": "Este es texto de muestra para revisión de diseño. No ha sido revisado por asesoría legal y no debe utilizarse como referencia. Reemplace con el texto legal definitivo antes del lanzamiento.", "en": "This is sample boilerplate text for layout review only. It has not been reviewed by counsel and must not be relied upon. Replace with final legal copy before launch." },
   "courses.h1": {
     "es": "Quince campos,<br/><em>una isla.</em>",
     "en": "Fifteen courses,<br/><em>one island.</em>"
