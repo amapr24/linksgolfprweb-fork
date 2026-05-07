@@ -50,7 +50,6 @@ body { padding-top: 80px; }
 .logo { font-family: var(--f-display); font-size: 22px; letter-spacing: -.01em; display: flex; align-items: center; gap: 11px; }
 .logo-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px rgba(255,255,255,.5), 0 2px 8px rgba(17,26,19,.2); flex-shrink: 0; }
 .logo-mark svg { width: 16px; height: 16px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-/* Brand logo images */
 .logo-img { height: 60px; width: auto; display: block; max-width: 240px; object-fit: contain; }
 @media (max-width:600px) { .logo-img { height: 48px; max-width: 200px; } }
 .mc-brand-img { height: 66px; width: auto; display: block; object-fit: contain; }
@@ -115,7 +114,7 @@ body { padding-top: 80px; }
 .mc-photo { width: 96px; height: 120px; border-radius: 6px; overflow: hidden; box-shadow: 0 0 0 1px rgba(160,210,150,.4) inset, 0 0 0 2px rgba(17,26,19,.4), 0 8px 16px rgba(0,0,0,0.4); background: linear-gradient(180deg, #3a5040, #253530); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .mc-photo svg { width: 48px; height: 48px; fill: rgba(160,210,150,.5); }
 .mc-photo img { width: 100%; height: 100%; object-fit: cover; }
-.mc-mid { margin-top: -45px; position: relative; }
+.mc-mid { margin-top: 8px; position: relative; }
 .mc-name { font-family: var(--f-display); font-size: 24px; font-weight: 400; letter-spacing: .01em; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 .mc-role { font-family: var(--f-mono); font-size: 11px; letter-spacing: .25em; color: rgba(160,210,150,.8); text-transform: uppercase; margin-top: 6px; }
 .mc-bot { display: flex; justify-content: space-between; align-items: flex-end; gap: 14px; }
@@ -209,44 +208,6 @@ body { padding-top: 80px; }
 .course-pill .c-off { font-family: var(--f-mono); font-size: 13px; font-weight: 600; color: var(--sage); white-space: nowrap; }
 .course-pill.featured .c-off { color: var(--sage-2); }
 
-/* DIGITAL CARD SECTION */
-.card-show-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
-@media (max-width:860px) { .card-show-grid { grid-template-columns: 1fr; } }
-.card-show-grid > .reveal:first-child { display: flex; flex-direction: column; }
-.checklist { list-style: none; padding: 0; margin: 18px 0 16px; display: flex; flex-direction: column; gap: 10px; }
-.checklist li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink-soft); }
-.check-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
-
-/* Digital card */
-.digital-card-col { display: flex; flex-direction: column; align-items: center; gap: 14px; justify-content: flex-start; padding-top: 28px; }
-.d-card { width: min(420px, 100%); aspect-ratio: 1.586 / 1; border-radius: 20px; color: var(--cream); background: radial-gradient(ellipse at 80% 10%, rgba(120,170,110,.18), transparent 55%), radial-gradient(ellipse at 10% 90%, rgba(60,100,65,.2), transparent 55%), linear-gradient(135deg, #0c1a0e 0%, #152a17 45%, #1a3320 100%); box-shadow: 0 1px 0 rgba(255,255,255,.07) inset, 0 0 0 1px rgba(140,190,130,.2), 0 28px 70px -18px rgba(17,26,19,.6), 0 12px 32px -8px rgba(88,140,98,.18); overflow: hidden; position: relative; }
-.d-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 30%, rgba(160,210,150,.15) 45%, rgba(220,245,210,.35) 50%, rgba(160,210,150,.15) 55%, transparent 70%); mix-blend-mode: overlay; transform: translateX(var(--sheen, -50%)); transition: transform .3s ease; pointer-events: none; }
-.d-card::after { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(160,200,140,.04) 0 2px, transparent 2px 6px); pointer-events: none; }
-.d-card-inner { position: relative; padding: 24px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; transform: translateZ(30px); }
-.d-card-top { display: flex; justify-content: space-between; align-items: flex-start; }
-.d-card-brand { font-family: var(--f-display); font-size: 17px; line-height: 1.05; }
-.d-card-brand span { color: var(--sage-light); }
-.d-card-brand small { display: block; font-family: var(--f-mono); font-size: 8px; letter-spacing: .3em; color: rgba(160,210,150,.7); margin-top: 5px; font-weight: 500; }
-.d-card-valid { display: none; }
-.d-card-mid { display: block; }
-.d-card-photo { width: 60px; height: 76px; border-radius: 5px; overflow: hidden; box-shadow: 0 0 0 1px rgba(160,210,150,.6) inset, 0 0 0 2px rgba(17,26,19,.4), 0 4px 10px rgba(0,0,0,.3); background: linear-gradient(180deg, #3a5040, #253530); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.d-card-photo svg { width: 32px; height: 32px; fill: rgba(160,210,150,.5); }
-.d-card-photo img { width: 100%; height: 100%; object-fit: cover; display: none; }
-.d-card-name { font-family: var(--f-display); font-size: 19px; font-weight: 400; letter-spacing: .01em; }
-.d-card-role { font-family: var(--f-mono); font-size: 9px; letter-spacing: .25em; color: rgba(160,210,150,.8); text-transform: uppercase; margin-top: 4px; }
-.d-card-bot { display: flex; justify-content: space-between; align-items: flex-end; }
-.d-card-num small { display: block; font-family: var(--f-mono); font-size: 8px; letter-spacing: .3em; color: rgba(160,210,150,.7); margin-bottom: 3px; text-transform: uppercase; }
-.d-card-num span { font-family: var(--f-mono); font-size: 13px; letter-spacing: .08em; }
-.d-card-qr { width: 50px; height: 50px; border-radius: 6px; background: #fff; padding: 4px; display: grid; grid-template-columns: repeat(9,1fr); gap: 1px; }
-.d-card-qr i { background: var(--ink); border-radius: 1px; }
-.d-card-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--sage-2) 0 50%, var(--sage-light) 50%); transform: translateZ(0); backface-visibility: hidden; will-change: transform; }
-
-/* Wallet add buttons */
-.wallet-actions { display: flex; gap: 10px; width: min(400px, 100%); margin-top: auto; }
-.wallet-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px; border: 1px solid var(--line); border-radius: 10px; background: var(--cream); font-size: 11px; font-weight: 600; color: var(--ink); transition: background .2s; cursor: pointer; }
-.wallet-btn:hover { background: var(--bg2); }
-.wallet-btn svg { width: 16px; height: 16px; }
-
 /* FAQ */
 .faq-dark { background: var(--bg2); }
 .faq-dark .eyebrow { color: var(--sage); }
@@ -314,10 +275,9 @@ body { padding-top: 80px; }
 .submit:hover { background: var(--sage-2); transform: translateY(-1px); box-shadow: 0 10px 24px -8px rgba(88,140,98,.4); }
 .fine { font-family: var(--f-mono); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: rgba(250,246,238,.4); text-align: center; margin-top: 12px; }
 
-/* Inline error messages — used in both panels */
+/* Inline error messages */
 .inline-error { display: none; margin-top: 12px; background: rgba(200,60,60,.15); border: 1px solid rgba(200,60,60,.3); color: #f4a4a4; font-size: 13px; border-radius: 8px; padding: 10px 14px; line-height: 1.5; }
 .inline-error.show { display: block; }
-/* Special info style for "already a member" — green instead of red */
 .inline-error.info { background: rgba(88,140,98,.15); border-color: rgba(140,190,130,.35); color: var(--sage-light); }
 
 #payment-error { display: none; margin-top: 10px; background: rgba(200,60,60,.15); border: 1px solid rgba(200,60,60,.3); color: #f4a4a4; font-size: 13px; border-radius: 8px; padding: 10px 14px; }
@@ -347,18 +307,77 @@ body { padding-top: 80px; }
 .back-btn { padding: 10px 16px; background: rgba(250,246,238,.07); border: 1px solid rgba(250,246,238,.1); color: rgba(250,246,238,.6); border-radius: 9px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background .2s; }
 .back-btn:hover { background: rgba(250,246,238,.12); }
 
-/* Success step */
-.id-success { text-align: center; padding: 4px 0 0; }
-.id-success .checkmark { width: 44px; height: 44px; border-radius: 50%; background: var(--sage); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; }
-.id-success .checkmark svg { width: 20px; height: 20px; stroke: white; stroke-width: 2.5; fill: none; }
-.id-success h3 { font-size: 19px; color: var(--cream); margin-bottom: 4px; }
-.id-success p { color: rgba(250,246,238,.6); font-size: 12px; line-height: 1.5; }
-/* Success-card: same look as hero .m-card, sized to fit the form panel */
-.success-card-wrap { display: flex; justify-content: center; margin: 18px auto 0; }
-.success-card-wrap .m-card { width: 100%; max-width: 360px; }
-.success-meta { display: flex; justify-content: space-between; gap: 12px; max-width: 360px; margin: 12px auto 0; font-family: var(--f-mono); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(160,210,150,.7); }
-.success-meta strong { font-weight: 600; color: var(--cream); letter-spacing: .12em; }
-.id-wallet-btns { display: flex; flex-direction: column; gap: 8px; max-width: 360px; margin: 14px auto 0; }
+/* DIGITAL CARD SECTION */
+.card-show-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
+@media (max-width:860px) { .card-show-grid { grid-template-columns: 1fr; } }
+.card-show-grid > .reveal:first-child { display: flex; flex-direction: column; }
+.checklist { list-style: none; padding: 0; margin: 18px 0 16px; display: flex; flex-direction: column; gap: 10px; }
+.checklist li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink-soft); }
+.check-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
+
+/* Digital card */
+.digital-card-col { display: flex; flex-direction: column; align-items: center; gap: 14px; justify-content: flex-start; padding-top: 28px; }
+.d-card { width: min(420px, 100%); aspect-ratio: 1.586 / 1; border-radius: 20px; color: var(--cream); background: radial-gradient(ellipse at 80% 10%, rgba(120,170,110,.18), transparent 55%), radial-gradient(ellipse at 10% 90%, rgba(60,100,65,.2), transparent 55%), linear-gradient(135deg, #0c1a0e 0%, #152a17 45%, #1a3320 100%); box-shadow: 0 1px 0 rgba(255,255,255,.07) inset, 0 0 0 1px rgba(140,190,130,.2), 0 28px 70px -18px rgba(17,26,19,.6), 0 12px 32px -8px rgba(88,140,98,.18); overflow: hidden; position: relative; }
+.d-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 30%, rgba(160,210,150,.15) 45%, rgba(220,245,210,.35) 50%, rgba(160,210,150,.15) 55%, transparent 70%); mix-blend-mode: overlay; transform: translateX(var(--sheen, -50%)); transition: transform .3s ease; pointer-events: none; }
+.d-card::after { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(160,200,140,.04) 0 2px, transparent 2px 6px); pointer-events: none; }
+.d-card-inner { position: relative; padding: 24px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; transform: translateZ(30px); }
+.d-card-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.d-card-brand { font-family: var(--f-display); font-size: 17px; line-height: 1.05; }
+.d-card-brand span { color: var(--sage-light); }
+.d-card-brand small { display: block; font-family: var(--f-mono); font-size: 8px; letter-spacing: .3em; color: rgba(160,210,150,.7); margin-top: 5px; font-weight: 500; }
+.d-card-valid { display: none; }
+.d-card-mid { display: block; }
+.d-card-photo { width: 60px; height: 76px; border-radius: 5px; overflow: hidden; box-shadow: 0 0 0 1px rgba(160,210,150,.6) inset, 0 0 0 2px rgba(17,26,19,.4), 0 4px 10px rgba(0,0,0,.3); background: linear-gradient(180deg, #3a5040, #253530); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.d-card-photo svg { width: 32px; height: 32px; fill: rgba(160,210,150,.5); }
+.d-card-photo img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.d-card-name { font-family: var(--f-display); font-size: 19px; font-weight: 400; letter-spacing: .01em; }
+.d-card-role { font-family: var(--f-mono); font-size: 9px; letter-spacing: .25em; color: rgba(160,210,150,.8); text-transform: uppercase; margin-top: 4px; }
+.d-card-bot { display: flex; justify-content: space-between; align-items: flex-end; }
+.d-card-num small { display: block; font-family: var(--f-mono); font-size: 8px; letter-spacing: .3em; color: rgba(160,210,150,.7); margin-bottom: 3px; text-transform: uppercase; }
+.d-card-num span { font-family: var(--f-mono); font-size: 13px; letter-spacing: .08em; }
+.d-card-qr { width: 50px; height: 50px; border-radius: 6px; background: #fff; padding: 4px; display: grid; grid-template-columns: repeat(9,1fr); gap: 1px; }
+.d-card-qr i { background: var(--ink); border-radius: 1px; }
+.d-card-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--sage-2) 0 50%, var(--sage-light) 50%); transform: translateZ(0); backface-visibility: hidden; will-change: transform; }
+
+/* Wallet add buttons */
+.wallet-actions { display: flex; gap: 10px; width: min(400px, 100%); margin-top: auto; }
+.wallet-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px; border: 1px solid var(--line); border-radius: 10px; background: var(--cream); font-size: 11px; font-weight: 600; color: var(--ink); transition: background .2s; cursor: pointer; }
+.wallet-btn:hover { background: var(--bg2); }
+.wallet-btn svg { width: 16px; height: 16px; }
+
+/* ── Success step ── */
+.id-success { padding: 4px 0 0; }
+
+/* Checkmark sits inline with "You're in." */
+.id-success-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+.id-success-header h3 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--cream);
+}
+.id-success .checkmark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.id-success .checkmark svg { width: 18px; height: 18px; stroke: white; stroke-width: 2.5; fill: none; }
+.id-success > p { color: rgba(250,246,238,.6); font-size: 12px; line-height: 1.5; margin: 0 0 14px; }
+
+/* Success card — fill the panel width */
+.success-card-wrap { display: flex; justify-content: center; }
+.success-card-wrap .m-card { width: 100%; max-width: none; }
+
+.id-wallet-btns { display: flex; flex-direction: column; gap: 8px; margin: 14px 0 0; }
 .id-wallet-btn { display: flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 18px; background: rgba(250,246,238,.08); border: 1px solid rgba(140,190,130,.25); border-radius: 10px; color: var(--cream); font-size: 12px; font-weight: 600; cursor: pointer; transition: background .2s; }
 .id-wallet-btn:hover { background: rgba(250,246,238,.14); }
 
@@ -410,7 +429,7 @@ footer a:hover { color: var(--sage-light); }
     <div class="nav-cta" style="display:flex;align-items:center;gap:10px;">
       <button class="lang-toggle" data-lang-toggle type="button" aria-label="Switch language">EN</button>
       <a href="#join" class="btn btn-primary" data-i18n="nav.cta">Get Your Card</a>
-      <button class="mobile-toggle" id="navToggle" data-i18n-attr="nav.menu.aria|aria-label" aria-label="Menu">
+      <button class="mobile-toggle" id="navToggle" aria-label="Menu">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path id="menuOpen" d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/><path id="menuClose" d="M6 18L18 6M6 6l12 12" stroke-linecap="round" style="display:none"/></svg>
       </button>
     </div>
@@ -530,23 +549,23 @@ footer a:hover { color: var(--sage-light); }
     <div class="faq-list">
       <details class="faq-item reveal">
         <summary><span class="faq-q" data-i18n="faq.q.1">What is Links Golf Membership?</span><span class="faq-icon"></span></summary>
-        <p class="faq-a" data-i18n="faq.a.1">Your all-in-one membership to premium golf across Puerto Rico. Instant access to exclusive discounts at every partner course, a digital wallet pass, and a verified photo ID — no physical card needed.</p>
+        <p class="faq-a" data-i18n="faq.a.1">Your all-in-one membership to premium golf across Puerto Rico.</p>
       </details>
       <details class="faq-item reveal">
         <summary><span class="faq-q" data-i18n="faq.q.4">Do I need to download an app?</span><span class="faq-icon"></span></summary>
-        <p class="faq-a" data-i18n="faq.a.4">Not at all. Your pass lives in your built-in Wallet — the same place as your boarding passes and credit cards.</p>
+        <p class="faq-a" data-i18n="faq.a.4">Not at all. Your pass lives in your built-in Wallet.</p>
       </details>
       <details class="faq-item reveal">
         <summary><span class="faq-q" data-i18n="faq.q.2">How do I use it?</span><span class="faq-icon"></span></summary>
-        <p class="faq-a" data-i18n="faq.a.2">Simply scan your digital QR code from Apple Wallet or Google Wallet at any partner course's pro shop. The system validates your membership in seconds and unlocks your member rate.</p>
+        <p class="faq-a" data-i18n="faq.a.2">Simply scan your digital QR code from Apple Wallet or Google Wallet at any partner course's pro shop.</p>
       </details>
       <details class="faq-item reveal">
         <summary><span class="faq-q" data-i18n="faq.q.3">What if I lose my phone?</span><span class="faq-icon"></span></summary>
-        <p class="faq-a" data-i18n="faq.a.3">No problem. Instantly invalidate your current QR code. As soon as you have a new device, we re-issue your pass immediately — no forms, no waiting.</p>
+        <p class="faq-a" data-i18n="faq.a.3">No problem. Instantly invalidate your current QR code.</p>
       </details>
       <details class="faq-item reveal">
         <summary><span class="faq-q" data-i18n="faq.q.5">Is the membership transferable?</span><span class="faq-icon"></span></summary>
-        <p class="faq-a" data-i18n="faq.a.5">No. The membership is non-transferable and bound to your verified photo. Each member has a unique QR code tied to their identity.</p>
+        <p class="faq-a" data-i18n="faq.a.5">No. The membership is non-transferable and bound to your verified photo.</p>
       </details>
     </div>
     <div style="margin-top:24px;text-align:center;" class="reveal"><a href="faq.html" class="btn" style="background:var(--sage);color:white;" data-i18n="faq.cta">View All FAQs →</a></div>
@@ -559,63 +578,55 @@ footer a:hover { color: var(--sage-light); }
     <div class="join-wrap">
       <div class="join-grid">
         <div class="join-left">
-          <h2>Start playing<br/><em>more</em> today.</h2>
-          <p>Unlock every major course in Puerto Rico. Pays for itself in as few as 3–4 rounds.</p>
+          <h2 data-i18n="join.h2">Start playing <em>more</em> today.</h2>
+          <p data-i18n="join.p">Unlock every major course in Puerto Rico. Pays for itself in as few as 3–4 rounds.</p>
           <div class="price-block">
             <div class="price"><small>$</small>299</div>
-            <div class="per">Per year · Annual membership</div>
+            <div class="per" data-i18n="join.price.per">Per year · Annual membership</div>
             <ul>
-              <li>Access to 15 partner courses</li>
-              <li>Up to 25% off all green fees</li>
-              <li>Apple &amp; Google Wallet digital pass</li>
-              <li>Photo-verified, non-transferable ID</li>
-              <li>Instant re-issuance if lost</li>
+              <li data-i18n="join.price.li.1">Access to 15 partner courses</li>
+              <li data-i18n="join.price.li.2">Up to 25% off all green fees</li>
+              <li data-i18n="join.price.li.3">Apple &amp; Google Wallet digital pass</li>
+              <li data-i18n="join.price.li.4">Photo-verified, non-transferable ID</li>
+              <li data-i18n="join.price.li.5">Instant re-issuance if lost</li>
             </ul>
           </div>
         </div>
         <div class="join-right">
           <div class="steps">
-            <div class="step active" id="step-1"><span class="n">01 </span>Player Details</div>
-            <div class="step" id="step-2"><span class="n">02 </span>Payment</div>
-            <div class="step" id="step-3"><span class="n">03 </span>Digital ID</div>
+            <div class="step active" id="step-1"><span class="n">01 </span><span data-i18n="join.step.1">Player Details</span></div>
+            <div class="step" id="step-2"><span class="n">02 </span><span data-i18n="join.step.2">Payment</span></div>
+            <div class="step" id="step-3"><span class="n">03 </span><span data-i18n="join.step.3">Digital ID</span></div>
           </div>
 
           <!-- ═══ PANEL 1 — Player Details ═══ -->
           <div class="form-panel" id="panel-1">
-
-            <!-- Split first / last name -->
             <div class="form-row">
               <div class="field">
-                <label>First Name *</label>
+                <label data-i18n="join.field.firstname">First Name *</label>
                 <input id="inp-firstname" type="text" placeholder="Juan"/>
               </div>
               <div class="field">
-                <label>Last Name *</label>
+                <label data-i18n="join.field.lastname">Last Name *</label>
                 <input id="inp-lastname" type="text" placeholder="Pérez"/>
               </div>
             </div>
-
-            <!-- Phone + Email side by side -->
             <div class="form-row">
               <div class="field">
-                <label>Mobile *</label>
+                <label data-i18n="join.field.phone">Mobile *</label>
                 <input id="inp-phone" type="tel" placeholder="+1 (787) 000-0000"/>
               </div>
               <div class="field">
-                <label>Email Address *</label>
+                <label data-i18n="join.field.email">Email Address *</label>
                 <input id="inp-email" type="email" placeholder="juan@example.com"/>
               </div>
             </div>
-
-            <!-- Address full width -->
             <div class="field" style="margin-bottom:12px;">
-              <label>Address</label>
+              <label data-i18n="join.field.address">Address</label>
               <input id="inp-address" type="text" placeholder="Street, City, PR, ZIP"/>
             </div>
-
-            <!-- Photo — required -->
             <div class="field" style="margin-bottom:18px;">
-              <label>Verification Photo *</label>
+              <label data-i18n="join.field.photo">Verification Photo *</label>
               <div class="selfie-wrap">
                 <div class="selfie-preview" id="selfiePreview">
                   <img id="selfieImg" alt=""/>
@@ -624,66 +635,69 @@ footer a:hover { color: var(--sage-light); }
                 <div>
                   <label for="selfieInput" class="selfie-label">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                    Take or Upload Photo
+                    <span data-i18n="join.field.photo.btn">Take or Upload Photo</span>
                   </label>
                   <input type="file" id="selfieInput" accept="image/*" style="display:none;"/>
-                  <p style="font-size:11px;color:rgba(250,246,238,.4);margin:5px 0 0;">Required · Front-facing · Used for your Digital ID only.</p>
+                  <p style="font-size:11px;color:rgba(250,246,238,.4);margin:5px 0 0;" data-i18n="join.field.photo.hint">Required · Front-facing · Used for your Digital ID only.</p>
                 </div>
               </div>
             </div>
-
-            <!-- Inline error message -->
             <div id="form-error-1" class="inline-error"></div>
-
             <button class="submit" id="btn-next-1">
-              Continue to Payment
+              <span data-i18n="join.btn.continue">Continue to Payment</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
-            <div class="fine">By continuing, you agree to our Terms of Service.</div>
+            <div class="fine" data-i18n="join.fine">By continuing, you agree to our Terms of Service.</div>
           </div>
 
           <!-- ═══ PANEL 2 — Payment ═══ -->
           <div class="form-panel" id="panel-2" style="display:none;">
             <div class="pay-summary">
               <div class="pay-summary-row">
-                <div><div class="order-title">Links Golf Membership — Annual</div><div class="order-sub">12 months · 15 partner courses</div></div>
+                <div>
+                  <div class="order-title" data-i18n="join.payment.title">Links Golf Membership — Annual</div>
+                  <div class="order-sub" data-i18n="join.payment.sub">12 months · 15 partner courses</div>
+                </div>
                 <div class="order-price">$299</div>
               </div>
               <hr class="pay-divider"/>
-              <div class="pay-total"><span>Total (USD)</span><strong>$299.00</strong></div>
+              <div class="pay-total"><span data-i18n="join.payment.total">Total (USD)</span><strong>$299.00</strong></div>
             </div>
-
-            <!-- Cardholder name — prefilled from step 1, editable -->
             <div class="field" style="margin-bottom:12px;">
-              <label>Cardholder Name</label>
+              <label data-i18n="join.field.cardname">Cardholder Name</label>
               <input id="inp-cardname" type="text" placeholder="Name on card"/>
             </div>
-
-            <div class="field" style="margin-bottom:0;"><label>Card Details</label><div id="card-element"></div></div>
+            <div class="field" style="margin-bottom:0;">
+              <label data-i18n="join.field.carddetails">Card Details</label>
+              <div id="card-element"></div>
+            </div>
             <div class="secure-badge">
               <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s-8-4-8-11V5l8-3 8 3v6c0 7-8 11-8 11z"/></svg>
-              <span>256-bit Encrypted · Powered by Stripe</span>
+              <span data-i18n="join.secure">256-bit Encrypted · Powered by Stripe</span>
             </div>
             <div id="payment-error"></div>
             <div style="display:flex;gap:10px;margin-top:14px;">
               <button class="back-btn" id="btn-back-2">← Back</button>
               <button class="submit" id="btn-authorize" style="flex:1;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                Authorize &amp; Activate
+                <span data-i18n="join.btn.authorize">Authorize &amp; Activate</span>
               </button>
             </div>
-            <div class="fine">We never store your card details. Processed securely via Stripe.</div>
+            <div class="fine" data-i18n="join.fine.payment">We never store your card details. Processed securely via Stripe.</div>
           </div>
 
           <!-- ═══ PANEL 3 — Success ═══ -->
           <div class="form-panel" id="panel-3" style="display:none;">
             <div class="id-success">
-              <div class="checkmark"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <h3>You're in.</h3>
-              <p>Membership active. A confirmation has been sent to your email.</p>
+              <!-- Checkmark inline with heading -->
+              <div class="id-success-header">
+                <div class="checkmark"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <h3 data-i18n="join.success.h3">You're in.</h3>
+              </div>
+              <p data-i18n="join.success.p">Membership active. A confirmation has been sent to your email.</p>
             </div>
 
-            <!-- Live membership card preview -->
+            <!-- Full-width membership card -->
             <div class="success-card-wrap">
               <article class="m-card" id="successCard">
                 <div class="mc-inner">
@@ -693,12 +707,12 @@ footer a:hover { color: var(--sage-light); }
                   </div>
                   <div class="mc-mid">
                     <div class="mc-name" id="success-card-name">YOUR NAME HERE</div>
-                    <div class="mc-role">Founding Member · 2026–27</div>
+                    <div class="mc-role" data-i18n="mcard.role">Founding Member · 2026–27</div>
                   </div>
                   <div class="mc-bot">
                     <div class="mc-meta">
-                      <div class="mc-num"><small>Member No.</small><span id="success-card-num">LGM-#####</span></div>
-                      <div class="mc-num"><small>Valid Until</small><span id="success-card-valid">## / ##</span></div>
+                      <div class="mc-num"><small data-i18n="mcard.num.label">Member No.</small><span id="success-card-num">LGM-#####</span></div>
+                      <div class="mc-num"><small data-i18n="mcard.valid.label">Valid Until</small><span id="success-card-valid">## / ##</span></div>
                     </div>
                     <div class="mc-qr" id="successQr" aria-hidden="true"></div>
                   </div>
@@ -707,16 +721,10 @@ footer a:hover { color: var(--sage-light); }
               </article>
             </div>
 
-            <!-- Compact meta strip below card -->
-            <div class="success-meta">
-              <span>Valid Until <strong id="success-expires">—</strong></span>
-              <span>ID <strong id="success-member-num">—</strong></span>
-            </div>
-
             <!-- Wallet buttons -->
             <div class="id-wallet-btns">
-              <button class="id-wallet-btn"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09z"/></svg>Add to Apple Wallet</button>
-              <button class="id-wallet-btn"><svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;"><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke="#4285F4" stroke-width="2"/><circle cx="17" cy="12" r="1.5" fill="#EA4335"/></svg>Add to Google Wallet</button>
+              <button class="id-wallet-btn"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09z"/></svg><span data-i18n="join.wallet.apple">Add to Apple Wallet</span></button>
+              <button class="id-wallet-btn"><svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;"><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke="#4285F4" stroke-width="2"/><circle cx="17" cy="12" r="1.5" fill="#EA4335"/></svg><span data-i18n="join.wallet.google">Add to Google Wallet</span></button>
             </div>
           </div>
 
@@ -801,22 +809,20 @@ function activateCourse(idx) {
   document.querySelectorAll('.pin').forEach(p => p.classList.toggle('active', +p.dataset.idx === idx));
   document.querySelectorAll('.course-pill').forEach(p => p.classList.toggle('active', +p.dataset.idx === idx));
 }
-// Render pins in geographic (source) order so positions are stable
 COURSES.forEach((c, i) => {
   const pin = document.createElement('div');
-  pin.className = 'pin';
+  pin.className = 'pin' + (c.featured ? ' featured' : '');
   pin.dataset.idx = i;
   pin.style.cssText = `left:${c.x}%;top:${c.y}%`;
   pin.innerHTML = `<div class="pin-dot"></div><div class="pin-label">${c.name}</div>`;
   pin.addEventListener('click', () => activateCourse(i));
   map.appendChild(pin);
 });
-// Render pills in a randomized order so no single course appears "featured" by position
 const pillOrder = COURSES.map((_, i) => i).sort(() => Math.random() - 0.5);
 pillOrder.forEach(i => {
   const c = COURSES[i];
   const pill = document.createElement('div');
-  pill.className = 'course-pill';
+  pill.className = 'course-pill' + (c.featured ? ' featured' : '');
   pill.dataset.idx = i;
   pill.innerHTML = `<div><div class="c-name">${c.name}</div><div class="c-loc">${c.loc}</div></div><div class="c-off">${c.off}</div>`;
   pill.addEventListener('click', () => activateCourse(i));
@@ -852,10 +858,10 @@ document.getElementById('selfieInput').addEventListener('change', function() {
   r.onload = e => {
     const img = document.getElementById('selfieImg');
     img.src = e.target.result; img.style.display = 'block';
-    img.nextElementSibling && (img.nextElementSibling.style.display = 'none');
-    // Clear any photo error styling
+    const svgEl = img.nextElementSibling;
+    if (svgEl) svgEl.style.display = 'none';
     document.getElementById('selfiePreview').classList.remove('error');
-    // Update hero card photo (first .mc-photo only)
+    // Update hero card photo
     const mc = document.querySelector('#mCard .mc-photo');
     if (mc) mc.innerHTML = `<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;" alt=""/>`;
     // Update success card photo
@@ -863,12 +869,12 @@ document.getElementById('selfieInput').addEventListener('change', function() {
     if (sp) sp.innerHTML = `<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;" alt=""/>`;
     // Update digital card photo if present
     const di = document.getElementById('dCardImg');
-    if (di) { di.src = e.target.result; di.style.display = 'block'; di.nextElementSibling && (di.nextElementSibling.style.display = 'none'); }
+    if (di) { di.src = e.target.result; di.style.display = 'block'; const svgSib = di.nextElementSibling; if (svgSib) svgSib.style.display = 'none'; }
   };
   r.readAsDataURL(f);
 });
 
-// ─── Name live update — combines first + last on both cards ──────────────────
+// ─── Name live update ────────────────────────────────────────────────────────
 function updateCardName() {
   const first = document.getElementById('inp-firstname').value.trim();
   const last  = document.getElementById('inp-lastname').value.trim();
@@ -903,10 +909,7 @@ function hideError(id) {
   if (el) { el.className = 'inline-error'; el.textContent = ''; }
 }
 
-// ─── Phone normalizer — strips everything except digits ──────────────────────
-function normalizePhone(raw) {
-  return raw.replace(/\D/g, '');
-}
+function normalizePhone(raw) { return raw.replace(/\D/g, ''); }
 
 // ─── Supabase ────────────────────────────────────────────────────────────────
 const SUPABASE_URL = 'https://kmnyjtzdjhrezzwekbko.supabase.co';
@@ -917,12 +920,9 @@ try { sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY); }
 catch (e) { console.warn('Supabase init failed:', e); }
 
 // ─── Stripe ──────────────────────────────────────────────────────────────────
-// TODO: Replace 'pk_test_...' with your real Stripe publishable key once you
-// sign up at stripe.com. The key lives only here — never use the secret key
-// in client-side code.
 let stripe, cardElement;
 try {
-  stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx'); // ← REPLACE WITH REAL KEY
+  stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
   const els = stripe.elements();
   cardElement = els.create('card', { style: { base: { fontFamily: 'Inter, sans-serif', fontSize: '14px', color: '#faf6ee', '::placeholder': { color: 'rgba(250,246,238,.28)' } }, invalid: { color: '#f4a4a4' } } });
   cardElement.mount('#card-element');
@@ -944,19 +944,9 @@ document.getElementById('btn-next-1').addEventListener('click', async () => {
   const address   = document.getElementById('inp-address').value.trim() || null;
   const file      = document.getElementById('selfieInput').files[0];
 
-  // ── Validation ──────────────────────────────────────────────────────────
-  if (!firstName || !lastName) {
-    showError('form-error-1', 'Please enter your first and last name.');
-    return;
-  }
-  if (!email || !email.includes('@')) {
-    showError('form-error-1', 'Please enter a valid email address.');
-    return;
-  }
-  if (!phoneRaw) {
-    showError('form-error-1', 'A mobile number is required to create your unique member ID.');
-    return;
-  }
+  if (!firstName || !lastName) { showError('form-error-1', 'Please enter your first and last name.'); return; }
+  if (!email || !email.includes('@')) { showError('form-error-1', 'Please enter a valid email address.'); return; }
+  if (!phoneRaw) { showError('form-error-1', 'A mobile number is required to create your unique member ID.'); return; }
   if (!file) {
     document.getElementById('selfiePreview').classList.add('error');
     showError('form-error-1', 'A verification photo is required. It will appear on your digital membership card.');
@@ -964,14 +954,13 @@ document.getElementById('btn-next-1').addEventListener('click', async () => {
   }
 
   const full_name = `${firstName} ${lastName}`;
-  const phone     = normalizePhone(phoneRaw); // digits only for storage & matching
+  const phone     = normalizePhone(phoneRaw);
 
   const btn = document.getElementById('btn-next-1');
   const originalBtnHtml = btn.innerHTML;
   btn.disabled = true; btn.textContent = 'Saving…';
 
   try {
-    // ── Upload photo ────────────────────────────────────────────────────
     let photo_url = null;
     if (file && sb) {
       const path = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
@@ -981,68 +970,32 @@ document.getElementById('btn-next-1').addEventListener('click', async () => {
     }
 
     if (sb) {
-      // Email is stored lowercased for clean lookups, but is NOT unique —
-      // families may legitimately share an email (e.g. dad pays for son).
-      // Identity is enforced via phone uniqueness only.
       const emailLower = email.toLowerCase();
 
-      // ── Check for ACTIVE member with same phone ──────────────────────
-      const { data: activeMember } = await sb
-        .from('members')
-        .select('id')
-        .eq('phone', phone)
-        .eq('status', 'active')
-        .maybeSingle();
-
+      const { data: activeMember } = await sb.from('members').select('id').eq('phone', phone).eq('status', 'active').maybeSingle();
       if (activeMember) {
-        showError('form-error-1',
-          'This phone number already has an active Links Golf membership. ' +
-          'If you need help accessing your account, contact us at hello@linksgolf.pr.',
-          true /* info style */
-        );
+        showError('form-error-1', 'This phone number already has an active Links Golf membership. If you need help accessing your account, contact us at hello@linksgolf.pr.', true);
         return;
       }
 
-      // ── Check for PENDING member with same phone (drop-off reuse) ────
-      const { data: pendingMember } = await sb
-        .from('members')
-        .select('id')
-        .eq('phone', phone)
-        .eq('status', 'pending')
-        .maybeSingle();
-
+      const { data: pendingMember } = await sb.from('members').select('id').eq('phone', phone).eq('status', 'pending').maybeSingle();
       if (pendingMember) {
-        // Reuse existing pending row, update details in case anything changed
         memberRowId = pendingMember.id;
-        const { error } = await sb.from('members')
-          .update({ full_name, first_name: firstName, last_name: lastName, email: emailLower, address, photo_url })
-          .eq('id', pendingMember.id);
+        const { error } = await sb.from('members').update({ full_name, first_name: firstName, last_name: lastName, email: emailLower, address, photo_url }).eq('id', pendingMember.id);
         if (error) throw error;
       } else {
-        // Fresh signup
         const newId = crypto.randomUUID();
         memberRowId = newId;
-        const { error } = await sb.from('members')
-          .insert({ id: newId, full_name, first_name: firstName, last_name: lastName, email: emailLower, phone, address, photo_url, status: 'pending' });
+        const { error } = await sb.from('members').insert({ id: newId, full_name, first_name: firstName, last_name: lastName, email: emailLower, phone, address, photo_url, status: 'pending' });
         if (error) {
-          // Catch phone unique constraint violation (race-condition safety net)
-          if (error.code === '23505') {
-            showError('form-error-1',
-              'This phone number is already registered. ' +
-              'If you started signing up before, please continue or contact hello@linksgolf.pr.'
-            );
-            return;
-          }
+          if (error.code === '23505') { showError('form-error-1', 'This phone number is already registered. If you started signing up before, please continue or contact hello@linksgolf.pr.'); return; }
           throw error;
         }
       }
     }
 
-    // ── Prefill cardholder name from step 1 ─────────────────────────────
     document.getElementById('inp-cardname').value = full_name;
-
     goStep(2);
-
   } catch (err) {
     showError('form-error-1', 'Could not save your details: ' + (err.message || err));
   } finally {
@@ -1050,23 +1003,9 @@ document.getElementById('btn-next-1').addEventListener('click', async () => {
   }
 });
 
-// ─── Step 2 — Back button ────────────────────────────────────────────────────
 document.getElementById('btn-back-2').addEventListener('click', () => goStep(1));
 
 // ─── Step 2 — Authorize & Activate ──────────────────────────────────────────
-// TODO (Stripe): Before the fake delays below, add real payment confirmation:
-//
-//   const { paymentMethod, error: pmError } = await stripe.createPaymentMethod({
-//     type: 'card',
-//     card: cardElement,
-//     billing_details: { name: document.getElementById('inp-cardname').value }
-//   });
-//   if (pmError) { showPaymentError(pmError.message); overlay.classList.remove('show'); return; }
-//
-//   Then send paymentMethod.id to your server/Edge Function to create a
-//   Stripe PaymentIntent and confirm it. Only call the Supabase activation
-//   update AFTER payment succeeds on the server.
-//
 document.getElementById('btn-authorize').addEventListener('click', async () => {
   const overlay = document.getElementById('processing-overlay');
   overlay.classList.add('show');
@@ -1075,20 +1014,16 @@ document.getElementById('btn-authorize').addEventListener('click', async () => {
   document.getElementById('proc-msg').textContent = 'Activating Your Card...';
   await new Promise(r => setTimeout(r, 1200));
 
-  const num       = 'LGM-' + String(Math.floor(10000 + Math.random() * 90000));
+  const num         = 'LGM-' + String(Math.floor(10000 + Math.random() * 90000));
   const activatedAt = new Date();
   const expiresAt   = new Date(activatedAt);
-  expiresAt.setFullYear(expiresAt.getFullYear() + 1); // exactly 1 year
+  expiresAt.setFullYear(expiresAt.getFullYear() + 1);
+
+  // Format for inside the card: MM/YY
+  const validStr = String(expiresAt.getMonth() + 1).padStart(2, '0') + '/' + String(expiresAt.getFullYear()).slice(2);
 
   if (sb && memberRowId) {
-    const { error } = await sb.from('members')
-      .update({
-        member_number: num,
-        status:        'active',
-        activated_at:  activatedAt.toISOString(),
-        expires_at:    expiresAt.toISOString()
-      })
-      .eq('id', memberRowId);
+    const { error } = await sb.from('members').update({ member_number: num, status: 'active', activated_at: activatedAt.toISOString(), expires_at: expiresAt.toISOString() }).eq('id', memberRowId);
     if (error) {
       overlay.classList.remove('show');
       showError('form-error-1', 'Activation error: ' + error.message);
@@ -1097,23 +1032,19 @@ document.getElementById('btn-authorize').addEventListener('click', async () => {
     }
   }
 
-  // Update hero card number
+  // Update hero card
   document.getElementById('card-num').textContent = num;
+  document.getElementById('card-valid').textContent = validStr;
   const dnum = document.getElementById('d-card-num'); if (dnum) dnum.textContent = num;
 
-  // Populate the success-card (in panel 3)
+  // Populate success card
   const fullName = `${document.getElementById('inp-firstname').value.trim()} ${document.getElementById('inp-lastname').value.trim()}`.trim() || 'YOUR NAME HERE';
-  const sCardName = document.getElementById('success-card-name');
-  const sCardNum  = document.getElementById('success-card-num');
-  if (sCardName) sCardName.textContent = fullName;
-  if (sCardNum)  sCardNum.textContent  = num;
-
-  // Populate the meta strip
-  const expiryFormatted = expiresAt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  const snEl = document.getElementById('success-member-num');
-  const seEl = document.getElementById('success-expires');
-  if (snEl) snEl.textContent = num;
-  if (seEl) seEl.textContent = expiryFormatted;
+  const sCardName  = document.getElementById('success-card-name');
+  const sCardNum   = document.getElementById('success-card-num');
+  const sCardValid = document.getElementById('success-card-valid');
+  if (sCardName)  sCardName.textContent  = fullName;
+  if (sCardNum)   sCardNum.textContent   = num;
+  if (sCardValid) sCardValid.textContent = validStr;
 
   overlay.classList.remove('show');
   goStep(3);
