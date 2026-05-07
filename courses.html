@@ -113,10 +113,8 @@ body { padding-top: 80px; }
 .dir td { padding: 18px 20px; vertical-align: middle; }
 .dir td.num { font-family: var(--f-mono); font-size: 10px; color: var(--muted); letter-spacing: .1em; width: 52px; }
 .dir td.name { font-family: var(--f-display); font-size: 18px; letter-spacing: -.01em; }
-.dir td.name .featured-tag { display: inline-block; margin-left: 9px; font-family: var(--f-mono); font-size: 8px; letter-spacing: .2em; text-transform: uppercase; background: var(--sage-pale); color: var(--sage-2); border: 1px solid var(--sage-light); padding: 2px 7px; border-radius: 4px; vertical-align: middle; font-weight: 600; }
 .dir td.loc { color: var(--ink-soft); font-size: 13px; }
 .dir td.off { font-family: var(--f-mono); font-weight: 500; color: var(--sage-2); font-size: 13px; }
-.dir tr.featured td.off { color: var(--sage); font-weight: 700; }
 
 .type-badge { display: inline-flex; padding: 4px 9px; border-radius: 999px; font-family: var(--f-mono); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; font-weight: 500; }
 .type-Resort        { background: rgba(88,140,98,.12);  color: var(--sage-2); }
@@ -289,21 +287,21 @@ footer a:hover { color: var(--sage-light); }
 
 <script>
 const COURSES = [
-  { name:"Bahia Beach Resort & Golf Club",       loc:"Rio Grande",    type:"Resort",        holes:18, off:20, featured:false },
-  { name:"Caguas Real Golf & Country Club",      loc:"Caguas",        type:"Semi-Private",  holes:18, off:15, featured:false },
-  { name:"Club Deportivo del Oeste",             loc:"Cabo Rojo",     type:"Public",        holes:18, off:15, featured:false },
-  { name:"Coco Beach Golf & Country Club",       loc:"Rio Grande",    type:"Semi-Private",  holes:36, off:15, featured:false },
-  { name:"Costa Caribe Golf Club",               loc:"Ponce",         type:"Semi-Private",  holes:27, off:15, featured:false },
-  { name:"El Conquistador Resort",               loc:"Las Croabas",   type:"Resort",        holes:18, off:20, featured:false },
-  { name:"El Legado Golf Resort",                loc:"Guayama",       type:"Resort",        holes:18, off:20, featured:false },
-  { name:"Dorado del Mar Beach & Golf Resort",   loc:"Dorado",        type:"Resort",        holes:18, off:20, featured:false },
-  { name:"Fort Buchanan Golf Course",            loc:"Fort Buchanan", type:"Public",        holes:9,  off:15, featured:false },
-  { name:"Palmas Del Mar Country Club",          loc:"Humacao",       type:"Country Club",  holes:36, off:20, featured:false },
-  { name:"Punta Borinquen Golf Course",          loc:"Ramey Base",    type:"Semi-Private",  holes:18, off:15, featured:false },
-  { name:"Rio Bayamon Golf Course",              loc:"Bayamon",       type:"Public",        holes:18, off:15, featured:false },
-  { name:"Royal Isabela Golf Course",            loc:"Isabela",       type:"Resort",        holes:18, off:20, featured:true  },
-  { name:"TPC Dorado Beach Resort & Club",       loc:"Dorado",        type:"Resort",        holes:72, off:25, featured:true  },
-  { name:"Wyndham Grand Rio Mar",                loc:"Rio Grande",    type:"Resort",        holes:36, off:20, featured:true  },
+  { name:"Bahia Beach Resort & Golf Club",       loc:"Rio Grande",    type:"Resort",        holes:18, off:20},
+  { name:"Caguas Real Golf & Country Club",      loc:"Caguas",        type:"Semi-Private",  holes:18, off:15},
+  { name:"Club Deportivo del Oeste",             loc:"Cabo Rojo",     type:"Public",        holes:18, off:15},
+  { name:"Coco Beach Golf & Country Club",       loc:"Rio Grande",    type:"Semi-Private",  holes:36, off:15},
+  { name:"Costa Caribe Golf Club",               loc:"Ponce",         type:"Semi-Private",  holes:27, off:15},
+  { name:"El Conquistador Resort",               loc:"Las Croabas",   type:"Resort",        holes:18, off:20},
+  { name:"El Legado Golf Resort",                loc:"Guayama",       type:"Resort",        holes:18, off:20},
+  { name:"Dorado del Mar Beach & Golf Resort",   loc:"Dorado",        type:"Resort",        holes:18, off:20},
+  { name:"Fort Buchanan Golf Course",            loc:"Fort Buchanan", type:"Public",        holes:9,  off:15},
+  { name:"Palmas Del Mar Country Club",          loc:"Humacao",       type:"Country Club",  holes:36, off:20},
+  { name:"Punta Borinquen Golf Course",          loc:"Ramey Base",    type:"Semi-Private",  holes:18, off:15},
+  { name:"Rio Bayamon Golf Course",              loc:"Bayamon",       type:"Public",        holes:18, off:15},
+  { name:"Royal Isabela Golf Course",            loc:"Isabela",       type:"Resort",        holes:18, off:20},
+  { name:"TPC Dorado Beach Resort & Club",       loc:"Dorado",        type:"Resort",        holes:72, off:25},
+  { name:"Wyndham Grand Rio Mar",                loc:"Rio Grande",    type:"Resort",        holes:36, off:20},
 ];
 
 const tbody       = document.getElementById('rows');
@@ -340,9 +338,9 @@ function renderRows() {
     const num = String(i + 1).padStart(2, '0');
     const typeCls = c.type.replace(/\s/g, '-');
     const offLabel = c.off + '% OFF';
-    return `<tr class="${c.featured ? 'featured' : ''}">
+    return `<tr>
       <td class="num" data-l="#">${num}</td>
-      <td class="name" data-l="Course">${c.name}${c.featured ? '<span class="featured-tag">Featured</span>' : ''}</td>
+      <td class="name" data-l="Course">${c.name}</td>
       <td class="loc"  data-l="Municipio">${c.loc}</td>
       <td data-l="Type"><span class="type-badge type-${typeCls}">${c.type}</span></td>
       <td data-l="Holes" style="font-family:var(--f-mono);font-size:13px;">${c.holes}</td>

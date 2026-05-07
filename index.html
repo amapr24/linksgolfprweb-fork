@@ -185,7 +185,6 @@ body { padding-top: 80px; }
 .pin-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--sage-light); box-shadow: 0 0 0 0 rgba(160,210,150,.5); transition: transform .3s ease; position: relative; }
 .pin-dot::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid rgba(160,210,150,.45); animation: pin-pulse 2.5s ease-out infinite; }
 @keyframes pin-pulse { 0% { transform: scale(.6); opacity: 1; } 100% { transform: scale(2.2); opacity: 0; } }
-.pin.featured .pin-dot { background: var(--sage); box-shadow: 0 0 14px rgba(88,140,98,.6); }
 .pin:hover .pin-dot { transform: scale(1.4); }
 .pin-label { position: absolute; left: 50%; bottom: calc(100% + 4px); transform: translateX(-50%); white-space: nowrap; font-family: var(--f-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; background: var(--cream); color: var(--ink); padding: 2px 6px; border-radius: 3px; opacity: 0; transition: opacity .25s ease; pointer-events: none; }
 .pin:hover { z-index: 4; }
@@ -206,7 +205,6 @@ body { padding-top: 80px; }
 .course-pill .c-name { font-family: var(--f-display); font-size: 17px; color: var(--ink); }
 .course-pill .c-loc { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; color: var(--muted); text-transform: uppercase; margin-top: 3px; }
 .course-pill .c-off { font-family: var(--f-mono); font-size: 13px; font-weight: 600; color: var(--sage); white-space: nowrap; }
-.course-pill.featured .c-off { color: var(--sage-2); }
 
 /* FAQ */
 .faq-dark { background: var(--bg2); }
@@ -787,21 +785,21 @@ buildQR(document.getElementById('successQr'));
 
 // ─── PR Map ──────────────────────────────────────────────────────────────────
 const COURSES = [
-  { name:"Punta Borinquen",          loc:"Aguadilla",     off:"15% OFF", x:9.0,  y:22.0, featured:false },
-  { name:"Royal Isabela",            loc:"Isabela",       off:"20% OFF", x:14.0, y:18.5, featured:true  },
-  { name:"Club Deportivo del Oeste", loc:"Cabo Rojo",     off:"15% OFF", x:7.5,  y:65.0, featured:false },
-  { name:"TPC Dorado Beach",         loc:"Dorado",        off:"25% OFF", x:49.0, y:21.5, featured:true  },
-  { name:"Dorado del Mar",           loc:"Dorado",        off:"20% OFF", x:51.5, y:23.0, featured:false },
-  { name:"Rio Bayamon",              loc:"Bayamón",       off:"15% OFF", x:54.5, y:28.0, featured:false },
-  { name:"Fort Buchanan",            loc:"Guaynabo",      off:"15% OFF", x:57.5, y:25.5, featured:false },
-  { name:"Bahia Beach",              loc:"Rio Grande",    off:"20% OFF", x:70.0, y:29.0, featured:false },
-  { name:"Wyndham Rio Mar",          loc:"Rio Grande",    off:"20% OFF", x:73.0, y:30.5, featured:true  },
-  { name:"Coco Beach",               loc:"Rio Grande",    off:"15% OFF", x:67.0, y:27.5, featured:false },
-  { name:"El Conquistador",          loc:"Las Croabas",   off:"20% OFF", x:79.5, y:35.0, featured:false },
-  { name:"Caguas Real",              loc:"Caguas",        off:"15% OFF", x:60.0, y:47.0, featured:false },
-  { name:"Palmas del Mar",           loc:"Humacao",       off:"20% OFF", x:72.0, y:62.0, featured:true  },
-  { name:"Costa Caribe",             loc:"Ponce",         off:"15% OFF", x:33.5, y:75.0, featured:false },
-  { name:"El Legado",                loc:"Guayama",       off:"20% OFF", x:57.5, y:79.0, featured:false },
+  { name:"Punta Borinquen",          loc:"Aguadilla",     off:"15% OFF", x:9.0,  y:22.0},
+  { name:"Royal Isabela",            loc:"Isabela",       off:"20% OFF", x:14.0, y:18.5},
+  { name:"Club Deportivo del Oeste", loc:"Cabo Rojo",     off:"15% OFF", x:7.5,  y:65.0},
+  { name:"TPC Dorado Beach",         loc:"Dorado",        off:"25% OFF", x:49.0, y:21.5},
+  { name:"Dorado del Mar",           loc:"Dorado",        off:"20% OFF", x:51.5, y:23.0},
+  { name:"Rio Bayamon",              loc:"Bayamón",       off:"15% OFF", x:54.5, y:28.0},
+  { name:"Fort Buchanan",            loc:"Guaynabo",      off:"15% OFF", x:57.5, y:25.5},
+  { name:"Bahia Beach",              loc:"Rio Grande",    off:"20% OFF", x:70.0, y:29.0},
+  { name:"Wyndham Rio Mar",          loc:"Rio Grande",    off:"20% OFF", x:73.0, y:30.5},
+  { name:"Coco Beach",               loc:"Rio Grande",    off:"15% OFF", x:67.0, y:27.5},
+  { name:"El Conquistador",          loc:"Las Croabas",   off:"20% OFF", x:79.5, y:35.0},
+  { name:"Caguas Real",              loc:"Caguas",        off:"15% OFF", x:60.0, y:47.0},
+  { name:"Palmas del Mar",           loc:"Humacao",       off:"20% OFF", x:72.0, y:62.0},
+  { name:"Costa Caribe",             loc:"Ponce",         off:"15% OFF", x:33.5, y:75.0},
+  { name:"El Legado",                loc:"Guayama",       off:"20% OFF", x:57.5, y:79.0},
 ];
 const map = document.getElementById('prMap');
 const aside = document.getElementById('mapAside');
@@ -811,7 +809,7 @@ function activateCourse(idx) {
 }
 COURSES.forEach((c, i) => {
   const pin = document.createElement('div');
-  pin.className = 'pin' + (c.featured ? ' featured' : '');
+  pin.className = 'pin';
   pin.dataset.idx = i;
   pin.style.cssText = `left:${c.x}%;top:${c.y}%`;
   pin.innerHTML = `<div class="pin-dot"></div><div class="pin-label">${c.name}</div>`;
@@ -822,7 +820,7 @@ const pillOrder = COURSES.map((_, i) => i).sort(() => Math.random() - 0.5);
 pillOrder.forEach(i => {
   const c = COURSES[i];
   const pill = document.createElement('div');
-  pill.className = 'course-pill' + (c.featured ? ' featured' : '');
+  pill.className = 'course-pill';
   pill.dataset.idx = i;
   pill.innerHTML = `<div><div class="c-name">${c.name}</div><div class="c-loc">${c.loc}</div></div><div class="c-off">${c.off}</div>`;
   pill.addEventListener('click', () => activateCourse(i));

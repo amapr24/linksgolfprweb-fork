@@ -129,10 +129,6 @@ h1 {
   0%   { transform: scale(.6); opacity: 1; }
   100% { transform: scale(2.2); opacity: 0; }
 }
-.pin.featured .pin-dot {
-  background: var(--sage);
-  box-shadow: 0 0 14px rgba(88,140,98,.6);
-}
 </style>
 </head>
 <body>
@@ -205,27 +201,27 @@ h1 {
 
 <script>
 const COURSES = [
-  { name:"Punta Borinquen",          x:9.0,  y:22.0, featured:false },
-  { name:"Royal Isabela",            x:14.0, y:18.5, featured:true  },
-  { name:"Club Deportivo del Oeste", x:7.5,  y:65.0, featured:false },
-  { name:"TPC Dorado Beach",         x:49.0, y:21.5, featured:true  },
-  { name:"Dorado del Mar",           x:51.5, y:23.0, featured:false },
-  { name:"Rio Bayamon",              x:54.5, y:28.0, featured:false },
-  { name:"Fort Buchanan",            x:57.5, y:25.5, featured:false },
-  { name:"Bahia Beach",              x:70.0, y:29.0, featured:false },
-  { name:"Wyndham Rio Mar",          x:73.0, y:30.5, featured:true  },
-  { name:"Coco Beach",               x:67.0, y:27.5, featured:false },
-  { name:"El Conquistador",          x:79.5, y:35.0, featured:false },
-  { name:"Caguas Real",              x:60.0, y:47.0, featured:false },
-  { name:"Palmas del Mar",           x:72.0, y:62.0, featured:true  },
-  { name:"Costa Caribe",             x:33.5, y:75.0, featured:false },
-  { name:"El Legado",                x:57.5, y:79.0, featured:false },
+  { name:"Punta Borinquen",          x:9.0,  y:22.0},
+  { name:"Royal Isabela",            x:14.0, y:18.5},
+  { name:"Club Deportivo del Oeste", x:7.5,  y:65.0},
+  { name:"TPC Dorado Beach",         x:49.0, y:21.5},
+  { name:"Dorado del Mar",           x:51.5, y:23.0},
+  { name:"Rio Bayamon",              x:54.5, y:28.0},
+  { name:"Fort Buchanan",            x:57.5, y:25.5},
+  { name:"Bahia Beach",              x:70.0, y:29.0},
+  { name:"Wyndham Rio Mar",          x:73.0, y:30.5},
+  { name:"Coco Beach",               x:67.0, y:27.5},
+  { name:"El Conquistador",          x:79.5, y:35.0},
+  { name:"Caguas Real",              x:60.0, y:47.0},
+  { name:"Palmas del Mar",           x:72.0, y:62.0},
+  { name:"Costa Caribe",             x:33.5, y:75.0},
+  { name:"El Legado",                x:57.5, y:79.0},
 ];
 
 document.querySelectorAll('[data-pins]').forEach(map => {
   COURSES.forEach(c => {
     const pin = document.createElement('div');
-    pin.className = 'pin' + (c.featured ? ' featured' : '');
+    pin.className = 'pin';
     pin.style.cssText = `left:${c.x}%;top:${c.y}%`;
     pin.innerHTML = '<div class="pin-dot"></div>';
     map.appendChild(pin);
