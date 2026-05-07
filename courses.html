@@ -39,8 +39,13 @@ a { color: inherit; text-decoration: none; }
 
 /* NAV */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--line); }
-body { padding-top: 68px; }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+body { padding-top: 80px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+@media (max-width:600px) { body { padding-top: 68px; } .nav-inner { height: 68px; } }
+.logo-img { height: 60px; width: auto; display: block; max-width: 240px; object-fit: contain; }
+@media (max-width:600px) { .logo-img { height: 48px; max-width: 200px; } }
+.footer-brand-img { height: 96px; width: auto; display: block; object-fit: contain; margin-bottom: 14px; }
+@media (max-width:600px) { .footer-brand-img { height: 76px; } }
 .logo { font-family: var(--f-display); font-size: 22px; letter-spacing: -.01em; display: flex; align-items: center; gap: 11px; }
 .logo-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px rgba(255,255,255,.5), 0 2px 8px rgba(17,26,19,.2); flex-shrink: 0; }
 .logo-mark svg { width: 16px; height: 16px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -161,16 +166,12 @@ footer a:hover { color: var(--sage-light); }
 
 <nav class="nav">
   <div class="wrap nav-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-mark">
-        <svg viewBox="0 0 24 24"><path d="M6 2v20M6 4l12 4-12 4"/></svg>
-      </span>
-      <span>Links Golf Membership</span>
+    <a href="index.html" class="logo" aria-label="Links Golf Membership - Home">
+      <img class="logo-img" src="images/links-golf-membership-3.png" alt="Links Golf Membership"/>
     </a>
     <div class="nav-links">
       <a href="index.html#benefits" data-i18n="nav.benefits">Benefits</a>
-      <a href="index.html#network" data-i18n="nav.network">Courses</a>
-      <a href="index.html#card" data-i18n="nav.card">Digital ID</a>
+      <a href="index.html#network" data-i18n="nav.network">Our Network</a>
       <a href="faq.html" data-i18n="nav.faq">FAQ</a>
       <a href="courses.html" class="active" data-i18n="nav.courses">All Courses</a>
     </div>
@@ -187,8 +188,7 @@ footer a:hover { color: var(--sage-light); }
   </div>
   <div class="mobile-panel" id="mobilePanel">
     <a href="index.html#benefits" data-i18n="nav.benefits">Benefits</a>
-    <a href="index.html#network" data-i18n="nav.network">Courses</a>
-    <a href="index.html#card" data-i18n="nav.card">Digital ID</a>
+    <a href="index.html#network" data-i18n="nav.network">Our Network</a>
     <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     <a href="courses.html" data-i18n="nav.courses">All Courses</a>
     <a href="index.html#join" class="btn btn-primary" style="width:fit-content;margin-top:4px;" data-i18n="nav.cta">Get Your Card</a>
@@ -260,7 +260,7 @@ footer a:hover { color: var(--sage-light); }
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h3>Links <em>Golf</em><br/>Membership</h3>
+        <img class="footer-brand-img" src="images/links-golf-membership-4.png" alt="Links Golf Membership"/>
         <p data-i18n="footer.brand.p">One membership. Puerto Rico's finest courses. Exclusive access, digital convenience, genuine savings.</p>
         <div class="tagline" data-i18n="footer.signature">play more, pay less.</div>
       </div>

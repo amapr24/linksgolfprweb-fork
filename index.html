@@ -241,7 +241,7 @@ body { padding-top: 80px; }
 .join-wrap { background: var(--ink); color: var(--cream); border-radius: var(--radius-lg); padding: 36px; position: relative; overflow: hidden; }
 @media (max-width:700px) { .join-wrap { padding: 28px 18px; border-radius: 0; } }
 .join-wrap::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 20%, rgba(88,140,98,.2), transparent 180%), radial-gradient(ellipse at 80% 80%, rgba(60,100,65,.1), transparent 100%); pointer-events: none; }
-.join-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; position: relative; z-index: 2; align-items: start; }
+.join-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; position: relative; z-index: 2; align-items: center; }
 @media (max-width:860px) { .join-grid { grid-template-columns: 1fr; } }
 .join-left h2 { color: var(--cream); font-size: clamp(30px, 3.8vw, 48px); line-height: 1.05; }
 .join-left h2 em { color: var(--sage-light); font-style: italic; }
@@ -375,7 +375,6 @@ body { padding-top: 80px; }
 
 /* Success card — fill the panel width */
 .success-card-wrap { display: flex; justify-content: center; }
-.success-card-wrap .m-card { width: 100%; max-width: none; }
 
 .id-wallet-btns { display: flex; flex-direction: column; gap: 8px; margin: 14px 0 0; }
 .id-wallet-btn { display: flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 18px; background: rgba(250,246,238,.08); border: 1px solid rgba(140,190,130,.25); border-radius: 10px; color: var(--cream); font-size: 12px; font-weight: 600; cursor: pointer; transition: background .2s; }
