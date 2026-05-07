@@ -1010,6 +1010,10 @@ document.getElementById('btn-authorize').addEventListener('click', async () => {
   const overlay = document.getElementById('processing-overlay');
   overlay.classList.add('show');
   document.getElementById('proc-msg').textContent = 'Verifying Payment...';
+  // TODO: replace this mock delay with stripe.confirmCardPayment(clientSecret, {
+  //   payment_method: { card: cardElement, billing_details: { name, email, phone,
+  //   address: { line1: <inp-address>, country: 'US' } } } }). Stripe's card Element
+  //   already collects ZIP itself; passing billing_details improves AVS coverage.
   await new Promise(r => setTimeout(r, 1800));
   document.getElementById('proc-msg').textContent = 'Activating Your Card...';
   await new Promise(r => setTimeout(r, 1200));
