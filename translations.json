@@ -105,7 +105,7 @@
   "courses.stat.1": { "es": "Campos aliados", "en": "Partner Courses" },
   "courses.stat.2": { "es": "Descuento de miembro", "en": "Member Discount" },
   "courses.stat.3": { "es": "Hoyos totales", "en": "Total Holes" },
-  "courses.stat.4": { "es": "Municipios", "en": "Municipios" },
+  "courses.stat.4": { "es": "Membresía", "en": "Membership" },
   "courses.search.placeholder": {
     "es": "Buscar por nombre, municipio o tipo…",
     "en": "Search by name, town or type…"
