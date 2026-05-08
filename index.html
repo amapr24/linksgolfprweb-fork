@@ -245,6 +245,10 @@ body { padding-top: 80px; }
 .join-left h2 em { color: var(--sage-light); font-style: italic; }
 .join-left p { color: rgba(250,246,238,.7); margin-top: 14px; font-size: 14px; }
 
+/* Eligibility note (residency) */
+.eligibility-note { display: inline-flex; align-items: center; gap: 8px; margin: 14px 0 0; padding: 7px 12px; background: rgba(140,190,130,.12); border: 1px solid rgba(140,190,130,.32); border-radius: 999px; font-family: var(--f-mono); font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--sage-light); }
+.eligibility-note svg { width: 12px; height: 12px; stroke: var(--sage-light); fill: none; stroke-width: 2; flex-shrink: 0; }
+
 /* Price block */
 .price-block { margin-top: 24px; padding: 20px; border: 1px solid rgba(140,190,130,.2); border-radius: 14px; background: rgba(250,246,238,.03); }
 .price-block .price { font-family: var(--f-display); font-size: 64px; line-height: 1; letter-spacing: -.03em; color: var(--sage-light); }
@@ -552,6 +556,10 @@ footer a:hover { color: var(--sage-light); }
         <p class="faq-a" data-i18n="faq.a.1">Your all-in-one membership to premium golf across Puerto Rico.</p>
       </details>
       <details class="faq-item reveal">
+        <summary><span class="faq-q" data-i18n="faq.q.6">Who can join?</span><span class="faq-icon"></span></summary>
+        <p class="faq-a" data-i18n="faq.a.6">Membership is currently open to Puerto Rico residents only. Proof of residency may be requested at activation.</p>
+      </details>
+      <details class="faq-item reveal">
         <summary><span class="faq-q" data-i18n="faq.q.4">Do I need to download an app?</span><span class="faq-icon"></span></summary>
         <p class="faq-a" data-i18n="faq.a.4">Not at all. Your pass lives in your built-in Wallet.</p>
       </details>
@@ -580,6 +588,10 @@ footer a:hover { color: var(--sage-light); }
         <div class="join-left">
           <h2 data-i18n="join.h2">Start playing <em>more</em> today.</h2>
           <p data-i18n="join.p">Unlock every major course in Puerto Rico. Pays for itself in as few as 3–4 rounds.</p>
+          <div class="eligibility-note" role="note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="join.eligibility">Puerto Rico residents only</span>
+          </div>
           <div class="price-block">
             <div class="price"><small>$</small>199</div>
             <div class="per" data-i18n="join.price.per">Per year · Annual membership</div>
@@ -647,7 +659,7 @@ footer a:hover { color: var(--sage-light); }
               <span data-i18n="join.btn.continue">Continue to Payment</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
-            <div class="fine" data-i18n="join.fine">By continuing, you agree to our Terms of Service.</div>
+            <div class="fine" data-i18n="join.fine">By continuing, you confirm you are a Puerto Rico resident and agree to our Terms of Service.</div>
           </div>
 
           <!-- ═══ PANEL 2 — Payment ═══ -->
