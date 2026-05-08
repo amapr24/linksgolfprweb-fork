@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="doc.title.home">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Links Golf Membership · Play More, Pay Less</title>
+<link rel="icon" type="image/png" href="images/links golf membership social media kit_photo profile 1.png"/>
+<link rel="apple-touch-icon" href="images/links golf membership social media kit_photo profile 1.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="mobile.css"/>
+<style>
+:root {
+  --bg:         #f0ebe0;
+  --bg2:        #e8e1d3;
+  --cream:      #faf6ee;
+  --ink:        #111a13;
+  --ink-soft:   #2d3e30;
+  --muted:      #6b7260;
+  --line:       rgba(17,26,19,.10);
+  --sage:       oklch(58% 0.09 152);
+  --sage-2:     oklch(48% 0.09 152);
+  --sage-light: oklch(83% 0.07 152);
+  --sage-pale:  oklch(94% 0.04 152);
+  --radius:     12px;
+  --radius-lg:  20px;
+  --shadow:     0 20px 60px -16px rgba(17,26,19,.22);
+  --f-display:  "DM Serif Display", Georgia, serif;
+  --f-sans:     "Inter", system-ui, sans-serif;
+  --f-mono:     "DM Mono", ui-monospace, monospace;
+}
+*,*::before,*::after { box-sizing: border-box; }
+html,body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-print-color-adjust: exact; print-color-adjust: exact; overflow-x: hidden; }
+body { font-family: var(--f-sans); background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: .045; mix-blend-mode: multiply; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); background-size: 400px 400px; }
+h1,h2,h3,h4 { font-family: var(--f-display); font-weight: 400; letter-spacing: -.02em; color: var(--ink); margin: 0; text-wrap: balance; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+@media (max-width:600px) { .wrap { padding: 0 18px; } }
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--line); }
+body { padding-top: 80px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+@media (max-width:600px) { html { scroll-padding-top: 68px; } body { padding-top: 68px; } .nav-inner { height: 68px; } }
+.logo { font-family: var(--f-display); font-size: 22px; letter-spacing: -.01em; display: flex; align-items: center; gap: 11px; }
+.logo-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px rgba(255,255,255,.5), 0 2px 8px rgba(17,26,19,.2); flex-shrink: 0; }
+.logo-mark svg { width: 16px; height: 16px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.logo-img { height: 60px; width: auto; display: block; max-width: 240px; object-fit: contain; }
+@media (max-width:600px) { .logo-img { height: 48px; max-width: 200px; } }
+.mc-brand-img { height: 86px; width: auto; display: block; object-fit: contain; }
+@media (max-width:600px) { .mc-brand-img { height: 54px; } }
+.footer-brand-img { height: 96px; width: auto; display: block; object-fit: contain; margin-bottom: 14px; }
+@media (max-width:600px) { .footer-brand-img { height: 76px; } }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 12px; font-weight: 500; color: var(--ink-soft); letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
+.nav-links a:hover { color: var(--sage); }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 999px; font-family: var(--f-sans); font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; border: none; transition: all .2s ease; }
+.btn-primary { background: var(--ink); color: var(--cream); }
+.btn-primary:hover { background: var(--sage-2); transform: translateY(-1px); box-shadow: 0 8px 20px -6px rgba(17,26,19,.35); }
+.btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.btn-outline:hover { background: var(--ink); color: var(--cream); }
+.lang-toggle { background: transparent; border: 1px solid var(--ink-soft); color: var(--ink); padding: 5px 10px; border-radius: 999px; font-family: var(--f-mono); font-size: 10px; font-weight: 600; letter-spacing: .14em; cursor: pointer; transition: all .2s ease; }
+.lang-toggle:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.mobile-toggle { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.mobile-toggle svg { width: 20px; height: 20px; stroke: var(--ink); }
+.mobile-panel { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 18px 24px; flex-direction: column; gap: 16px; }
+.mobile-panel a { font-size: 17px; font-family: var(--f-display); }
+.mobile-panel.open { display: flex; }
+@media (max-width:860px) { .nav-links { display: none; } .mobile-toggle { display: inline-flex; } }
+
+/* HERO */
+.hero { padding: 24px 0 16px; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; right: -8%; top: -30%; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(88,140,98,.12), transparent 65%); pointer-events: none; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 24px; align-items: stretch; }
+.hero-left { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.hero-left .hero-sub { margin-left: auto; margin-right: auto; }
+.hero-left .hero-cta { justify-content: center; }
+@media (max-width:860px) { .hero-grid { grid-template-columns: 1fr; gap: 32px; } .hero { padding: 16px 0 12px; } }
+
+.headline { font-size: clamp(36px, 5vw, 64px); line-height: 1.0; font-weight: 400; margin: 0 0 20px; letter-spacing: -.03em; white-space: nowrap; }
+.headline .line { display: inline; overflow: hidden; padding: 0; }
+.headline .line > span { display: inline-block; transform: translateY(110%); animation: slide-up .9s cubic-bezier(.2,.8,.2,1) forwards; }
+.headline .line:nth-child(1) > span { animation-delay: .08s; }
+.headline .line:nth-child(2) > span { animation-delay: .18s; }
+@keyframes slide-up { to { transform: translateY(0); } }
+.headline em { font-style: italic; color: var(--sage); }
+@media (max-width:860px) { .headline { white-space: normal; font-size: clamp(36px, 9vw, 56px); } }
+
+.hero-sub { font-size: 16px; color: var(--ink-soft); max-width: 580px; margin-bottom: 22px; line-height: 1.65; }
+.hero-cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 0; margin-bottom: 0; }
+.hero-right { display: flex; flex-direction: column; justify-content: center; }
+
+/* CARD STAGE */
+.card-stage { position: relative; display: flex; align-items: center; justify-content: flex-end; }
+.card-stage::before { content: ""; position: absolute; width: 110%; height: 110%; background: radial-gradient(ellipse at 50% 50%, rgba(88,140,98,.18), transparent 60%); filter: blur(30px); z-index: 0; animation: drift 22s linear infinite; }
+@keyframes drift { to { transform: rotate(360deg); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Membership Card - Restored SVG & Premium Fixes */
+.m-card { position: relative; z-index: 3; width: min(420px, 100%); aspect-ratio: 1.586 / 1; border-radius: 20px; color: var(--cream); background: radial-gradient(ellipse at 80% 10%, rgba(120,170,110,.18), transparent 55%), radial-gradient(ellipse at 10% 90%, rgba(60,100,65,.2), transparent 55%), linear-gradient(135deg, #0c1a0e 0%, #152a17 45%, #1a3320 100%); box-shadow: 0 1px 0 rgba(255,255,255,.07) inset, 0 0 0 1px rgba(140,190,130,.2), 0 28px 70px -18px rgba(17,26,19,.6), 0 12px 32px -8px rgba(88,140,98,.18); overflow: hidden; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.m-card:hover { transform: translateY(-4px) scale(1.01); }
+.m-card::before { content: ""; position: absolute; top: 0; left: -150%; width: 60%; height: 100%; background: linear-gradient(to right, transparent 0%, rgba(200, 240, 190, 0.08) 50%, transparent 100%); transform: skewX(-20deg); z-index: 4; pointer-events: none; animation: shimmer 4.5s infinite linear; }
+.m-card::after { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(160,200,140,.03) 0 2px, transparent 2px 6px); pointer-events: none; z-index: 5; }
+.mc-inner { position: relative; padding: 16px 28px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; z-index: 6; }
+.mc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.mc-brand { font-family: var(--f-display); font-size: 17px; letter-spacing: -.01em; line-height: 1.05; }
+.mc-brand span { color: var(--sage-light); }
+.mc-brand small { display: block; font-family: var(--f-mono); font-size: 8px; letter-spacing: .3em; color: rgba(160,210,150,.7); margin-top: 5px; font-weight: 500; }
+.mc-photo { width: 88px; height: 105px; border-radius: 6px; overflow: hidden; box-shadow: 0 0 0 1px rgba(160,210,150,.4) inset, 0 0 0 2px rgba(17,26,19,.4), 0 8px 16px rgba(0,0,0,0.4); background: linear-gradient(180deg, #3a5040, #253530); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.mc-photo svg { width: 48px; height: 48px; fill: rgba(160,210,150,.5); }
+.mc-photo img { width: 100%; height: 100%; object-fit: cover; }
+.mc-mid { margin-top: 8px; position: relative; }
+.mc-name { font-family: var(--f-display); font-size: 24px; font-weight: 400; letter-spacing: .01em; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+.mc-role { font-family: var(--f-mono); font-size: 11px; letter-spacing: .25em; color: rgba(160,210,150,.8); text-transform: uppercase; margin-top: 6px; }
+.mc-bot { display: flex; justify-content: space-between; align-items: flex-end; gap: 14px; }
+.mc-meta { display: flex; align-items: flex-end; gap: 40px; }
+.mc-num { font-family: var(--f-mono); font-size: 15px; letter-spacing: .08em; }
+.mc-num small { display: block; font-size: 9px; letter-spacing: .3em; color: rgba(160,210,150,.7); margin-bottom: 4px; text-transform: uppercase; }
+.mc-qr { width: 60px; height: 60px; border-radius: 7px; background: #fff; padding: 6px; display: grid; grid-template-columns: repeat(9,1fr); gap: 1px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.mc-qr i { background: var(--ink); border-radius: 0.5px; }
+.mc-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--sage-2) 0 50%, var(--sage-light) 50%); }
+
+/* Animations */
+@keyframes shimmer { 0% { left: -150%; } 35% { left: 150%; } 100% { left: 150%; } }
+
+/* MARQUEE */
+.marquee { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--ink); color: var(--cream); padding: 14px 0; overflow: hidden; }
+.marquee-track { display: flex; gap: 50px; white-space: nowrap; animation: marquee 10s linear infinite; font-family: var(--f-display); font-size: 20px; font-style: italic; }
+.marquee-track span { color: var(--sage-light); }
+.marquee-sep { color: rgba(255,255,255,.25); margin: 0 24px; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* SECTIONS */
+.section { padding: 32px 0; position: relative; }
+.section.alt { background: var(--bg2); }
+.section-head { text-align: center; max-width: 1000px; margin: 0 auto 24px; }
+.eyebrow { font-family: var(--f-mono); font-size: 13px; letter-spacing: .28em; text-transform: uppercase; color: var(--sage); margin-bottom: 14px; font-weight: 600; }
+.section-head h2 { font-size: clamp(26px, 3.2vw, 40px); line-height: 1.1; }
+.section-head h2 em { color: var(--sage); font-style: italic; }
+.section-head p { margin: 14px auto 0; color: var(--ink-soft); font-size: 15px; max-width: 720px; }
+
+/* BENEFITS TILES */
+.benefits-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; max-width: 900px; margin: 0 auto; }
+.benefit-tile { background: var(--bg); padding: 22px 32px; display: flex; flex-direction: column; gap: 10px; transition: background .3s; }
+.benefit-tile:hover { background: var(--cream); }
+.tile-num { font-family: var(--f-mono); font-size: 10px; letter-spacing: .28em; color: var(--sage); font-weight: 600; }
+.benefit-tile h3 { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.02em; margin: 0; }
+.benefit-tile h3 em { color: var(--sage); font-style: italic; }
+.benefit-tile p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+@media (max-width: 640px) { .benefits-tiles { grid-template-columns: 1fr; } }
+
+/* BENEFITS */
+.benefits-grid { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; width: max-content; max-width: 100%; margin: 0 auto; }
+.benefit { padding: 24px 28px; background: var(--bg); display: flex; align-items: center; gap: 24px; transition: background .3s; }
+.benefit:hover { background: var(--cream); }
+.benefit .num { font-family: var(--f-mono); font-size: 11px; letter-spacing: .28em; color: var(--muted); flex-shrink: 0; min-width: 36px; }
+.benefit .glyph { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--ink); color: var(--sage-light); transition: transform .4s cubic-bezier(.6,.1,.1,1), background .3s; flex-shrink: 0; }
+.benefit:hover .glyph { transform: rotate(-8deg) scale(1.06); background: var(--sage); }
+.benefit .glyph svg { width: 22px; height: 22px; }
+.benefit h3 { font-size: clamp(20px, 2.4vw, 28px); line-height: 1.15; letter-spacing: -.02em; flex: 1; margin: 0; font-weight: 400; }
+.benefit h3 em { color: var(--sage); font-style: italic; }
+.benefit p { display: none; }
+.benefit .tagline-q { font-family: var(--f-display); font-style: italic; color: var(--sage); font-size: clamp(13px, 1.4vw, 16px); flex-shrink: 0; padding-left: 16px; border-left: 1px solid var(--line); margin-left: auto; }
+@media (max-width:720px) { .benefit { flex-wrap: wrap; gap: 14px; padding: 20px 22px; } .benefit .tagline-q { width: 100%; padding-left: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 10px; margin-left: 0; } }
+
+/* EDITORIAL NUMBER */
+.editorial-grid { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; max-width: 640px; margin: 0 auto 40px; }
+@media (max-width:860px) { .editorial-grid { grid-template-columns: 1fr; } }
+.big-num { font-family: var(--f-display); font-size: clamp(72px, 9vw, 140px); font-weight: 400; line-height: .9; letter-spacing: -.04em; color: var(--ink); }
+.big-num sup { font-size: .28em; vertical-align: super; color: var(--sage); font-style: italic; display: inline-block; transform: translateY(.2em); }
+.big-num .label { display: block; font-family: var(--f-mono); font-size: 10px; letter-spacing: .3em; color: var(--muted); margin-top: 14px; text-transform: uppercase; }
+
+/* PR MAP */
+.map-wrap { position: relative; max-width: 964px; margin: 0 auto; }
+.map-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; position: relative; }
+@media (max-width:900px) { .map-grid { grid-template-columns: 1fr; } }
+.pr-map { position: relative; aspect-ratio: 2.6/1; background: transparent; border-radius: 12px; overflow: hidden; }
+.pr-map::before { content: ""; position: absolute; inset: 0; background: url("https://upload.wikimedia.org/wikipedia/commons/6/6d/Puerto-Rico-blank.svg") no-repeat; background-size: 136.8% auto; background-position: 91.4% 50%; filter: invert(1) sepia(1) saturate(3) hue-rotate(80deg) brightness(.55); opacity: .85; pointer-events: none; }
+.pin { position: absolute; transform: translate(-50%, -100%); cursor: pointer; z-index: 3; }
+.pin-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--sage-light); box-shadow: 0 0 0 0 rgba(160,210,150,.5); transition: transform .3s ease; position: relative; }
+.pin-dot::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid rgba(160,210,150,.45); animation: pin-pulse 2.5s ease-out infinite; }
+@keyframes pin-pulse { 0% { transform: scale(.6); opacity: 1; } 100% { transform: scale(2.2); opacity: 0; } }
+.pin:hover .pin-dot { transform: scale(1.4); }
+.pin-label { position: absolute; left: 50%; bottom: calc(100% + 4px); transform: translateX(-50%); white-space: nowrap; font-family: var(--f-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; background: var(--cream); color: var(--ink); padding: 2px 6px; border-radius: 3px; opacity: 0; transition: opacity .25s ease; pointer-events: none; }
+.pin:hover { z-index: 4; }
+.pin:hover .pin-label, .pin.active .pin-label { opacity: 1; }
+.map-aside-wrap { position: relative; min-height: 0; }
+.map-aside { position: absolute; inset: 0; display: flex; flex-direction: column; row-gap: max(10px, calc((100% - 210px) / 2)); overflow-y: auto; overflow-x: hidden; padding-right: 4px; }
+@media (max-width:900px) {
+  .map-aside-wrap { position: static; }
+  .map-aside { position: static; max-height: 360px; row-gap: 10px; }
+}
+.map-aside { scrollbar-width: thin; scrollbar-color: rgba(88,140,98,.55) rgba(88,140,98,.1); }
+.map-aside::-webkit-scrollbar { width: 6px; }
+.map-aside::-webkit-scrollbar-track { background: rgba(88,140,98,.1); border-radius: 3px; }
+.map-aside::-webkit-scrollbar-thumb { background: rgba(88,140,98,.55); border-radius: 3px; }
+.map-aside::-webkit-scrollbar-thumb:hover { background: rgba(88,140,98,.75); }
+.course-pill { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.4); cursor: pointer; transition: all .25s ease; }
+.course-pill:hover, .course-pill.active { background: var(--cream); border-color: rgba(88,140,98,.4); }
+.course-pill .c-name { font-family: var(--f-display); font-size: 17px; color: var(--ink); }
+.course-pill .c-loc { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; color: var(--muted); text-transform: uppercase; margin-top: 3px; }
+.course-pill .c-off { font-family: var(--f-mono); font-size: 13px; font-weight: 600; color: var(--sage); white-space: nowrap; }
+
+/* FAQ */
+.faq-dark { background: var(--bg2); }
+.faq-dark .eyebrow { color: var(--sage); }
+.faq-dark h2 { color: var(--ink); }
+.faq-dark h2 em { color: var(--sage); }
+.faq-dark .faq-item { border-bottom: 1px solid var(--line); }
+.faq-dark .faq-item:nth-child(-n+2) { border-top: 1px solid var(--line); }
+@media (max-width: 640px) { .faq-dark .faq-item:nth-child(-n+2) { border-top: 0; } .faq-dark .faq-item:first-child { border-top: 1px solid var(--line); } }
+.faq-dark .faq-q { color: var(--ink); }
+.faq-dark .faq-icon { border-color: rgba(17,26,19,.25); }
+.faq-dark .faq-icon::before, .faq-dark .faq-icon::after { background: var(--ink-soft); }
+.faq-dark .faq-item[open] .faq-icon::before, .faq-dark .faq-item[open] .faq-icon::after { background: white; }
+.faq-dark .faq-a { color: var(--ink-soft); }
+.faq-list { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 56px; }
+@media (max-width: 640px) { .faq-list { grid-template-columns: 1fr; } }
+.faq-item { border-bottom: 1px solid rgba(250,246,238,.1); }
+.faq-item:nth-child(-n+2) { border-top: 1px solid rgba(250,246,238,.1); }
+@media (max-width: 640px) { .faq-item:nth-child(-n+2) { border-top: 0; } .faq-item:first-child { border-top: 1px solid rgba(250,246,238,.1); } }
+.faq-item summary { list-style: none; display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 20px 0; cursor: pointer; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-q { font-family: var(--f-display); font-size: clamp(19px, 2.4vw, 28px); letter-spacing: -.02em; line-height: 1.2; font-weight: 400; color: var(--cream); }
+.faq-icon { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(250,246,238,.2); display: flex; align-items: center; justify-content: center; position: relative; transition: all .3s; }
+.faq-icon::before, .faq-icon::after { content: ""; position: absolute; width: 12px; height: 1.5px; background: rgba(250,246,238,.7); }
+.faq-icon::after { transform: rotate(90deg); transition: transform .3s; }
+.faq-item[open] .faq-icon { background: var(--sage); border-color: var(--sage); }
+.faq-item[open] .faq-icon::before, .faq-item[open] .faq-icon::after { background: white; }
+.faq-item[open] .faq-icon::after { transform: rotate(0); }
+.faq-a { padding: 0 0 20px; color: rgba(250,246,238,.65); font-size: 15px; line-height: 1.75; max-width: 640px; }
+
+/* JOIN */
+.join-wrap { background: var(--ink); color: var(--cream); border-radius: var(--radius-lg); padding: 36px; position: relative; overflow: hidden; }
+@media (max-width:700px) { .join-wrap { padding: 28px 18px; border-radius: 0; } }
+.join-wrap::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 20%, rgba(88,140,98,.2), transparent 180%), radial-gradient(ellipse at 80% 80%, rgba(60,100,65,.1), transparent 100%); pointer-events: none; }
+.join-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; position: relative; z-index: 2; align-items: start; }
+@media (max-width:860px) { .join-grid { grid-template-columns: 1fr; } }
+.join-left h2 { color: var(--cream); font-size: clamp(30px, 3.8vw, 48px); line-height: 1.05; }
+.join-left h2 em { color: var(--sage-light); font-style: italic; }
+.join-left p { color: rgba(250,246,238,.7); margin-top: 14px; font-size: 14px; }
+
+/* Price block */
+.price-block { margin-top: 24px; padding: 20px; border: 1px solid rgba(140,190,130,.2); border-radius: 14px; background: rgba(250,246,238,.03); }
+.price-block .price { font-family: var(--f-display); font-size: 64px; line-height: 1; letter-spacing: -.03em; color: var(--sage-light); }
+.price-block .price small { font-size: 18px; color: rgba(250,246,238,.55); vertical-align: super; }
+.price-block .per { font-family: var(--f-mono); font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: rgba(250,246,238,.55); margin-top: 6px; }
+.price-block ul { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-direction: column; gap: 8px; }
+.price-block li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(250,246,238,.8); }
+.price-block li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--sage-light); flex-shrink: 0; }
+
+/* Steps */
+.steps { display: flex; gap: 6px; margin-bottom: 24px; }
+.step { flex: 1; padding: 9px 0 11px; border-top: 2px solid rgba(250,246,238,.12); font-family: var(--f-mono); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(250,246,238,.35); transition: all .3s; }
+.step.active { border-top-color: var(--sage-light); color: var(--sage-light); }
+.step.done { border-top-color: var(--sage); color: var(--sage); }
+
+/* Form */
+.form-panel { background: rgba(250,246,238,.04); border: 1px solid rgba(140,190,130,.15); border-radius: 14px; padding: 22px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+@media (max-width:600px) { .form-row { grid-template-columns: 1fr; } }
+.field label { display: block; font-family: var(--f-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: rgba(250,246,238,.85); margin-bottom: 6px; }
+.field input, .field select { width: 100%; padding: 11px 13px; border-radius: 9px; background: rgba(250,246,238,.06); border: 1px solid rgba(250,246,238,.18); color: var(--cream); font-family: var(--f-sans); font-size: 14px; transition: all .2s; outline: none; }
+.field input:focus, .field select:focus { border-color: var(--sage-light); background: rgba(250,246,238,.1); }
+.field input::placeholder { color: rgba(250,246,238,.42); }
+.field input.error { border-color: rgba(200,60,60,.6); }
+.submit { width: 100%; padding: 14px; margin-top: 18px; background: var(--sage); color: white; border: none; border-radius: 10px; font-family: var(--f-sans); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; transition: all .3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.submit:hover { background: var(--sage-2); transform: translateY(-1px); box-shadow: 0 10px 24px -8px rgba(88,140,98,.4); }
+.fine { font-family: var(--f-mono); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: rgba(250,246,238,.4); text-align: center; margin-top: 12px; }
+
+/* Inline error messages */
+.inline-error { display: none; margin-top: 12px; background: rgba(200,60,60,.15); border: 1px solid rgba(200,60,60,.3); color: #f4a4a4; font-size: 13px; border-radius: 8px; padding: 10px 14px; line-height: 1.5; }
+.inline-error.show { display: block; }
+.inline-error.info { background: rgba(88,140,98,.15); border-color: rgba(140,190,130,.35); color: var(--sage-light); }
+
+#payment-error { display: none; margin-top: 10px; background: rgba(200,60,60,.15); border: 1px solid rgba(200,60,60,.3); color: #f4a4a4; font-size: 13px; border-radius: 8px; padding: 10px 14px; }
+
+/* Selfie */
+.selfie-wrap { display: flex; align-items: center; gap: 12px; }
+.selfie-preview { width: 50px; height: 50px; border-radius: 50%; border: 1.5px dashed rgba(140,190,130,.4); background: rgba(250,246,238,.04); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; transition: border-color .2s; }
+.selfie-preview.error { border-color: rgba(200,60,60,.6); }
+.selfie-preview img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.selfie-preview svg { width: 20px; height: 20px; fill: rgba(140,190,130,.4); }
+.selfie-label { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; background: rgba(250,246,238,.08); border: 1px solid rgba(140,190,130,.2); border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 600; color: var(--cream); transition: background .2s; }
+.selfie-label:hover { background: rgba(250,246,238,.14); }
+
+/* Payment summary */
+.pay-summary { background: rgba(250,246,238,.05); border: 1px solid rgba(140,190,130,.15); border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+.pay-summary-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.pay-summary .order-title { font-weight: 600; font-size: 13px; }
+.pay-summary .order-sub { font-size: 11px; color: rgba(250,246,238,.5); margin-top: 2px; }
+.pay-summary .order-price { font-family: var(--f-display); font-size: 26px; color: var(--sage-light); }
+.pay-divider { border: none; border-top: 1px solid rgba(250,246,238,.1); margin: 10px 0; }
+.pay-total { display: flex; justify-content: space-between; font-size: 11px; color: rgba(250,246,238,.5); }
+.pay-total strong { color: var(--cream); }
+.secure-badge { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; background: rgba(88,140,98,.1); border: 1px solid rgba(140,190,130,.2); border-radius: 8px; padding: 9px; }
+.secure-badge span { font-family: var(--f-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: rgba(250,246,238,.8); }
+.secure-badge svg { width: 13px; height: 13px; stroke: var(--sage-light); fill: none; }
+#card-element { background: rgba(250,246,238,.05); border: 1px solid rgba(140,190,130,.2); border-radius: 9px; padding: 13px; transition: border-color .2s; }
+.back-btn { padding: 10px 16px; background: rgba(250,246,238,.07); border: 1px solid rgba(250,246,238,.1); color: rgba(250,246,238,.6); border-radius: 9px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background .2s; }
+.back-btn:hover { background: rgba(250,246,238,.12); }
+
+/* DIGITAL CARD SECTION */
+.card-show-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
+@media (max-width:860px) { .card-show-grid { grid-template-columns: 1fr; } }
+.card-show-grid > .reveal:first-child { display: flex; flex-direction: column; }
+.checklist { list-style: none; padding: 0; margin: 18px 0 16px; display: flex; flex-direction: column; gap: 10px; }
+.checklist li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink-soft); }
+.check-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
+
+/* Digital card */
+.digital-card-col { display: flex; flex-direction: column; align-items: center; gap: 14px; justify-content: flex-start; padding-top: 28px; }
+.d-card { width: min(420px, 100%); aspect-ratio: 1.586 / 1; border-radius: 20px; color: var(--cream); background: radial-gradient(ellipse at 80% 10%, rgba(120,170,110,.18), transparent 55%), radial-gradient(ellipse at 10% 90%, rgba(60,100,65,.2), transparent 55%), linear-gradient(135deg, #0c1a0e 0%, #152a17 45%, #1a3320 100%); box-shadow: 0 1px 0 rgba(255,255,255,.07) inset, 0 0 0 1px rgba(140,190,130,.2), 0 28px 70px -18px rgba(17,26,19,.6), 0 12px 32px -8px rgba(88,140,98,.18); overflow: hidden; position: relative; }
+.d-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 30%, rgba(160,210,150,.15) 45%, rgba(220,245,210,.35) 50%, rgba(160,210,150,.15) 55%, transparent 70%); mix-blend-mode: overlay; transform: translateX(var(--sheen, -50%)); transition: transform .3s ease; pointer-events: none; }
+.d-card::after { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(160,200,140,.04) 0 2px, transparent 2px 6px); pointer-events: none; }
+.d-card-inner { position: relative; padding: 24px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; transform: translateZ(30px); }
+.d-card-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.d-card-brand { font-family: var(--f-display); font-size: 17px; line-height: 1.05; }
+.d-card-brand span { color: var(--sage-light); }
+.d-card-brand small { display: block; font-family: var(--f-mono); font-size: 8px; letter-spacing: .3em; color: rgba(160,210,150,.7); margin-top: 5px; font-weight: 500; }
+.d-card-valid { display: none; }
+.d-card-mid { display: block; }
+.d-card-photo { width: 60px; height: 76px; border-radius: 5px; overflow: hidden; box-shadow: 0 0 0 1px rgba(160,210,150,.6) inset, 0 0 0 2px rgba(17,26,19,.4), 0 4px 10px rgba(0,0,0,.3); background: linear-gradient(180deg, #3a5040, #253530); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.d-card-photo svg { width: 32px; height: 32px; fill: rgba(160,210,150,.5); }
+.d-card-photo img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.d-card-name { font-family: var(--f-display); font-size: 19px; font-weight: 400; letter-spacing: .01em; }
+.d-card-role { font-family: var(--f-mono); font-size: 9px; letter-spacing: .25em; color: rgba(160,210,150,.8); text-transform: uppercase; margin-top: 4px; }
+.d-card-bot { display: flex; justify-content: space-between; align-items: flex-end; }
+.d-card-num small { display: block; font-family: var(--f-mono); font-size: 8px; letter-spacing: .3em; color: rgba(160,210,150,.7); margin-bottom: 3px; text-transform: uppercase; }
+.d-card-num span { font-family: var(--f-mono); font-size: 13px; letter-spacing: .08em; }
+.d-card-qr { width: 50px; height: 50px; border-radius: 6px; background: #fff; padding: 4px; display: grid; grid-template-columns: repeat(9,1fr); gap: 1px; }
+.d-card-qr i { background: var(--ink); border-radius: 1px; }
+.d-card-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--sage-2) 0 50%, var(--sage-light) 50%); transform: translateZ(0); backface-visibility: hidden; will-change: transform; }
+
+/* Wallet add buttons */
+.wallet-actions { display: flex; gap: 10px; width: min(400px, 100%); margin-top: auto; }
+.wallet-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px; border: 1px solid var(--line); border-radius: 10px; background: var(--cream); font-size: 11px; font-weight: 600; color: var(--ink); transition: background .2s; cursor: pointer; }
+.wallet-btn:hover { background: var(--bg2); }
+.wallet-btn svg { width: 16px; height: 16px; }
+
+/* ── Success step ── */
+.id-success { padding: 4px 0 0; }
+
+/* Checkmark sits inline with "You're in." */
+.id-success-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+.id-success-header h3 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--cream);
+}
+.id-success .checkmark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.id-success .checkmark svg { width: 18px; height: 18px; stroke: white; stroke-width: 2.5; fill: none; }
+.id-success > p { color: rgba(250,246,238,.6); font-size: 12px; line-height: 1.5; margin: 0 0 14px; text-align: center; }
+
+/* Success card — fill the panel width */
+.success-card-wrap { display: flex; justify-content: center; }
+
+.id-wallet-btns { display: flex; flex-direction: column; gap: 8px; margin: 14px 0 0; }
+.id-wallet-btn { display: flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 18px; background: rgba(250,246,238,.08); border: 1px solid rgba(140,190,130,.25); border-radius: 10px; color: var(--cream); font-size: 12px; font-weight: 600; cursor: pointer; transition: background .2s; }
+.id-wallet-btn:hover { background: rgba(250,246,238,.14); }
+
+/* FOOTER */
+footer { background: var(--ink); color: var(--cream); padding: 52px 0 32px; border-top: 4px solid var(--sage); position: relative; overflow: hidden; }
+footer::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 20%, rgba(88,140,98,.2), transparent 180%), radial-gradient(ellipse at 80% 80%, rgba(60,100,65,.1), transparent 100%); pointer-events: none; z-index: 0; }
+footer .wrap { position: relative; z-index: 1; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; margin-bottom: 40px; }
+@media (max-width:700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+.footer-brand h3 { color: var(--cream); font-size: 28px; margin-bottom: 10px; letter-spacing: -.02em; }
+.footer-brand h3 em { color: var(--sage-light); font-style: italic; }
+.footer-brand p { color: rgba(250,246,238,.55); font-size: 13px; max-width: 280px; line-height: 1.7; }
+.footer-brand .tagline { font-family: var(--f-display); font-style: italic; color: var(--sage-light); font-size: 14px; margin-top: 10px; }
+footer h4 { font-family: var(--f-mono); color: rgba(140,190,130,.8); font-size: 10px; letter-spacing: .28em; text-transform: uppercase; margin-bottom: 14px; font-weight: 500; }
+footer a { display: block; color: rgba(250,246,238,.6); padding: 4px 0; font-size: 13px; transition: color .2s; }
+footer a:hover { color: var(--sage-light); }
+.footer-bot { display: flex; justify-content: space-between; border-top: 1px solid rgba(250,246,238,.1); padding-top: 20px; color: rgba(250,246,238,.35); font-size: 11px; font-family: var(--f-mono); letter-spacing: .1em; }
+@media (max-width:600px) { .footer-bot { flex-direction: column; gap: 10px; } }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal.d1 { transition-delay: .1s; } .reveal.d2 { transition-delay: .2s; } .reveal.d3 { transition-delay: .3s; }
+
+/* Processing overlay */
+#processing-overlay { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(17,26,19,.95); backdrop-filter: blur(10px); align-items: center; justify-content: center; flex-direction: column; color: white; }
+#processing-overlay.show { display: flex; }
+.spin-ring { width: 64px; height: 64px; position: relative; }
+.spin-ring::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(140,190,130,.15); }
+.spin-ring::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid transparent; border-top-color: var(--sage-light); border-right-color: var(--sage-light); animation: spin 1.1s linear infinite; }
+.spin-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.spin-icon svg { width: 24px; height: 24px; stroke: var(--sage-light); fill: none; }
+
+/* ─── CINEMATIC HERO ───────────────────────────────────────────
+   Full-bleed photo with deep gradient overlay. Headline + card
+   sit on top, the way a luxury resort home page reads.
+   ─────────────────────────────────────────────────────────── */
+.hero { padding: 0; min-height: 80vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero::before { display: none; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.02); animation: hero-pan 22s ease-in-out infinite alternate; }
+@keyframes hero-pan { from { transform: scale(1.02) translate(0,0); } to { transform: scale(1.08) translate(-1%, -1%); } }
+.hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, rgba(8,16,10,.88) 0%, rgba(12,22,14,.65) 38%, rgba(12,22,14,.42) 60%, rgba(12,22,14,.62) 100%); }
+.hero-bg::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 18% 78%, rgba(88,140,98,.30), transparent 55%), radial-gradient(ellipse at 82% 18%, rgba(160,210,150,.18), transparent 55%); }
+.hero .wrap { position: relative; z-index: 2; padding-top: 32px; padding-bottom: 32px; }
+.hero .headline { color: var(--cream); }
+.hero .headline em { color: var(--sage-light); }
+.hero .hero-sub { color: rgba(250,246,238,.85); }
+.hero .btn-outline { border-color: rgba(250,246,238,.5); color: var(--cream); }
+.hero .btn-outline:hover { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+
+/* Hero badge above headline */
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 8px; background: rgba(250,246,238,.10); border: 1px solid rgba(250,246,238,.18); border-radius: 999px; backdrop-filter: blur(10px); margin-bottom: 18px; font-family: var(--f-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: rgba(250,246,238,.85); }
+.hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage-light); box-shadow: 0 0 10px var(--sage-light); }
+
+/* ─── CINEMATIC IMAGE BANNER ─────────────────────────────── */
+.image-banner { position: relative; height: 60vh; min-height: 380px; overflow: hidden; }
+.image-banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.image-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,16,10,.88) 0%, rgba(8,16,10,.20) 55%, rgba(8,16,10,.05) 100%); }
+.image-banner .banner-inner { position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 28px; color: var(--cream); }
+.image-banner .banner-inner .wrap { display: flex; align-items: end; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.image-banner .banner-eyebrow { font-family: var(--f-mono); font-size: 11px; letter-spacing: .28em; color: var(--sage-light); text-transform: uppercase; margin-bottom: 10px; }
+.image-banner h2 { font-family: var(--f-display); font-size: clamp(30px, 4.4vw, 60px); line-height: 1.04; letter-spacing: -.02em; max-width: 760px; }
+.image-banner h2 em { color: var(--sage-light); font-style: italic; }
+.image-banner .stats { display: flex; gap: 36px; padding-bottom: 6px; }
+.image-banner .stat { text-align: right; }
+.image-banner .stat-num { font-family: var(--f-display); font-size: clamp(32px, 5vw, 54px); color: var(--cream); line-height: 1; }
+.image-banner .stat-num sup { color: var(--sage-light); font-size: .35em; font-style: italic; vertical-align: super; }
+.image-banner .stat-lab { font-family: var(--f-mono); font-size: 9px; letter-spacing: .26em; text-transform: uppercase; color: rgba(250,246,238,.7); margin-top: 6px; }
+@media (max-width: 700px) { .image-banner .stats { gap: 22px; } }
+
+/* ─── COURSE GALLERY (cinematic) ─────────────────────────── */
+.course-gallery { padding: 40px 0 8px; }
+.course-gallery .gallery-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 22px; flex-wrap: wrap; }
+.course-gallery .gallery-head .left { display: flex; flex-direction: column; gap: 8px; }
+.course-gallery .gallery-head h3 { font-family: var(--f-display); font-size: clamp(24px, 3vw, 36px); line-height: 1.1; margin: 0; letter-spacing: -.02em; }
+.course-gallery .gallery-head h3 em { color: var(--sage); font-style: italic; }
+.course-gallery .gallery-head .right { font-family: var(--f-mono); font-size: 11px; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 860px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .gallery-grid { grid-template-columns: 1fr; } }
+.gallery-tile { position: relative; aspect-ratio: 16/11; border-radius: 16px; overflow: hidden; box-shadow: 0 18px 40px -18px rgba(17,26,19,.35); cursor: pointer; transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease; display: block; background: linear-gradient(180deg,#2d3e30,#111a13); }
+.gallery-tile:hover { transform: translateY(-5px); box-shadow: 0 26px 50px -18px rgba(17,26,19,.45); }
+.gallery-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; display: block; }
+.gallery-tile:hover img { transform: scale(1.06); }
+.gallery-tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,20,14,.92) 0%, rgba(12,20,14,.25) 50%, rgba(12,20,14,0) 75%); pointer-events: none; }
+.gallery-tile .gt-meta { position: absolute; left: 18px; right: 18px; bottom: 16px; color: var(--cream); z-index: 2; }
+.gallery-tile .gt-name { font-family: var(--f-display); font-size: 22px; line-height: 1.1; letter-spacing: -.01em; }
+.gallery-tile .gt-loc { font-family: var(--f-mono); font-size: 10px; letter-spacing: .22em; color: rgba(250,246,238,.78); text-transform: uppercase; margin-top: 5px; }
+.gallery-tile .gt-tag { position: absolute; top: 14px; right: 14px; background: rgba(88,140,98,.95); color: white; font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; padding: 5px 10px; border-radius: 999px; z-index: 2; backdrop-filter: blur(8px); box-shadow: 0 4px 12px rgba(0,0,0,.25); }
+
+/* ─── JOIN photo backdrop ─────────────────────────────────── */
+.join-wrap { position: relative; }
+.join-photo-bg { position: absolute; inset: 0; z-index: 0; opacity: .22; pointer-events: none; }
+.join-photo-bg img { width: 100%; height: 100%; object-fit: cover; }
+.join-photo-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgba(12,20,14,.7), rgba(12,20,14,.3) 60%, rgba(12,20,14,.85)); }
+.join-grid { position: relative; z-index: 2; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo" aria-label="Links Golf Membership - Home">
+      <img class="logo-img" src="images/links-golf-membership-1.png" alt="Links Golf Membership"/>
+    </a>
+    <div class="nav-links">
+      <a href="#" data-i18n="nav.home">Home</a>
+      <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
+      <a href="#network" data-i18n="nav.network">Our Network</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="courses.html" data-i18n="nav.courses">All Courses</a>
+    </div>
+    <div class="nav-cta" style="display:flex;align-items:center;gap:10px;">
+      <button class="lang-toggle" data-lang-toggle type="button" aria-label="Switch language">EN</button>
+      <a href="#join" class="btn btn-primary" data-i18n="nav.cta">Get Your Card</a>
+      <button class="mobile-toggle" id="navToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path id="menuOpen" d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/><path id="menuClose" d="M6 18L18 6M6 6l12 12" stroke-linecap="round" style="display:none"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#" data-i18n="nav.home">Home</a>
+    <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
+    <a href="#network" data-i18n="nav.network">Our Network</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="courses.html" data-i18n="nav.courses">All Courses</a>
+    <a href="#join" class="btn btn-primary" style="width:fit-content;margin-top:4px;" data-i18n="nav.cta">Get Your Card</a>
+  </div>
+</nav>
+
+<!-- HERO (cinematic) -->
+<!-- PHOTOS: replace each <img src> with photos from
+     premiergolfpr.pages.dev (or local images/* paths).
+     Defaults are stand-in golf photos from Unsplash. -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=2400&amp;q=85&amp;auto=format&amp;fit=crop" alt=""/>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="dot"></span><span data-i18n="hero.badge">Now enrolling · 2026 season</span></div>
+      <h1 class="headline">
+        <span class="line"><span data-i18n="hero.headline.1">Play More,</span></span>
+        <span class="line"><span><em data-i18n="hero.headline.2">Pay Less!</em></span></span>
+      </h1>
+      <p class="hero-sub" data-i18n="hero.sub">One membership. Puerto Rico's finest courses — from the ocean cliffs of Royal Isabela to the hills and ocean views of Palmas del Mar. Exclusive access, digital convenience, genuine savings.</p>
+      <div class="hero-cta">
+        <a href="courses.html" class="btn btn-outline" data-i18n="hero.cta.secondary">All Courses</a>
+        <a href="#join" class="btn btn-primary" data-i18n="hero.cta.primary">Get Your Card →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="card-stage" id="cardStage">
+        <article class="m-card" id="mCard">
+          <div class="mc-inner">
+            <div class="mc-top">
+              <div class="mc-brand"><img class="mc-brand-img" src="images/links-golf-membership-2.png" alt="Links Golf Membership"/></div>
+              <div class="mc-photo"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
+            </div>
+            <div class="mc-mid">
+              <div class="mc-name" id="card-name" data-i18n="mcard.placeholder.name">YOUR NAME HERE</div>
+              <div class="mc-role" data-i18n="mcard.role">Founding Member · 2026–27</div>
+            </div>
+            <div class="mc-bot">
+              <div class="mc-meta">
+                <div class="mc-num"><small data-i18n="mcard.num.label">Member No.</small><span id="card-num">LGM-#####</span></div>
+                <div class="mc-num"><small data-i18n="mcard.valid.label">Valid Until</small><span id="card-valid">## / ##</span></div>
+              </div>
+              <div class="mc-qr" id="mcQr" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="mc-bar"></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMAGE BANNER ═════════════════════════════════════════ -->
+<section class="image-banner">
+  <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=2400&amp;q=85&amp;auto=format&amp;fit=crop" alt="Aerial view of a Puerto Rico golf course"/>
+  <div class="banner-inner">
+    <div class="wrap">
+      <div>
+        <div class="banner-eyebrow" data-i18n="banner.eyebrow">The Network</div>
+        <h2 data-i18n="banner.h2">Fifteen courses. <em>One island.</em><br/>One card.</h2>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">15<sup>*</sup></div><div class="stat-lab" data-i18n="banner.stat.1">Partner courses</div></div>
+        <div class="stat"><div class="stat-num">25<sup>%</sup></div><div class="stat-lab" data-i18n="banner.stat.2">Off green fees</div></div>
+        <div class="stat"><div class="stat-num">12</div><div class="stat-lab" data-i18n="banner.stat.3">Months access</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section alt" id="benefits">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="benefits.eyebrow">01 · Why Links</div>
+      <h2 data-i18n="benefits.h2">Built for golfers who want to play more and save.</h2>
+    </div>
+    <div class="benefits-tiles">
+      <div class="benefit-tile reveal d1">
+        <div class="tile-num">/ 01</div>
+        <h3 data-i18n="benefit.1.h3">Real savings — <em>up to 25% off</em> every round.</h3>
+      </div>
+      <div class="benefit-tile reveal d2">
+        <div class="tile-num">/ 02</div>
+        <h3 data-i18n="benefit.2.h3">Digital ID card, <em>always in your pocket.</em></h3>
+      </div>
+      <div class="benefit-tile reveal d1">
+        <div class="tile-num">/ 03</div>
+        <h3 data-i18n="benefit.3.h3">Non-transferable, <em>verified</em> at check-in.</h3>
+      </div>
+      <div class="benefit-tile reveal d2">
+        <div class="tile-num">/ 04</div>
+        <h3 data-i18n="benefit.4.h3">One flat price, <em>discounts all year.</em></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COURSE GALLERY (cinematic) ═══════════════════════════ -->
+<section class="section course-gallery">
+  <div class="wrap">
+    <div class="gallery-head reveal">
+      <div class="left">
+        <div class="eyebrow" data-i18n="gallery.eyebrow">Featured Courses</div>
+        <h3 data-i18n="gallery.h3">Where your <em>card</em> works.</h3>
+      </div>
+      <div class="right" data-i18n="gallery.meta">15 partner courses · island-wide</div>
+    </div>
+    <div class="gallery-grid">
+      <a class="gallery-tile reveal d1" href="courses.html" aria-label="Royal Isabela">
+        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="Royal Isabela coastal links"/>
+        <span class="gt-tag">20% OFF</span>
+        <div class="gt-meta"><div class="gt-name">Royal Isabela</div><div class="gt-loc">Isabela</div></div>
+      </a>
+      <a class="gallery-tile reveal d2" href="courses.html" aria-label="TPC Dorado Beach">
+        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="TPC Dorado Beach fairway"/>
+        <span class="gt-tag">25% OFF</span>
+        <div class="gt-meta"><div class="gt-name">TPC Dorado Beach</div><div class="gt-loc">Dorado</div></div>
+      </a>
+      <a class="gallery-tile reveal d3" href="courses.html" aria-label="Bahia Beach">
+        <img src="https://images.unsplash.com/photo-1611374243857-ed14f1e93e2b?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="Bahia Beach palm-lined fairway"/>
+        <span class="gt-tag">20% OFF</span>
+        <div class="gt-meta"><div class="gt-name">Bahia Beach</div><div class="gt-loc">Rio Grande</div></div>
+      </a>
+      <a class="gallery-tile reveal d1" href="courses.html" aria-label="Palmas del Mar">
+        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="Palmas del Mar ocean view"/>
+        <span class="gt-tag">20% OFF</span>
+        <div class="gt-meta"><div class="gt-name">Palmas del Mar</div><div class="gt-loc">Humacao</div></div>
+      </a>
+      <a class="gallery-tile reveal d2" href="courses.html" aria-label="El Conquistador">
+        <img src="https://images.unsplash.com/photo-1568957308135-9ada34128e91?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="El Conquistador clifftop"/>
+        <span class="gt-tag">20% OFF</span>
+        <div class="gt-meta"><div class="gt-name">El Conquistador</div><div class="gt-loc">Las Croabas</div></div>
+      </a>
+      <a class="gallery-tile reveal d3" href="courses.html" aria-label="Wyndham Rio Mar">
+        <img src="https://images.unsplash.com/photo-1592919505780-303950717480?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="Wyndham Rio Mar fairway at sunset"/>
+        <span class="gt-tag">20% OFF</span>
+        <div class="gt-meta"><div class="gt-name">Wyndham Rio Mar</div><div class="gt-loc">Rio Grande</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK -->
+<section class="section" id="network">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="network.eyebrow">02 · Our Network</div>
+    </div>
+    <div class="editorial-grid reveal" style="text-align:center;">
+      <div>
+        <div class="big-num">15<sup>*</sup><span class="label" data-i18n="network.bignum.label">Partner courses · Island-wide</span></div>
+      </div>
+      <div class="reveal d2">
+        <h2 style="font-size:clamp(26px,3.2vw,44px);line-height:1.1;" data-i18n="network.h2">The island's best greens.</h2>
+        <p style="margin:14px auto 0;color:var(--ink-soft);font-size:14px;max-width:420px;" data-i18n="network.p">Championship resort layouts, tucked-away municipal gems, and everything between — always somewhere remarkable.</p>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <div class="map-grid">
+        <div class="pr-map" id="prMap"></div>
+        <div class="map-aside-wrap"><div class="map-aside" id="mapAside"></div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:24px;" class="reveal">
+      <a href="courses.html" class="btn btn-outline" style="display:inline-flex;border-color:var(--ink-soft);color:var(--ink-soft);" data-i18n="network.cta">View Full Course Directory →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-dark" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align:center;margin:0 auto 28px;max-width:none;">
+      <div class="eyebrow" data-i18n="faq.eyebrow">03 · FAQ</div>
+      <h2 style="font-size:clamp(30px,4vw,54px);" data-i18n="faq.h2">Common <em>questions.</em></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary><span class="faq-q" data-i18n="faq.q.1">What is Links Golf Membership?</span><span class="faq-icon"></span></summary>
+        <p class="faq-a" data-i18n="faq.a.1">Your all-in-one membership to premium golf across Puerto Rico.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary><span class="faq-q" data-i18n="faq.q.4">Do I need to download an app?</span><span class="faq-icon"></span></summary>
+        <p class="faq-a" data-i18n="faq.a.4">Not at all. Your pass lives in your built-in Wallet.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary><span class="faq-q" data-i18n="faq.q.2">How do I use it?</span><span class="faq-icon"></span></summary>
+        <p class="faq-a" data-i18n="faq.a.2">Simply scan your digital QR code from Apple Wallet or Google Wallet at any partner course's pro shop.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary><span class="faq-q" data-i18n="faq.q.3">What if I lose my phone?</span><span class="faq-icon"></span></summary>
+        <p class="faq-a" data-i18n="faq.a.3">No problem. Instantly invalidate your current QR code.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary><span class="faq-q" data-i18n="faq.q.5">Is the membership transferable?</span><span class="faq-icon"></span></summary>
+        <p class="faq-a" data-i18n="faq.a.5">No. The membership is non-transferable and bound to your verified photo.</p>
+      </details>
+    </div>
+    <div style="margin-top:24px;text-align:center;" class="reveal"><a href="faq.html" class="btn" style="background:var(--sage);color:white;" data-i18n="faq.cta">View All FAQs →</a></div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section id="join" style="padding:32px 0;">
+  <div class="wrap">
+    <div class="join-wrap">
+      <div class="join-photo-bg" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1568957308135-9ada34128e91?w=2000&amp;q=85&amp;auto=format&amp;fit=crop" alt=""/>
+      </div>
+      <div class="join-grid">
+        <div class="join-left">
+          <h2 data-i18n="join.h2">Start playing <em>more</em> today.</h2>
+          <p data-i18n="join.p">Unlock every major course in Puerto Rico. Pays for itself in as few as 3–4 rounds.</p>
+          <div class="price-block">
+            <div class="price"><small>$</small>199</div>
+            <div class="per" data-i18n="join.price.per">Per year · Annual membership</div>
+            <ul>
+              <li data-i18n="join.price.li.1">Access to 15 partner courses</li>
+              <li data-i18n="join.price.li.2">Up to 25% off all green fees</li>
+              <li data-i18n="join.price.li.3">Apple &amp; Google Wallet digital pass</li>
+              <li data-i18n="join.price.li.4">Photo-verified, non-transferable ID</li>
+              <li data-i18n="join.price.li.5">Instant re-issuance if lost</li>
+            </ul>
+          </div>
+        </div>
+        <div class="join-right">
+          <div class="steps">
+            <div class="step active" id="step-1"><span class="n">01 </span><span data-i18n="join.step.1">Player Details</span></div>
+            <div class="step" id="step-2"><span class="n">02 </span><span data-i18n="join.step.2">Payment</span></div>
+            <div class="step" id="step-3"><span class="n">03 </span><span data-i18n="join.step.3">Digital ID</span></div>
+          </div>
+
+          <!-- ═══ PANEL 1 — Player Details ═══ -->
+          <div class="form-panel" id="panel-1">
+            <div class="form-row">
+              <div class="field">
+                <label data-i18n="join.field.firstname">First Name *</label>
+                <input id="inp-firstname" type="text" placeholder="Juan"/>
+              </div>
+              <div class="field">
+                <label data-i18n="join.field.lastname">Last Name *</label>
+                <input id="inp-lastname" type="text" placeholder="Pérez"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label data-i18n="join.field.phone">Mobile *</label>
+                <input id="inp-phone" type="tel" placeholder="+1 (787) 000-0000"/>
+              </div>
+              <div class="field">
+                <label data-i18n="join.field.email">Email Address *</label>
+                <input id="inp-email" type="email" placeholder="juan@example.com"/>
+              </div>
+            </div>
+            <div class="field" style="margin-bottom:12px;">
+              <label data-i18n="join.field.address">Address</label>
+              <input id="inp-address" type="text" placeholder="Street, City, PR, ZIP"/>
+            </div>
+            <div class="field" style="margin-bottom:18px;">
+              <label data-i18n="join.field.photo">Verification Photo *</label>
+              <div class="selfie-wrap">
+                <div class="selfie-preview" id="selfiePreview">
+                  <img id="selfieImg" alt=""/>
+                  <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                </div>
+                <div>
+                  <label for="selfieInput" class="selfie-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    <span data-i18n="join.field.photo.btn">Take or Upload Photo</span>
+                  </label>
+                  <input type="file" id="selfieInput" accept="image/*" style="display:none;"/>
+                  <p style="font-size:11px;color:rgba(250,246,238,.4);margin:5px 0 0;" data-i18n="join.field.photo.hint">Required · Front-facing · Used for your Digital ID only.</p>
+                </div>
+              </div>
+            </div>
+            <div id="form-error-1" class="inline-error"></div>
+            <button class="submit" id="btn-next-1">
+              <span data-i18n="join.btn.continue">Continue to Payment</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <div class="fine" data-i18n="join.fine">By continuing, you agree to our Terms of Service.</div>
+          </div>
+
+          <!-- ═══ PANEL 2 — Payment ═══ -->
+          <div class="form-panel" id="panel-2" style="display:none;">
+            <div class="pay-summary">
+              <div class="pay-summary-row">
+                <div>
+                  <div class="order-title" data-i18n="join.payment.title">Links Golf Membership — Annual</div>
+                  <div class="order-sub" data-i18n="join.payment.sub">12 months · 15 partner courses</div>
+                </div>
+                <div class="order-price">$199</div>
+              </div>
+              <hr class="pay-divider"/>
+              <div class="pay-total"><span data-i18n="join.payment.total">Total (USD)</span><strong>$129.00</strong></div>
+            </div>
+            <div class="field" style="margin-bottom:12px;">
+              <label data-i18n="join.field.cardname">Cardholder Name</label>
+              <input id="inp-cardname" type="text" placeholder="Name on card"/>
+            </div>
+            <div class="field" style="margin-bottom:0;">
+              <label data-i18n="join.field.carddetails">Card Details</label>
+              <div id="card-element"></div>
+            </div>
+            <div class="secure-badge">
+              <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s-8-4-8-11V5l8-3 8 3v6c0 7-8 11-8 11z"/></svg>
+              <span data-i18n="join.secure">256-bit Encrypted · Powered by Stripe</span>
+            </div>
+            <div id="payment-error"></div>
+            <div style="display:flex;gap:10px;margin-top:14px;">
+              <button class="back-btn" id="btn-back-2">← Back</button>
+              <button class="submit" id="btn-authorize" style="flex:1;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                <span data-i18n="join.btn.authorize">Authorize &amp; Activate</span>
+              </button>
+            </div>
+            <div class="fine" data-i18n="join.fine.payment">We never store your card details. Processed securely via Stripe.</div>
+          </div>
+
+          <!-- ═══ PANEL 3 — Success ═══ -->
+          <div class="form-panel" id="panel-3" style="display:none;">
+            <div class="id-success">
+              <!-- Checkmark inline with heading -->
+              <div class="id-success-header">
+                <div class="checkmark"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <h3 data-i18n="join.success.h3">You're in.</h3>
+              </div>
+              <p data-i18n="join.success.p">Membership active. A confirmation has been sent to your email.</p>
+            </div>
+
+            <!-- Full-width membership card -->
+            <div class="success-card-wrap">
+              <article class="m-card" id="successCard">
+                <div class="mc-inner">
+                  <div class="mc-top">
+                    <div class="mc-brand"><img class="mc-brand-img" src="images/links-golf-membership-2.png" alt="Links Golf Membership"/></div>
+                    <div class="mc-photo" id="success-photo"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
+                  </div>
+                  <div class="mc-mid">
+                    <div class="mc-name" id="success-card-name">YOUR NAME HERE</div>
+                    <div class="mc-role" data-i18n="mcard.role">Founding Member · 2026–27</div>
+                  </div>
+                  <div class="mc-bot">
+                    <div class="mc-meta">
+                      <div class="mc-num"><small data-i18n="mcard.num.label">Member No.</small><span id="success-card-num">LGM-#####</span></div>
+                      <div class="mc-num"><small data-i18n="mcard.valid.label">Valid Until</small><span id="success-card-valid">## / ##</span></div>
+                    </div>
+                    <div class="mc-qr" id="successQr" aria-hidden="true"></div>
+                  </div>
+                </div>
+                <div class="mc-bar"></div>
+              </article>
+            </div>
+
+            <!-- Wallet buttons -->
+            <div class="id-wallet-btns">
+              <button class="id-wallet-btn"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09z"/></svg><span data-i18n="join.wallet.apple">Add to Apple Wallet</span></button>
+              <button class="id-wallet-btn"><svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;"><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke="#4285F4" stroke-width="2"/><circle cx="17" cy="12" r="1.5" fill="#EA4335"/></svg><span data-i18n="join.wallet.google">Add to Google Wallet</span></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="footer-brand-img" src="images/links-golf-membership-2.png" alt="Links Golf Membership"/>
+        <p data-i18n="footer.brand.p">One membership. Puerto Rico's finest courses. Exclusive access, digital convenience, genuine savings.</p>
+        <div class="tagline" data-i18n="footer.signature">play more, pay less.</div>
+      </div>
+      <div>
+        <h4 data-i18n="footer.col.explore">Explore</h4>
+        <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
+        <a href="#network" data-i18n="footer.link.network">Our Network</a>
+        <a href="courses.html" data-i18n="nav.courses">All Courses</a>
+      </div>
+      <div>
+        <h4 data-i18n="footer.col.support">Support</h4>
+        <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+        <a href="mailto:hello@linksgolf.pr" data-i18n="footer.link.contact">Contact</a>
+        <a href="terms.html" data-i18n="footer.link.terms">Terms of Service</a>
+        <a href="privacy.html" data-i18n="footer.link.privacy">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span data-i18n="footer.copyright">© 2026 Links Golf Membership · Puerto Rico</span>
+      <span style="font-family:var(--f-display);font-style:italic;color:rgba(160,210,150,.5);" data-i18n="footer.signature">play more, pay less</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Processing Overlay -->
+<div id="processing-overlay">
+  <div class="spin-ring">
+    <div class="spin-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  </div>
+  <p style="margin-top:20px;font-family:var(--f-mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;" id="proc-msg">Verifying Payment...</p>
+  <p style="margin-top:6px;font-size:12px;color:rgba(250,246,238,.4);">Please do not close this window</p>
+</div>
+
+<script>
+// ─── QR pixel pattern ───────────────────────────────────────────────────────
+function buildQR(el) {
+  if (!el) return;
+  const p = [1,1,1,0,1,0,1,1,0, 1,0,1,1,0,1,0,0,1, 1,1,1,0,0,0,1,1,0, 0,0,0,1,1,1,0,0,1, 0,1,0,0,1,0,1,0,0, 1,0,1,1,0,1,0,1,1, 0,1,0,1,1,0,1,0,1, 1,1,0,0,1,1,0,1,0, 0,0,1,1,0,0,1,1,0];
+  el.innerHTML = '';
+  for (let i = 0; i < 81; i++) { const c = document.createElement('i'); c.style.opacity = p[i % p.length] ? '1' : '0'; el.appendChild(c); }
+}
+buildQR(document.getElementById('mcQr'));
+buildQR(document.getElementById('dCardQr'));
+buildQR(document.getElementById('successQr'));
+
+// ─── PR Map ──────────────────────────────────────────────────────────────────
+const COURSES = [
+  { name:"Punta Borinquen",          loc:"Aguadilla",     off:"15% OFF", x:9.0,  y:22.0},
+  { name:"Royal Isabela",            loc:"Isabela",       off:"20% OFF", x:14.0, y:18.5},
+  { name:"Club Deportivo del Oeste", loc:"Cabo Rojo",     off:"15% OFF", x:7.5,  y:65.0},
+  { name:"TPC Dorado Beach",         loc:"Dorado",        off:"25% OFF", x:49.0, y:21.5},
+  { name:"Dorado del Mar",           loc:"Dorado",        off:"20% OFF", x:51.5, y:23.0},
+  { name:"Rio Bayamon",              loc:"Bayamón",       off:"15% OFF", x:54.5, y:28.0},
+  { name:"Fort Buchanan",            loc:"Guaynabo",      off:"15% OFF", x:57.5, y:25.5},
+  { name:"Bahia Beach",              loc:"Rio Grande",    off:"20% OFF", x:70.0, y:29.0},
+  { name:"Wyndham Rio Mar",          loc:"Rio Grande",    off:"20% OFF", x:73.0, y:30.5},
+  { name:"Coco Beach",               loc:"Rio Grande",    off:"15% OFF", x:67.0, y:27.5},
+  { name:"El Conquistador",          loc:"Las Croabas",   off:"20% OFF", x:79.5, y:35.0},
+  { name:"Caguas Real",              loc:"Caguas",        off:"15% OFF", x:60.0, y:47.0},
+  { name:"Palmas del Mar",           loc:"Humacao",       off:"20% OFF", x:72.0, y:62.0},
+  { name:"Costa Caribe",             loc:"Ponce",         off:"15% OFF", x:33.5, y:75.0},
+  { name:"El Legado",                loc:"Guayama",       off:"20% OFF", x:57.5, y:79.0},
+];
+const map = document.getElementById('prMap');
+const aside = document.getElementById('mapAside');
+function activateCourse(idx) {
+  document.querySelectorAll('.pin').forEach(p => p.classList.toggle('active', +p.dataset.idx === idx));
+  document.querySelectorAll('.course-pill').forEach(p => p.classList.toggle('active', +p.dataset.idx === idx));
+}
+COURSES.forEach((c, i) => {
+  const pin = document.createElement('div');
+  pin.className = 'pin';
+  pin.dataset.idx = i;
+  pin.style.cssText = `left:${c.x}%;top:${c.y}%`;
+  pin.innerHTML = `<div class="pin-dot"></div><div class="pin-label">${c.name}</div>`;
+  pin.addEventListener('click', () => activateCourse(i));
+  map.appendChild(pin);
+});
+const pillOrder = COURSES.map((_, i) => i).sort(() => Math.random() - 0.5);
+pillOrder.forEach(i => {
+  const c = COURSES[i];
+  const pill = document.createElement('div');
+  pill.className = 'course-pill';
+  pill.dataset.idx = i;
+  pill.innerHTML = `<div><div class="c-name">${c.name}</div><div class="c-loc">${c.loc}</div></div><div class="c-off">${c.off}</div>`;
+  pill.addEventListener('click', () => activateCourse(i));
+  aside.appendChild(pill);
+});
+
+// ─── Mobile nav ──────────────────────────────────────────────────────────────
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const panel  = document.getElementById('mobilePanel');
+  const open   = document.getElementById('menuOpen');
+  const close  = document.getElementById('menuClose');
+  toggle.addEventListener('click', () => {
+    panel.classList.toggle('open');
+    const isOpen = panel.classList.contains('open');
+    open.style.display = isOpen ? 'none' : ''; close.style.display = isOpen ? '' : 'none';
+  });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    panel.classList.remove('open'); open.style.display = ''; close.style.display = 'none';
+  }));
+})();
+
+// ─── Scroll reveal ───────────────────────────────────────────────────────────
+const revealIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+
+// ─── Selfie preview ──────────────────────────────────────────────────────────
+document.getElementById('selfieInput').addEventListener('change', function() {
+  const f = this.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = e => {
+    const img = document.getElementById('selfieImg');
+    img.src = e.target.result; img.style.display = 'block';
+    const svgEl = img.nextElementSibling;
+    if (svgEl) svgEl.style.display = 'none';
+    document.getElementById('selfiePreview').classList.remove('error');
+    // Update hero card photo
+    const mc = document.querySelector('#mCard .mc-photo');
+    if (mc) mc.innerHTML = `<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;" alt=""/>`;
+    // Update success card photo
+    const sp = document.getElementById('success-photo');
+    if (sp) sp.innerHTML = `<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;" alt=""/>`;
+    // Update digital card photo if present
+    const di = document.getElementById('dCardImg');
+    if (di) { di.src = e.target.result; di.style.display = 'block'; const svgSib = di.nextElementSibling; if (svgSib) svgSib.style.display = 'none'; }
+  };
+  r.readAsDataURL(f);
+});
+
+// ─── Name live update ────────────────────────────────────────────────────────
+function updateCardName() {
+  const first = document.getElementById('inp-firstname').value.trim();
+  const last  = document.getElementById('inp-lastname').value.trim();
+  const full  = [first, last].filter(Boolean).join(' ') || 'YOUR NAME HERE';
+  document.getElementById('card-name').textContent = full;
+  const dn = document.getElementById('d-card-name'); if (dn) dn.textContent = full;
+  const sn = document.getElementById('success-card-name'); if (sn) sn.textContent = full;
+}
+document.getElementById('inp-firstname').addEventListener('input', updateCardName);
+document.getElementById('inp-lastname').addEventListener('input', updateCardName);
+
+// ─── Stepper ─────────────────────────────────────────────────────────────────
+function goStep(n) {
+  [1,2,3].forEach(i => {
+    document.getElementById('panel-'+i).style.display = i === n ? '' : 'none';
+    const s = document.getElementById('step-'+i);
+    s.classList.remove('active','done');
+    if (i === n) s.classList.add('active');
+    if (i < n)  s.classList.add('done');
+  });
+}
+
+// ─── Inline error helpers ────────────────────────────────────────────────────
+function showError(id, msg, isInfo = false) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  el.className = 'inline-error show' + (isInfo ? ' info' : '');
+}
+function hideError(id) {
+  const el = document.getElementById(id);
+  if (el) { el.className = 'inline-error'; el.textContent = ''; }
+}
+
+function normalizePhone(raw) { return raw.replace(/\D/g, ''); }
+
+// ─── Supabase ────────────────────────────────────────────────────────────────
+const SUPABASE_URL = 'https://kmnyjtzdjhrezzwekbko.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImttbnlqdHpkamhyZXp6d2VrYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4NjgzMzMsImV4cCI6MjA5MzQ0NDMzM30._gpVTG5PSs4EmbsrEXmfsyPytwc6aT1odgHpW_O3lSk';
+let sb = null;
+let memberRowId = null;
+try { sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY); }
+catch (e) { console.warn('Supabase init failed:', e); }
+
+// ─── Stripe ──────────────────────────────────────────────────────────────────
+let stripe, cardElement;
+try {
+  stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+  const els = stripe.elements();
+  cardElement = els.create('card', { style: { base: { fontFamily: 'Inter, sans-serif', fontSize: '14px', color: '#faf6ee', '::placeholder': { color: 'rgba(250,246,238,.28)' } }, invalid: { color: '#f4a4a4' } } });
+  cardElement.mount('#card-element');
+  cardElement.on('change', e => {
+    const err = document.getElementById('payment-error');
+    err.style.display = e.error ? '' : 'none';
+    if (e.error) err.textContent = e.error.message;
+  });
+} catch(e) { console.warn('Stripe:', e); }
+
+// ─── Step 1 — Player Details submit ─────────────────────────────────────────
+document.getElementById('btn-next-1').addEventListener('click', async () => {
+  hideError('form-error-1');
+
+  const firstName = document.getElementById('inp-firstname').value.trim();
+  const lastName  = document.getElementById('inp-lastname').value.trim();
+  const email     = document.getElementById('inp-email').value.trim();
+  const phoneRaw  = document.getElementById('inp-phone').value.trim();
+  const address   = document.getElementById('inp-address').value.trim() || null;
+  const file      = document.getElementById('selfieInput').files[0];
+
+  if (!firstName || !lastName) { showError('form-error-1', 'Please enter your first and last name.'); return; }
+  if (!email || !email.includes('@')) { showError('form-error-1', 'Please enter a valid email address.'); return; }
+  if (!phoneRaw) { showError('form-error-1', 'A mobile number is required to create your unique member ID.'); return; }
+  if (!file) {
+    document.getElementById('selfiePreview').classList.add('error');
+    showError('form-error-1', 'A verification photo is required. It will appear on your digital membership card.');
+    return;
+  }
+
+  const full_name = `${firstName} ${lastName}`;
+  const phone     = normalizePhone(phoneRaw);
+
+  const btn = document.getElementById('btn-next-1');
+  const originalBtnHtml = btn.innerHTML;
+  btn.disabled = true; btn.textContent = 'Saving…';
+
+  try {
+    let photo_url = null;
+    if (file && sb) {
+      const path = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
+      const { error: upErr } = await sb.storage.from('member-photos').upload(path, file);
+      if (upErr) console.warn('Photo upload failed:', upErr.message);
+      else photo_url = sb.storage.from('member-photos').getPublicUrl(path).data.publicUrl;
+    }
+
+    if (sb) {
+      const emailLower = email.toLowerCase();
+
+      const { data: activeMember } = await sb.from('members').select('id').eq('phone', phone).eq('status', 'active').maybeSingle();
+      if (activeMember) {
+        showError('form-error-1', 'This phone number already has an active Links Golf membership. If you need help accessing your account, contact us at hello@linksgolf.pr.', true);
+        return;
+      }
+
+      const { data: pendingMember } = await sb.from('members').select('id').eq('phone', phone).eq('status', 'pending').maybeSingle();
+      if (pendingMember) {
+        memberRowId = pendingMember.id;
+        const { error } = await sb.from('members').update({ full_name, first_name: firstName, last_name: lastName, email: emailLower, address, photo_url }).eq('id', pendingMember.id);
+        if (error) throw error;
+      } else {
+        const newId = crypto.randomUUID();
+        memberRowId = newId;
+        const { error } = await sb.from('members').insert({ id: newId, full_name, first_name: firstName, last_name: lastName, email: emailLower, phone, address, photo_url, status: 'pending' });
+        if (error) {
+          if (error.code === '23505') { showError('form-error-1', 'This phone number is already registered. If you started signing up before, please continue or contact hello@linksgolf.pr.'); return; }
+          throw error;
+        }
+      }
+    }
+
+    document.getElementById('inp-cardname').value = full_name;
+    goStep(2);
+  } catch (err) {
+    showError('form-error-1', 'Could not save your details: ' + (err.message || err));
+  } finally {
+    btn.disabled = false; btn.innerHTML = originalBtnHtml;
+  }
+});
+
+document.getElementById('btn-back-2').addEventListener('click', () => goStep(1));
+
+// ─── Step 2 — Authorize & Activate ──────────────────────────────────────────
+document.getElementById('btn-authorize').addEventListener('click', async () => {
+  const overlay = document.getElementById('processing-overlay');
+  overlay.classList.add('show');
+  document.getElementById('proc-msg').textContent = 'Verifying Payment...';
+  // TODO: replace this mock delay with stripe.confirmCardPayment(clientSecret, {
+  //   payment_method: { card: cardElement, billing_details: { name, email, phone,
+  //   address: { line1: <inp-address>, country: 'US' } } } }). Stripe's card Element
+  //   already collects ZIP itself; passing billing_details improves AVS coverage.
+  await new Promise(r => setTimeout(r, 1800));
+  document.getElementById('proc-msg').textContent = 'Activating Your Card...';
+  await new Promise(r => setTimeout(r, 1200));
+
+  const num         = 'LGM-' + String(Math.floor(10000 + Math.random() * 90000));
+  const activatedAt = new Date();
+  const expiresAt   = new Date(activatedAt);
+  expiresAt.setFullYear(expiresAt.getFullYear() + 1);
+
+  // Format for inside the card: MM/YY
+  const validStr = String(expiresAt.getMonth() + 1).padStart(2, '0') + '/' + String(expiresAt.getFullYear()).slice(2);
+
+  if (sb && memberRowId) {
+    const { error } = await sb.from('members').update({ member_number: num, status: 'active', activated_at: activatedAt.toISOString(), expires_at: expiresAt.toISOString() }).eq('id', memberRowId);
+    if (error) {
+      overlay.classList.remove('show');
+      showError('form-error-1', 'Activation error: ' + error.message);
+      goStep(1);
+      return;
+    }
+  }
+
+  // Update hero card
+  document.getElementById('card-num').textContent = num;
+  document.getElementById('card-valid').textContent = validStr;
+  const dnum = document.getElementById('d-card-num'); if (dnum) dnum.textContent = num;
+
+  // Populate success card
+  const fullName = `${document.getElementById('inp-firstname').value.trim()} ${document.getElementById('inp-lastname').value.trim()}`.trim() || 'YOUR NAME HERE';
+  const sCardName  = document.getElementById('success-card-name');
+  const sCardNum   = document.getElementById('success-card-num');
+  const sCardValid = document.getElementById('success-card-valid');
+  if (sCardName)  sCardName.textContent  = fullName;
+  if (sCardNum)   sCardNum.textContent   = num;
+  if (sCardValid) sCardValid.textContent = validStr;
+
+  overlay.classList.remove('show');
+  goStep(3);
+});
+</script>
+<script src="languageManager.js" defer></script>
+</body>
+</html>
