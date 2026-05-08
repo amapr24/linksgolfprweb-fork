@@ -74,17 +74,13 @@ body { padding-top: 80px; }
 @media (max-width:860px) { .nav-links { display: none; } .mobile-toggle { display: inline-flex; } }
 
 /* HERO */
-.hero-benefits-stage { margin-top: -80px; padding-top: 80px; background-image: url('https://images.unsplash.com/photo-1632946269126-0f8edbe8b068?w=2000&auto=format&fit=crop&q=80'); background-size: cover; background-position: center; position: relative; }
-.hero { padding: 24px 0 16px; position: relative; overflow: hidden; background: linear-gradient(rgba(240,235,224,.88), rgba(240,235,224,.88)); }
-.photo-strip { height: 220px; background-image: linear-gradient(rgba(17,26,19,.55) 0%, rgba(17,26,19,.3) 50%, rgba(17,26,19,.55) 100%), url('https://images.unsplash.com/photo-1632244112951-95b29c92eee1?w=1600&auto=format&fit=crop&q=80'); background-size: cover; background-position: center 50%; background-attachment: fixed; }
-@media (max-width:768px) { .photo-strip { background-attachment: scroll; } }
+.hero { padding: 24px 0 16px; position: relative; overflow: hidden; }
 .hero::before { content: ""; position: absolute; right: -8%; top: -30%; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(88,140,98,.12), transparent 65%); pointer-events: none; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 24px; align-items: stretch; }
 .hero-left { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .hero-left .hero-sub { margin-left: auto; margin-right: auto; }
 .hero-left .hero-cta { justify-content: center; }
 @media (max-width:860px) { .hero-grid { grid-template-columns: 1fr; gap: 32px; } .hero { padding: 16px 0 12px; } }
-@media (max-width:600px) { .hero-benefits-stage { margin-top: -68px; padding-top: 68px; } }
 
 .headline { font-size: clamp(36px, 5vw, 64px); line-height: 1.0; font-weight: 400; margin: 0 0 20px; letter-spacing: -.03em; white-space: nowrap; }
 .headline .line { display: inline; overflow: hidden; padding: 0; }
@@ -142,16 +138,6 @@ body { padding-top: 80px; }
 /* SECTIONS */
 .section { padding: 32px 0; position: relative; }
 .section.alt { background: var(--bg2); }
-#network { background-image: linear-gradient(rgba(240,235,224,.91), rgba(240,235,224,.91)), url('https://images.unsplash.com/photo-1635745129486-dcb2a5259b1f?w=1600&auto=format&fit=crop&q=80'); background-size: cover; background-position: center; }
-#benefits { background: linear-gradient(to right, rgba(232,225,211,.18) 0%, rgba(232,225,211,.22) 28%, rgba(232,225,211,.5) 50%, rgba(232,225,211,.78) 70%, rgba(232,225,211,.85) 100%); padding: 56px 0; }
-#benefits .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-#benefits .section-head { margin: 0; text-align: left; max-width: 460px; padding-top: 8px; }
-#benefits .benefits-tiles { margin: 0; max-width: 560px; grid-template-columns: 1fr; background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.3); box-shadow: 0 28px 70px -22px rgba(17,26,19,.3); }
-#benefits .benefit-tile { background: rgba(250,246,238,.48); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); padding: 20px 30px; }
-#benefits .benefit-tile h3 { font-size: clamp(18px, 1.7vw, 22px); }
-#benefits .benefit-tile:hover { background: rgba(255,255,255,.7); }
-@media (max-width:860px) { #benefits { background: linear-gradient(rgba(232,225,211,.78), rgba(232,225,211,.78)); padding: 32px 0; } #benefits .wrap { grid-template-columns: 1fr; gap: 0; } #benefits .section-head { margin: 0 auto 24px; text-align: center; max-width: 1000px; padding-top: 0; } #benefits .benefits-tiles { margin: 0 auto; max-width: 900px; grid-template-columns: 1fr 1fr; } #benefits .benefit-tile h3 { font-size: clamp(20px, 2.2vw, 26px); } }
-@media (max-width:640px) { #benefits .benefits-tiles { grid-template-columns: 1fr; } }
 .section-head { text-align: center; max-width: 1000px; margin: 0 auto 24px; }
 .eyebrow { font-family: var(--f-mono); font-size: 13px; letter-spacing: .28em; text-transform: uppercase; color: var(--sage); margin-bottom: 14px; font-weight: 600; }
 .section-head h2 { font-size: clamp(26px, 3.2vw, 40px); line-height: 1.1; }
@@ -461,8 +447,7 @@ footer a:hover { color: var(--sage-light); }
   </div>
 </nav>
 
-<!-- HERO + BENEFITS share photo stage -->
-<div class="hero-benefits-stage">
+<!-- HERO -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-left">
@@ -530,7 +515,6 @@ footer a:hover { color: var(--sage-light); }
     </div>
   </div>
 </section>
-</div>
 
 <!-- NETWORK -->
 <section class="section" id="network">
@@ -595,8 +579,6 @@ footer a:hover { color: var(--sage-light); }
     <div style="margin-top:24px;text-align:center;" class="reveal"><a href="faq.html" class="btn" style="background:var(--sage);color:white;" data-i18n="faq.cta">View All FAQs →</a></div>
   </div>
 </section>
-
-<div class="photo-strip" aria-hidden="true"></div>
 
 <!-- JOIN -->
 <section id="join" style="padding:32px 0;">
